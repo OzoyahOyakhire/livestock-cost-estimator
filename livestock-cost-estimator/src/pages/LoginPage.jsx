@@ -1,10 +1,36 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
-import { Eye, EyeOff, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Eye, EyeOff, ShieldCheck, ArrowRight, Loader2, AlertCircle } from 'lucide-react';
+import { api } from '../api/api';
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    try {
+      await api.post('/auth/login', formData);
+      // On success, redirect to dashboard or home
+      navigate('/'); 
+    } catch (error) {
+      const errorMsg = error.response?.data?.msg || 'Invalid credentials. Please try again.';
+      setError(errorMsg);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen font-sans bg-white overflow-hidden">
@@ -51,12 +77,22 @@ export default function LoginPage() {
             <p className="text-slate-500 text-sm">Enter your credentials to access your farm's analytics.</p>
           </div>
 
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+          {error && (
+            <div className="mb-6 p-4 rounded-xl flex items-center gap-3 bg-red-50 text-red-700 border border-red-100 animate-in fade-in slide-in-from-top-4 duration-300">
+              <AlertCircle size={20} />
+              <p className="text-sm font-medium">{error}</p>
+            </div>
+          )}
+
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="space-y-2">
               <label className="text-sm font-semibold text-slate-700" htmlFor="email">Email Address</label>
               <input
                 id="email"
                 type="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="name@company.com"
                 className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition-all outline-none text-slate-600 placeholder:text-slate-400 shadow-sm"
               />
@@ -71,6 +107,9 @@ export default function LoginPage() {
                 <input
                   id="password"
                   type={showPassword ? "text" : "password"}
+                  required
+                  value={formData.password}
+                  onChange={handleChange}
                   placeholder="••••••••"
                   className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition-all outline-none text-slate-600 placeholder:text-slate-400 shadow-sm pr-12"
                 />
@@ -93,9 +132,17 @@ export default function LoginPage() {
               <label htmlFor="remember" className="text-sm font-medium text-slate-600 cursor-pointer select-none">Remember this device</label>
             </div>
 
-            <button className="w-full py-4 bg-green-500 hover:bg-green-600 text-white rounded-xl font-bold text-lg shadow-lg shadow-green-500/25 transition-all active:scale-95 flex items-center justify-center gap-2 group">
-              Sign In to LivestockIQ
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            <button 
+              type="submit"
+              disabled={loading}
+              className="w-full py-4 bg-green-500 hover:bg-green-600 text-white rounded-xl font-bold text-lg shadow-lg shadow-green-500/25 transition-all active:scale-95 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+            >
+              {loading ? <Loader2 size={24} className="animate-spin" /> : (
+                <>
+                  Sign In to LivestockIQ
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </>
+              )}
             </button>
           </form>
 
@@ -126,4 +173,3 @@ export default function LoginPage() {
   </div>
   );
 }
-
