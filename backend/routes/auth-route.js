@@ -20,8 +20,7 @@ router.post("/register", validator(registerValidation), register);
 router.post("/login", validator(loginValidation), login);
 router.delete("/logout", authenticateUser, logout);
 router.get("/verify-email", verifyEmail);
-router.post("/forgot-password", forgotPassword)
-router.post("/reset-password", resetPassword)
-
+router.post("/forgot-password", forgotPassword);
+router.post("/reset-password", resetPassword);
 
 export default router;
