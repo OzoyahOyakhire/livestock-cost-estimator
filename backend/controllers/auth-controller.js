@@ -202,27 +202,35 @@ const resetPassword = async (req, res, next) => {
   const { newPassword, email, token } = req.body;
 
   if (!email || !newPassword || !token) {
-    throw new BadRequestError("Please provide a valid email");
+    throw new BadRequestError("Please provide email, token and new password");
   }
+
   try {
     const user = await User.findOne({ email });
-    if (user) {
-      const currentDate = new Date();
-      const hasExpired = currentDate > user.passwordTokenExpirationDate;
-      const checkToken = user.passwordToken === createHash(token);
 
-      if (checkToken && !hasExpired) {
-        user.password = newPassword;
-        user.passwordToken = null;
-        user.passwordTokenExpirationDate = null;
-
-        await user.save();
-
-        res.status(StatusCodes.OK).json({
-          msg: "Password reset successful",
-        });
-      }
+    if (!user) {
+      return res
+        .status(StatusCodes.BAD_REQUEST)
+        .json({ msg: "Invalid or expired reset link" });
     }
+
+    const hasExpired = new Date() > user.passwordTokenExpirationDate;
+    const checkToken = user.passwordToken === createHash(token);
+
+    if (!checkToken || hasExpired) {
+      return res
+        .status(StatusCodes.BAD_REQUEST)
+        .json({ msg: "Invalid or expired reset link" });
+    }
+
+    user.password = newPassword;
+    user.passwordToken = null;
+    user.passwordTokenExpirationDate = null;
+    await user.save();
+
+    return res.status(StatusCodes.OK).json({
+      msg: "Password reset successful",
+    });
   } catch (error) {
     next(error);
   }
