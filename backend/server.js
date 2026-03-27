@@ -8,6 +8,7 @@ const app = express();
 
 //rest of the packages
 import cookieParser from "cookie-parser";
+import cors from "cors"
 
 //database
 import connectDB from "./db/connect.js";
