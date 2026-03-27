@@ -42,8 +42,7 @@ const register = async (req, res, next) => {
 
     //sending Email
 
-    const verificationLink = `http://localhost:5000/api/v1/auth/verify-email?token=${verificationToken}&email=${newUser.email}`;
-
+    const verificationLink = `${process.env.API_URL}/api/v1/auth/verify-email?token=${verificationToken}&email=${newUser.email}`;
     await sendVerificationEmail({
       name: newUser.name,
       email: newUser.email,
@@ -176,8 +175,7 @@ const forgotPassword = async (req, res, next) => {
     if (user) {
       const passwordToken = crypto.randomBytes(70).toString("hex");
       //send email
-      const resetPasswordLink = `http://localhost:5000/api/v1/auth/reset-password?token=${passwordToken}&email=${user.email}`;
-
+      const resetPasswordLink = `${process.env.CLIENT_URL}/reset-password?token=${passwordToken}&email=${user.email}`;
       await sendResetPasswordEmail({
         name: user.name,
         email: user.email,

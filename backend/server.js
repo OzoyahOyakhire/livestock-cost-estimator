@@ -21,11 +21,17 @@ import errorHandlerMiddleware from "./middleware/error-handler.js";
 
 app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+    credentials: true,
+  }),
+);
 
 app.use("/api/v1/auth", authRouter);
 
-app.use(notFound)
-app.use(errorHandlerMiddleware)
+app.use(notFound);
+app.use(errorHandlerMiddleware);
 
 //starting program
 const port = process.env.PORT || 5000;
