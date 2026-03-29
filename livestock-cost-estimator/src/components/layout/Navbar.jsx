@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Menu, X } from 'lucide-react';
+import { Box, Menu, X, LogOut } from 'lucide-react';
+import { useAuth } from '../../context/AuthContext';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { user, logout } = useAuth();
 
   return (
     <nav className="border-b border-gray-100 bg-white sticky top-0 z-50">
@@ -18,13 +20,26 @@ export default function Navbar() {
           </Link>
 
   
-          <div className="hidden md:flex flex-1 justify-center items-center gap-10">
+          {/* <div className="hidden md:flex flex-1 justify-center items-center gap-10">
              <a href="#how-it-works" className="text-gray-600 hover:text-green-500 font-medium transition-colors">How It Works</a>
              <a href="#features" className="text-gray-600 hover:text-green-500 font-medium transition-colors">Features</a>
-             </div>
+             </div> */}
 
           <div className="hidden md:flex items-center gap-6">
-             <Link to="/login" className="text-gray-700 font-medium hover:text-slate-900 transition-colors">Log In</Link>
+             {user ? (
+               <button 
+                 onClick={logout}
+                 className="flex items-center gap-2 text-slate-600 font-medium hover:text-red-600 transition-colors bg-slate-50 px-4 py-2 rounded-lg hover:bg-red-50"
+               >
+                 <LogOut size={18} />
+                 Log Out
+               </button>
+             ) : (
+               <>
+                 <Link to="/login" className="text-gray-700 font-medium hover:text-slate-900 transition-colors">Log In</Link>
+                 <Link to="/signup" className="text-green-600 font-bold hover:text-green-700">Join Free</Link>
+               </>
+             )}
              <Link to="/estimate" className="bg-green-500 hover:bg-green-600 text-white px-6 py-2.5 rounded-lg font-semibold transition-all shadow-sm">Start Free Estimation</Link>
           </div>
 
@@ -51,7 +66,23 @@ export default function Navbar() {
              
              <div className="h-px bg-gray-100 my-2"></div>
              
-             <Link to="/login" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 rounded-lg">Log In</Link>
+             {user ? (
+               <button 
+                 onClick={() => {
+                   logout();
+                   setIsMobileMenuOpen(false);
+                 }}
+                 className="flex items-center gap-2 px-4 py-3 text-base font-medium text-red-600 hover:bg-red-50 rounded-lg"
+               >
+                 <LogOut size={18} />
+                 Log Out
+               </button>
+             ) : (
+               <>
+                 <Link to="/login" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 rounded-lg">Log In</Link>
+                 <Link to="/signup" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-base font-medium text-green-600 hover:bg-green-50 rounded-lg">Sign Up</Link>
+               </>
+             )}
              <Link to="/estimate" onClick={() => setIsMobileMenuOpen(false)} className="block mt-2 w-full text-center bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-xl font-bold shadow-md transition-colors">
                Start Free Estimation
              </Link>
@@ -61,3 +92,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

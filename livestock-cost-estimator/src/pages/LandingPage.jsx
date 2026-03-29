@@ -9,10 +9,7 @@ export default function LandingPage() {
     <div className="flex flex-col w-full">
      
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center w-full">
-         <div className="inline-flex items-center gap-2 bg-green-50 text-green-600 px-4 py-1.5 rounded-full text-sm font-semibold mb-8 border border-green-100">
-           <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-           NEW: Predictive Market Trends v2.0
-         </div>
+        
          <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
            Make Smarter Livestock<br />
            <span className="text-green-500">Investment Decisions</span>
