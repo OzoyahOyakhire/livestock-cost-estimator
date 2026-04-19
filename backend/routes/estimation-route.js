@@ -18,7 +18,7 @@ router.patch("/:id/step-2", updateStep2);
 router.patch("/:id/step-3", updateStep3);
 router.patch("/:id/step-4", updateStep4);
 router.patch("/:id/step-5", updateStep5);
-router.post("/:id/step-6", updateStep6);
+router.patch("/:id/step-6", updateStep6);
 router.post("/:id/calculate", calculateEstimation);
 
 export default router;

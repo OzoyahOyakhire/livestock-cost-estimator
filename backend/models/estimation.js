@@ -2,88 +2,206 @@ import mongoose from "mongoose";
 
 const estimationSchema = new mongoose.Schema(
   {
-    // User who created this estimation
+    // 🔗 User who created this estimation
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
 
-    // Livestock type selected by the user
+    // 🐄 Livestock category
     livestockType: {
       type: String,
       enum: ["cattle", "poultry"],
       required: true,
     },
 
-    // Tracks whether the estimation is still being filled or finished
+    // 📌 Draft or completed
     status: {
       type: String,
       enum: ["draft", "completed"],
       default: "draft",
     },
 
-    // Tracks the current wizard step
+    // 📍 Track wizard progress
     currentStep: {
       type: Number,
       default: 1,
     },
 
-    // General production information
+    // =========================
+    // 🏗️ PRODUCTION SETUP
+    // =========================
     productionSetup: {
-      productionType: String,
-      productionSystem: String,
-      numberOfAnimals: Number,
-      cycleDuration: Number,
-      location: String,
+      productionType: {
+        type: String,
+        enum: ["broiler", "layer", "beef", "dairy"],
+      },
+
+      productionSystem: {
+        type: String,
+        enum: ["intensive", "semi-intensive", "extensive", "deep litter", "battery cage"],
+      },
+
+      numberOfAnimals: {
+        type: Number,
+        min: 1,
+      },
+
+      cycleDuration: {
+        type: Number,
+        min: 1,
+      },
+
+      location: {
+        type: String,
+        trim: true,
+      },
     },
 
-    // Housing and infrastructure details
+    // =========================
+    // 🏠 HOUSING
+    // =========================
     housingInfrastructure: {
-      hasHousing: Boolean,
-      housingType: String,
-      capacity: Number,
-      equipment: [String],
+      hasHousing: {
+        type: Boolean,
+        default: false,
+      },
+
+      housingType: {
+        type: String,
+        enum: ["basic", "standard", "premium"],
+      },
+
+      capacity: {
+        type: Number,
+        min: 0,
+      },
+
+      equipment: [
+        {
+          type: String,
+          trim: true,
+        },
+      ],
     },
 
-    // Feed and operations costs / assumptions
+    // =========================
+    // 🌽 FEED & OPERATIONS
+    // =========================
     feedOperations: {
-      feedPrice: Number,
-      laborCost: Number,
-      electricityCost: Number,
+      feedPrice: {
+        type: Number,
+        min: 0,
+      },
+
+      laborCost: {
+        type: Number,
+        min: 0,
+      },
+
+      electricityCost: {
+        type: Number,
+        min: 0,
+      },
     },
 
-    // Health and veterinary details
+    // =========================
+    // 💉 HEALTH MANAGEMENT
+    // =========================
     healthManagement: {
-      mortalityRate: Number,
-      vaccinationProgram: String,
-      vetServiceFrequency: String,
-      medicationIntensity: String,
-      diseaseRiskLevel: String,
+      mortalityRate: {
+        type: Number,
+        min: 0,
+        max: 100,
+      },
+
+      vaccinationProgram: {
+        type: String,
+        enum: ["minimal", "standard", "intensive"],
+      },
+
+      vetServiceFrequency: {
+        type: String,
+        enum: ["weekly", "monthly", "quarterly"],
+      },
+
+      medicationIntensity: {
+        type: String,
+        enum: ["low", "medium", "high"],
+      },
+
+      diseaseRiskLevel: {
+        type: String,
+        enum: ["low", "medium", "high"],
+      },
     },
 
-    // Market-related assumptions
+    // =========================
+    // 💰 MARKET INPUTS
+    // =========================
     marketInputs: {
-      sellingPricePerKg: Number,
-      eggPricePerEgg: Number,
-      milkPricePerLiter: Number,
+      sellingPricePerKg: {
+        type: Number,
+        min: 0,
+      },
+
+      eggPricePerEgg: {
+        type: Number,
+        min: 0,
+      },
+
+      milkPricePerLiter: {
+        type: Number,
+        min: 0,
+      },
     },
 
-    // Final calculated result
+    // =========================
+    // 📊 FINAL RESULTS
+    // =========================
     results: {
       totalCostEstimation: {
         type: Number,
         default: 0,
       },
+
       projectedRevenue: {
         type: Number,
         default: 0,
       },
+
       projectedProfit: {
         type: Number,
         default: 0,
       },
+
       roi: {
+        type: Number,
+        default: 0,
+      },
+    },
+
+    // =========================
+    // 🤖 ML OUTPUT (for later)
+    // =========================
+    modelOutput: {
+      predictedFeedCost: {
+        type: Number,
+        default: 0,
+      },
+
+      predictedLaborCost: {
+        type: Number,
+        default: 0,
+      },
+
+      predictedElectricityCost: {
+        type: Number,
+        default: 0,
+      },
+
+      confidenceScore: {
         type: Number,
         default: 0,
       },
@@ -93,4 +211,5 @@ const estimationSchema = new mongoose.Schema(
 );
 
 const Estimation = mongoose.model("Estimation", estimationSchema);
+
 export default Estimation;
