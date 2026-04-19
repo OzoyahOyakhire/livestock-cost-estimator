@@ -15,6 +15,7 @@ import connectDB from "./db/connect.js";
 
 //routes
 import authRouter from "./routes/auth-route.js";
+import estimationRouter from "./routes/estimation-route.js";
 
 //middlewares
 import notFound from "./middleware/not-found.js";
@@ -30,6 +31,7 @@ app.use(
 );
 
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/estimation", estimationRouter)
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
