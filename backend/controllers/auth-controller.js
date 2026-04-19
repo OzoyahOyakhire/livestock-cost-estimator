@@ -15,20 +15,20 @@ import {
 } from "../utils/index.js";
 import crypto from "crypto";
 import Token from "../models/token.js";
-import { OAuth2Client } from "google-auth-library";
-
-const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 //registering user
 const register = async (req, res, next) => {
   const payload = req.body;
 
   try {
+    //checking for existing user
     const isExisting = await User.findOne({ email: payload.email });
     if (isExisting) {
-      return next(new ConflictError("Email already exists"));
+      const err = new ConflictError("Email already exists");
+      return next(err);
     }
 
+    // first registered user is an admin
     const isFirstAccount = (await User.countDocuments({})) === 0;
     const role = isFirstAccount ? "admin" : "user";
 
@@ -36,25 +36,21 @@ const register = async (req, res, next) => {
 
     const newUser = await User.create({
       ...payload,
-      role,
+      role: role,
       verificationToken,
-      isVerified: false,
     });
 
-    const verificationLink = `${process.env.API_URL}/api/v1/auth/verify-email?token=${verificationToken}&email=${newUser.email}`;
+    //sending Email
 
-    try {
-      await sendVerificationEmail({
-        name: newUser.name,
-        email: newUser.email,
-        verificationLink,
-      });
-    } catch (emailError) {
-      await User.findByIdAndDelete(newUser._id);
-      throw new BadRequestError(emailError.message ||"Unable to send verification email");
-    }
+    const verificationLink = `http://localhost:5000/api/v1/auth/verify-email?token=${verificationToken}&email=${newUser.email}`;
 
-    return res.status(StatusCodes.CREATED).json({
+    await sendVerificationEmail({
+      name: newUser.name,
+      email: newUser.email,
+      verificationLink,
+    });
+
+    res.status(StatusCodes.CREATED).json({
       msg: "Success! Please check your email to verify account",
     });
   } catch (error) {
@@ -155,82 +151,6 @@ const login = async (req, res, next) => {
   }
 };
 
-const googleLogin = async (req, res, next) => {
-  const { token } = req.body;
-  if (!token) {
-    throw new UnauthenticatedError("Google Token is required");
-  }
-  try {
-    const ticket = await client.verifyIdToken({
-      idToken: token,
-      audience: process.env.GOOGLE_CLIENT_ID,
-    });
-
-    const payload = ticket.getPayload();
-
-    if (!payload || !payload.email) {
-      throw new UnauthenticatedError("Invalid Google token");
-    }
-
-    const { email, name, picture, email_verified } = payload;
-
-    if (!email_verified) {
-      throw new UnauthenticatedError("Google email is not verified");
-    }
-
-    let user = await User.findOne({ email });
-    if (!user) {
-      const isFirstAccount = (await User.countDocuments({})) === 0;
-      const role = isFirstAccount ? "admin" : "user";
-
-      user = await User.create({
-        name,
-        email,
-        role,
-        password: crypto.randomBytes(20).toString("hex"),
-        isVerified: true,
-        verified: new Date(),
-      });
-    }
-
-    const tokenUser = createUserToken(user);
-
-    let refreshToken = "";
-    const existingToken = await Token.findOne({ user: user._id });
-
-    if (existingToken) {
-      refreshToken = existingToken.refreshToken;
-      attachCookiesToResponse({ res, user: tokenUser, refreshToken });
-
-      return res.status(StatusCodes.OK).json({
-        msg: "Google login successful",
-        user: tokenUser,
-      });
-    }
-
-    refreshToken = crypto.randomBytes(40).toString("hex");
-
-    const userAgent = req.headers["user-agent"];
-    const ip = req.ip;
-
-    await Token.create({
-      refreshToken,
-      ip,
-      userAgent,
-      user: user._id,
-    });
-
-    attachCookiesToResponse({ res, user: tokenUser, refreshToken });
-
-    return res.status(StatusCodes.OK).json({
-      msg: "Google login successful",
-      user: tokenUser,
-    });
-  } catch (error) {
-    next(error);
-  }
-};
-
 const logout = async (req, res, next) => {
   await Token.findOneAndDelete({ user: req.user.id });
 
@@ -256,7 +176,8 @@ const forgotPassword = async (req, res, next) => {
     if (user) {
       const passwordToken = crypto.randomBytes(70).toString("hex");
       //send email
-      const resetPasswordLink = `${process.env.CLIENT_URL}/reset-password?token=${passwordToken}&email=${user.email}`;
+      const resetPasswordLink = `http://localhost:5000/api/v1/auth/reset-password?token=${passwordToken}&email=${user.email}`;
+
       await sendResetPasswordEmail({
         name: user.name,
         email: user.email,
@@ -315,12 +236,4 @@ const resetPassword = async (req, res, next) => {
   }
 };
 
-export {
-  register,
-  verifyEmail,
-  login,
-  logout,
-  forgotPassword,
-  resetPassword,
-  googleLogin,
-};
+export { register, verifyEmail, login, logout, forgotPassword, resetPassword };
