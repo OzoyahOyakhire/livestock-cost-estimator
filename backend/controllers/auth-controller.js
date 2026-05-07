@@ -17,7 +17,7 @@ import crypto from "crypto";
 import Token from "../models/token.js";
 import { OAuth2Client } from "google-auth-library";
 
-const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID)
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 //registering user
 const register = async (req, res, next) => {
@@ -45,8 +45,7 @@ const register = async (req, res, next) => {
 
     //sending Email
 
-    const verificationLink = `http://localhost:5000/api/v1/auth/verify-email?token=${verificationToken}&email=${newUser.email}`;
-
+    const verificationLink = `https://livestock-cost-estimator.vercel.app/verify-email?token=${verificationToken}&email=${newUser.email}`;
     await sendVerificationEmail({
       name: newUser.name,
       email: newUser.email,
