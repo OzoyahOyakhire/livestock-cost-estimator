@@ -1,0 +1,1001 @@
+livestockType,productionType,productionSystem,numberOfAnimals,cycleDuration,location,hasHousing,housingType,capacity,equipmentCount,feedPrice,laborCost,electricityCost,mortalityRate,vaccinationProgram,vetServiceFrequency,medicationIntensity,diseaseRiskLevel,sellingPricePerKg,eggPricePerEgg,milkPricePerLiter,totalCostEstimation,projectedRevenue,projectedProfit,roi
+poultry,broiler,intensive,1359,2,Benin City,True,basic,1415,0,384785,37790,43698,7.5,minimal,weekly,low,low,3269,0,0,1145773,8218756,7072983,617.31
+poultry,broiler,semi-intensive,1282,2,Calabar,False,basic,1454,2,454374,16703,54729,12.5,intensive,monthly,medium,medium,1836,0,0,3666706,4119066,452360,12.34
+poultry,broiler,intensive,490,4,Kano,False,basic,542,2,346526,84342,57895,2.6,standard,quarterly,low,medium,1522,0,0,1481013,1452779,-28234,-1.91
+poultry,broiler,deep litter,1180,4,Uyo,True,premium,1204,1,435310,90861,10229,13.1,minimal,monthly,medium,medium,2694,0,0,1126400,5524963,4398563,390.5
+poultry,broiler,deep litter,383,4,Onitsha,False,premium,490,0,349360,59862,40005,11.5,minimal,monthly,medium,medium,3481,0,0,2153577,2359805,206228,9.58
+poultry,broiler,intensive,499,4,Enugu,True,standard,559,0,140615,97490,18934,10.5,standard,quarterly,medium,low,2284,0,0,519014,2040092,1521078,293.07
+poultry,broiler,deep litter,335,3,Uyo,False,premium,375,1,102525,148569,37343,3.2,minimal,weekly,low,high,1855,0,0,1812687,1203079,-609608,-33.63
+poultry,broiler,intensive,1672,5,Ondo,False,premium,2171,4,161813,18009,49583,11.4,intensive,quarterly,medium,high,2593,0,0,8547605,7682499,-865106,-10.12
+poultry,broiler,battery cage,278,4,Kaduna,False,basic,357,2,292451,61832,38271,13.9,intensive,monthly,high,high,2014,0,0,1129254,964134,-165120,-14.62
+poultry,broiler,semi-intensive,363,4,Calabar,True,premium,398,0,88650,110153,59504,12.5,minimal,weekly,low,high,1522,0,0,439807,966850,527044,119.84
+poultry,broiler,intensive,225,5,Calabar,True,basic,269,4,116574,84483,39581,13.3,standard,weekly,high,high,2023,0,0,499388,789273,289885,58.05
+poultry,broiler,battery cage,1510,4,Abeokuta,False,premium,1714,1,147806,31784,27156,2.3,intensive,weekly,high,low,1229,0,0,8134246,3626214,-4508032,-55.42
+poultry,broiler,semi-intensive,195,2,Kano,True,standard,199,1,176002,142248,19040,9.0,intensive,quarterly,high,medium,2195,0,0,537165,779006,241841,45.02
+poultry,broiler,battery cage,1656,5,Onitsha,True,basic,1983,2,252077,122767,35606,13.2,minimal,quarterly,high,high,1603,0,0,1528250,4608330,3080080,201.54
+poultry,broiler,deep litter,174,5,Ibadan,True,basic,183,3,103495,125593,17025,5.6,minimal,weekly,medium,high,1601,0,0,376613,525948,149335,39.65
+poultry,broiler,intensive,153,6,Kano,True,basic,171,3,142065,120130,8842,4.1,minimal,monthly,medium,medium,2368,0,0,362837,694899,332062,91.52
+poultry,broiler,battery cage,916,6,Port Harcourt,True,standard,975,0,333657,30979,54019,6.1,minimal,quarterly,medium,high,3375,0,0,762155,5805837,5043682,661.77
+poultry,broiler,intensive,372,2,Kaduna,True,premium,379,1,241694,46427,42334,5.2,intensive,weekly,high,low,2917,0,0,795455,2057395,1261940,158.64
+poultry,broiler,deep litter,1396,6,Benin City,True,premium,1695,1,169258,118752,13577,10.7,standard,monthly,medium,low,1238,0,0,1208987,3086651,1877664,155.31
+poultry,broiler,intensive,988,6,Kano,True,premium,1066,2,491826,33033,21009,6.8,minimal,monthly,high,high,2439,0,0,1286868,4491740,3204872,249.04
+poultry,broiler,intensive,1302,6,Calabar,False,premium,1342,1,168656,45258,12014,11.7,minimal,monthly,medium,high,2062,0,0,6084928,4741223,-1343705,-22.08
+poultry,broiler,semi-intensive,1519,4,Benin City,False,standard,1931,0,78390,126037,59352,5.6,minimal,monthly,low,high,2272,0,0,4592929,6515805,1922876,41.87
+poultry,broiler,battery cage,380,5,Calabar,True,basic,388,1,316046,24444,59696,6.8,intensive,weekly,medium,low,1371,0,0,799186,971107,171921,21.51
+poultry,broiler,intensive,681,4,Abeokuta,True,premium,731,0,215429,121529,45675,11.7,minimal,weekly,low,medium,1301,0,0,723133,1564642,841509,116.37
+poultry,broiler,battery cage,417,4,Enugu,False,basic,515,0,230562,25151,35847,4.9,standard,monthly,medium,low,2113,0,0,1167260,1675892,508632,43.57
+poultry,broiler,battery cage,98,3,Ogun,False,basic,126,2,214101,148537,31193,10.8,intensive,monthly,low,low,2269,0,0,624131,396694,-227437,-36.44
+poultry,broiler,deep litter,415,6,Abuja,True,premium,469,2,258796,149066,12578,7.0,intensive,weekly,medium,low,2986,0,0,876940,2304893,1427953,162.83
+poultry,broiler,semi-intensive,53,6,Abeokuta,False,basic,68,2,356712,97291,48475,13.0,intensive,monthly,high,medium,2872,0,0,642928,264856,-378072,-58.8
+poultry,broiler,deep litter,718,5,Calabar,True,basic,808,3,385109,60620,45338,9.4,standard,quarterly,low,medium,2375,0,0,903917,3089913,2185996,241.84
+poultry,broiler,deep litter,480,5,Ekiti,False,standard,577,4,278085,59483,48178,3.1,intensive,quarterly,high,high,2572,0,0,2149746,2392577,242831,11.3
+poultry,broiler,deep litter,241,3,Enugu,True,basic,242,1,279108,34091,34846,7.4,intensive,quarterly,low,high,2772,0,0,522770,1237232,714462,136.67
+poultry,broiler,semi-intensive,1062,5,Port Harcourt,True,basic,1310,1,122215,136778,8291,9.2,minimal,monthly,low,medium,3375,0,0,692084,6508998,5816914,840.49
+poultry,broiler,deep litter,1194,6,Ekiti,False,premium,1353,1,419889,139433,34495,5.4,minimal,quarterly,medium,high,3184,0,0,5877267,7192809,1315542,22.38
+poultry,broiler,deep litter,1333,3,Ekiti,True,premium,1447,2,206080,98809,40399,3.0,minimal,weekly,medium,high,1825,0,0,1278388,4719486,3441098,269.17
+poultry,broiler,intensive,1496,3,Osun,False,standard,1739,3,62645,69220,59584,7.5,intensive,quarterly,low,high,2758,0,0,5165649,7633041,2467392,47.77
+poultry,broiler,deep litter,1026,2,Jos,False,standard,1191,4,449361,72812,36996,4.9,standard,monthly,low,medium,2576,0,0,3842369,5026940,1184571,30.83
+poultry,broiler,semi-intensive,1419,5,Ekiti,True,premium,1646,3,340322,22104,10501,10.4,minimal,monthly,low,low,2265,0,0,1082427,5759551,4677124,432.1
+poultry,broiler,semi-intensive,826,4,Ekiti,False,standard,1014,3,175886,125510,21532,12.9,standard,weekly,high,high,1413,0,0,3296528,2033154,-1263374,-38.32
+poultry,broiler,semi-intensive,1999,4,Kano,True,basic,2568,1,469997,20342,45719,4.0,minimal,monthly,high,low,2092,0,0,1935358,8029263,6093905,314.87
+poultry,broiler,deep litter,1002,4,Kaduna,True,basic,1291,0,333397,21731,25444,9.5,standard,monthly,high,low,1511,0,0,1182172,2740380,1558208,131.81
+poultry,broiler,intensive,1262,3,Jos,True,premium,1558,2,309311,127296,48353,6.8,intensive,quarterly,medium,low,2920,0,0,1589210,6868915,5279705,332.22
+poultry,broiler,intensive,1734,5,Osun,False,premium,2197,3,400833,55105,33540,4.3,intensive,quarterly,medium,high,3404,0,0,9029428,11297454,2268026,25.12
+poultry,broiler,battery cage,1636,5,Osun,False,standard,2054,0,176238,133175,20981,11.8,intensive,quarterly,high,medium,2577,0,0,6015494,7436975,1421481,23.63
+poultry,broiler,deep litter,108,5,Kaduna,False,basic,119,2,208435,88310,44069,11.1,standard,quarterly,low,high,1982,0,0,559514,380592,-178922,-31.98
+poultry,broiler,battery cage,225,3,Sokoto,True,premium,257,3,264972,19520,11098,5.8,standard,quarterly,low,medium,2711,0,0,424965,1149193,724228,170.42
+poultry,broiler,deep litter,1019,6,Osun,False,standard,1233,2,190758,80903,20108,3.6,minimal,monthly,low,high,3394,0,0,3297819,6667961,3370142,102.19
+poultry,broiler,semi-intensive,1997,3,Onitsha,False,standard,2431,4,342890,89186,11588,12.8,standard,weekly,medium,low,2438,0,0,7333314,8490988,1157674,15.79
+poultry,broiler,semi-intensive,78,6,Benin City,True,basic,90,1,364427,143680,11723,13.3,intensive,monthly,medium,medium,3004,0,0,590030,406297,-183733,-31.14
+poultry,broiler,intensive,747,3,Benin City,False,basic,931,3,287816,34420,42815,10.2,minimal,weekly,low,high,2444,0,0,1971101,3278900,1307799,66.35
+poultry,broiler,intensive,224,3,Calabar,False,premium,264,4,148325,114713,34524,13.8,standard,quarterly,medium,medium,1446,0,0,1355962,558410,-797552,-58.82
+poultry,broiler,semi-intensive,1298,2,Onitsha,False,premium,1329,1,121128,34677,15258,2.0,standard,quarterly,high,medium,2392,0,0,6369013,6085439,-283574,-4.45
+poultry,broiler,deep litter,116,3,Jos,False,basic,139,2,443048,66857,32861,3.5,minimal,quarterly,low,medium,1782,0,0,760266,398954,-361312,-47.52
+poultry,broiler,semi-intensive,196,2,Jos,False,standard,203,2,396861,120515,22841,8.5,standard,monthly,low,high,1363,0,0,1147817,488881,-658936,-57.41
+poultry,broiler,deep litter,1871,5,Owerri,False,basic,1922,4,337821,20438,55119,10.7,standard,quarterly,low,low,3127,0,0,4389253,10449202,6059949,138.06
+poultry,broiler,deep litter,1112,5,Kaduna,False,premium,1383,0,276420,106215,31761,6.3,intensive,weekly,low,medium,2886,0,0,5863196,6014101,150905,2.57
+poultry,broiler,deep litter,1470,5,Ondo,True,standard,1508,2,199488,45388,55629,7.3,intensive,weekly,high,high,3092,0,0,2211505,8426875,6215370,281.05
+poultry,broiler,semi-intensive,896,2,Maiduguri,False,premium,1099,3,428453,28529,18340,5.5,minimal,monthly,medium,high,3185,0,0,4596922,5393606,796684,17.33
+poultry,broiler,semi-intensive,298,2,Kaduna,False,premium,299,3,78868,73903,12435,8.0,minimal,quarterly,low,medium,2395,0,0,1483856,1313226,-170630,-11.5
+poultry,broiler,battery cage,1092,4,Sokoto,False,basic,1241,1,231109,64967,44280,8.6,minimal,weekly,medium,medium,2592,0,0,2688156,5174088,2485932,92.48
+poultry,broiler,deep litter,1963,6,Lagos,False,premium,2138,4,334046,143356,14738,7.8,standard,monthly,medium,high,3425,0,0,9914540,12397719,2483179,25.05
+poultry,broiler,deep litter,822,5,Onitsha,True,premium,916,3,52883,98408,53804,8.1,standard,monthly,high,high,1823,0,0,985995,2754254,1768259,179.34
+poultry,broiler,semi-intensive,1064,2,Maiduguri,False,basic,1343,3,82277,134780,6005,11.4,standard,quarterly,low,low,3123,0,0,2430862,5888129,3457267,142.22
+poultry,broiler,deep litter,1650,4,Owerri,False,premium,1689,2,476872,114617,25752,10.1,standard,quarterly,low,high,1480,0,0,8083491,4390716,-3692775,-45.68
+poultry,broiler,semi-intensive,530,4,Kano,False,basic,650,0,262615,58611,50482,5.9,minimal,weekly,medium,low,2401,0,0,1484708,2394901,910193,61.3
+poultry,broiler,battery cage,784,4,Port Harcourt,True,premium,880,1,119120,60893,10175,9.9,standard,quarterly,high,low,3238,0,0,797788,4574543,3776755,473.4
+poultry,broiler,semi-intensive,1919,6,Enugu,False,premium,2065,2,379616,17463,57732,8.0,standard,quarterly,high,low,1502,0,0,9713986,5303502,-4410484,-45.4
+poultry,broiler,deep litter,954,4,Osun,False,standard,1195,1,231690,141670,11989,5.1,intensive,monthly,high,medium,2409,0,0,3819749,4361957,542208,14.19
+poultry,broiler,deep litter,94,5,Lagos,True,premium,115,2,436711,75324,44784,12.4,minimal,quarterly,low,high,2226,0,0,592069,366595,-225474,-38.08
+poultry,broiler,intensive,1438,3,Abuja,False,standard,1452,2,413967,49448,10906,13.8,standard,quarterly,medium,low,2022,0,0,4968071,5012764,44693,0.9
+poultry,broiler,deep litter,320,6,Maiduguri,False,basic,344,3,452832,92369,53926,13.3,minimal,monthly,low,low,2124,0,0,1239127,1178565,-60562,-4.89
+poultry,broiler,deep litter,1811,5,Kano,False,basic,1954,0,268438,111622,49094,11.7,standard,quarterly,medium,high,2721,0,0,4096429,8702373,4605944,112.44
+poultry,broiler,battery cage,271,3,Lagos,False,premium,288,0,363134,136704,50945,5.9,standard,weekly,low,low,1352,0,0,1810933,689550,-1121383,-61.92
+poultry,broiler,intensive,673,5,Ibadan,True,premium,700,3,224516,124871,43491,11.6,minimal,monthly,high,low,3204,0,0,931278,3812324,2881046,309.36
+poultry,broiler,deep litter,1310,5,Abuja,False,basic,1484,1,478502,110075,11511,14.8,standard,quarterly,high,medium,1448,0,0,3580338,3232284,-348054,-9.72
+poultry,broiler,semi-intensive,865,4,Ibadan,False,basic,1036,4,41197,28258,56563,6.3,minimal,quarterly,low,low,3470,0,0,1834393,5624905,3790512,206.64
+poultry,broiler,semi-intensive,474,6,Enugu,False,basic,586,4,31486,87685,14482,14.8,intensive,monthly,low,low,1305,0,0,1294953,1054043,-240910,-18.6
+poultry,broiler,deep litter,319,2,Enugu,False,basic,335,0,96457,125352,39477,3.5,minimal,monthly,medium,medium,3302,0,0,883336,2032942,1149606,130.14
+poultry,broiler,battery cage,1265,2,Maiduguri,True,premium,1281,4,188141,135073,47161,14.5,minimal,monthly,medium,medium,1642,0,0,1192625,3551892,2359267,197.82
+poultry,broiler,intensive,1054,5,Kano,False,premium,1100,1,174187,100245,29962,14.9,intensive,monthly,medium,high,2962,0,0,5468994,5313555,-155439,-2.84
+poultry,broiler,semi-intensive,253,2,Osun,False,basic,284,3,239049,124049,52815,3.2,standard,monthly,high,medium,2733,0,0,1035763,1338645,302882,29.24
+poultry,broiler,intensive,362,5,Kano,True,basic,408,2,455600,49108,41462,2.8,intensive,quarterly,medium,high,1700,0,0,862920,1196338,333418,38.64
+poultry,broiler,battery cage,891,4,Abuja,False,premium,974,0,332995,148015,18942,4.0,standard,weekly,low,medium,3478,0,0,4643102,5949884,1306782,28.14
+poultry,broiler,deep litter,802,2,Uyo,True,standard,1005,4,351689,21882,44911,14.1,intensive,monthly,low,low,2319,0,0,1180382,3195202,2014820,170.69
+poultry,broiler,deep litter,1489,4,Abeokuta,True,basic,1877,4,374637,120063,9560,3.8,intensive,weekly,low,high,3372,0,0,2142160,9660227,7518067,350.96
+poultry,broiler,battery cage,490,5,Ekiti,False,basic,544,2,437285,37270,8447,4.0,intensive,weekly,high,low,2314,0,0,1855002,2177011,322009,17.36
+poultry,broiler,battery cage,957,5,Owerri,False,standard,1035,4,89673,105484,33174,3.4,intensive,quarterly,high,medium,3358,0,0,3745306,6208687,2463381,65.77
+poultry,broiler,intensive,1416,4,Enugu,False,premium,1439,1,188030,70373,55289,3.8,standard,monthly,medium,low,1231,0,0,6898092,3353717,-3544375,-51.38
+poultry,broiler,semi-intensive,1068,5,Port Harcourt,False,premium,1293,4,322932,107842,9723,7.2,intensive,weekly,medium,low,3083,0,0,5994097,6111147,117050,1.95
+poultry,broiler,deep litter,1936,2,Uyo,False,premium,2170,3,181789,45192,31544,2.3,standard,weekly,high,medium,2682,0,0,10132125,10145856,13731,0.14
+poultry,broiler,intensive,230,5,Enugu,False,premium,257,0,237495,96336,53877,6.4,standard,weekly,low,high,1667,0,0,1457208,717744,-739464,-50.75
+poultry,broiler,semi-intensive,1136,6,Abeokuta,False,premium,1462,1,153872,41949,14597,5.3,minimal,quarterly,low,high,1508,0,0,5123618,3244589,-1879029,-36.67
+poultry,broiler,battery cage,412,5,Uyo,False,premium,526,4,367112,99727,46105,6.1,standard,weekly,medium,medium,2440,0,0,2552344,1887916,-664428,-26.03
+poultry,broiler,intensive,1680,4,Abeokuta,True,standard,1912,0,59826,111662,59506,5.7,intensive,weekly,high,high,3276,0,0,2246994,10379940,8132946,361.95
+poultry,broiler,intensive,837,5,Ekiti,True,standard,988,4,109094,31219,34525,3.3,standard,quarterly,low,high,1906,0,0,697963,3085353,2387390,342.05
+poultry,broiler,battery cage,130,3,Ekiti,True,standard,144,2,233117,122156,55755,6.4,intensive,weekly,high,high,2570,0,0,580028,625435,45407,7.83
+poultry,broiler,intensive,184,4,Calabar,False,standard,197,4,487850,54419,26847,3.1,intensive,weekly,medium,medium,2805,0,0,1249916,1000241,-249675,-19.98
+poultry,broiler,intensive,314,6,Jos,False,premium,388,1,381333,39498,47337,10.7,intensive,monthly,low,medium,2465,0,0,1975368,1382382,-592986,-30.02
+poultry,broiler,deep litter,419,3,Sokoto,True,basic,544,1,70456,92540,56650,3.3,intensive,quarterly,high,low,2579,0,0,649121,2089882,1440761,221.96
+poultry,broiler,semi-intensive,1844,6,Owerri,False,basic,1933,4,454171,58395,52263,7.7,standard,monthly,high,high,2172,0,0,5174829,7393540,2218711,42.88
+poultry,broiler,deep litter,959,6,Ekiti,True,premium,1027,3,467839,65860,29106,10.8,intensive,monthly,medium,medium,2764,0,0,1521805,4728806,3207001,210.74
+poultry,broiler,battery cage,1079,6,Kaduna,True,premium,1123,2,57357,140983,29327,9.2,minimal,quarterly,high,low,2367,0,0,955992,4638051,3682059,385.16
+poultry,broiler,deep litter,221,3,Ekiti,True,standard,227,1,458187,133260,27910,14.1,standard,weekly,medium,high,2731,0,0,796157,1036901,240744,30.24
+poultry,broiler,intensive,532,5,Abeokuta,True,basic,582,0,469970,102894,56863,3.9,minimal,monthly,medium,high,1768,0,0,869127,1807787,938660,108.0
+poultry,broiler,battery cage,1604,5,Owerri,True,basic,1613,1,467761,54195,40966,14.2,intensive,quarterly,medium,low,2380,0,0,1886222,6550864,4664642,247.3
+poultry,broiler,intensive,536,4,Abuja,True,standard,638,4,269659,31464,12265,12.9,standard,quarterly,high,low,3310,0,0,809188,3090587,2281399,281.94
+poultry,broiler,semi-intensive,1227,3,Jos,False,basic,1453,1,329192,124200,17275,10.6,minimal,quarterly,medium,low,3354,0,0,2832642,7358260,4525618,159.77
+poultry,broiler,intensive,1164,6,Ondo,False,basic,1385,2,162985,19257,28402,12.3,standard,weekly,high,high,1624,0,0,3178844,3315649,136805,4.3
+poultry,broiler,deep litter,1630,6,Port Harcourt,True,standard,1897,1,465360,136798,50573,8.2,minimal,weekly,low,high,3074,0,0,1549231,9199498,7650267,493.81
+poultry,broiler,semi-intensive,125,4,Abuja,True,basic,136,2,300209,119392,58438,9.1,standard,weekly,high,low,2371,0,0,609289,538810,-70479,-11.57
+poultry,broiler,deep litter,781,2,Benin City,True,standard,883,3,419707,130274,30339,6.4,minimal,monthly,high,medium,2704,0,0,1205120,3953335,2748215,228.04
+poultry,broiler,deep litter,1942,6,Kano,False,basic,2192,1,315985,92009,26050,3.3,standard,quarterly,medium,medium,3026,0,0,4463694,11365136,6901442,154.61
+poultry,broiler,semi-intensive,1284,5,Ekiti,False,standard,1300,2,352359,129017,22993,10.3,minimal,weekly,high,high,2863,0,0,4869969,6594909,1724940,35.42
+poultry,broiler,semi-intensive,794,6,Lagos,True,premium,955,3,48244,48090,9406,5.1,intensive,monthly,medium,medium,1332,0,0,899740,2007340,1107600,123.1
+poultry,broiler,battery cage,1289,3,Abeokuta,False,standard,1584,4,102191,111193,31085,6.1,standard,weekly,low,low,1962,0,0,4562619,4749496,186877,4.1
+poultry,broiler,battery cage,1072,6,Calabar,True,standard,1321,3,142496,89862,50480,13.9,standard,weekly,low,low,1503,0,0,1140438,2774514,1634076,143.28
+poultry,broiler,battery cage,975,3,Kano,False,premium,1076,0,318356,91116,24657,13.1,intensive,quarterly,high,high,1913,0,0,5284754,3241674,-2043080,-38.66
+poultry,broiler,semi-intensive,1675,4,Ibadan,True,basic,1793,3,43780,109606,41308,9.4,standard,quarterly,low,high,1553,0,0,1157819,4713510,3555691,307.1
+poultry,broiler,battery cage,184,4,Sokoto,False,standard,229,0,95707,98106,47096,3.0,standard,quarterly,high,medium,1725,0,0,834309,615756,-218553,-26.2
+poultry,broiler,semi-intensive,1848,6,Port Harcourt,False,premium,2352,0,465888,47548,38954,4.0,minimal,weekly,medium,high,2123,0,0,9053190,7532744,-1520446,-16.79
+poultry,broiler,deep litter,758,6,Kano,False,basic,902,4,173891,47812,45961,5.9,intensive,weekly,high,high,1890,0,0,2465864,2696191,230327,9.34
+poultry,broiler,semi-intensive,1262,6,Kaduna,False,premium,1277,0,72584,26917,47038,12.0,standard,quarterly,low,high,2906,0,0,5730889,6454575,723686,12.63
+poultry,broiler,battery cage,1315,2,Calabar,False,premium,1692,3,158386,121454,24492,7.9,intensive,weekly,low,medium,2902,0,0,6945082,7029311,84229,1.21
+poultry,broiler,semi-intensive,1041,5,Ogun,True,standard,1310,2,414932,105536,31130,3.7,standard,quarterly,high,low,2507,0,0,1410423,5026450,3616027,256.38
+poultry,broiler,intensive,545,5,Benin City,False,basic,568,0,182154,115702,45329,7.4,minimal,monthly,high,high,2480,0,0,1514935,2503163,988228,65.23
+poultry,broiler,battery cage,438,3,Maiduguri,False,standard,553,3,42151,38605,30771,8.6,minimal,weekly,high,medium,1399,0,0,1622627,1120129,-502498,-30.97
+poultry,broiler,battery cage,153,4,Owerri,False,standard,177,0,255930,50110,22332,11.5,standard,monthly,low,medium,1409,0,0,787372,381571,-405801,-51.54
+poultry,broiler,semi-intensive,1217,6,Abeokuta,False,basic,1358,3,430767,88327,59087,14.9,intensive,quarterly,low,low,1596,0,0,3407706,3305849,-101857,-2.99
+poultry,broiler,deep litter,856,4,Calabar,False,basic,907,4,240442,146092,7638,2.6,minimal,quarterly,medium,medium,3327,0,0,2170372,5547733,3377361,155.61
+poultry,broiler,semi-intensive,985,3,Ogun,False,basic,1101,4,417616,93442,43910,6.4,intensive,quarterly,medium,high,2427,0,0,2992843,4475194,1482351,49.53
+poultry,broiler,deep litter,1022,2,Ogun,True,standard,1200,0,342952,139410,22401,14.6,intensive,quarterly,low,high,1410,0,0,1194613,2461262,1266649,106.03
+poultry,broiler,semi-intensive,1245,5,Maiduguri,False,basic,1551,1,46552,43808,17503,2.2,standard,monthly,low,medium,2035,0,0,2660113,4955673,2295560,86.3
+poultry,broiler,battery cage,890,6,Abuja,True,premium,945,2,377197,140402,39437,6.9,minimal,monthly,high,medium,3437,0,0,1224536,5695728,4471192,365.13
+poultry,broiler,battery cage,775,4,Onitsha,True,standard,904,1,186035,90760,51196,4.7,intensive,monthly,medium,medium,2628,0,0,1025491,3881950,2856459,278.55
+poultry,broiler,deep litter,1197,4,Ibadan,False,standard,1490,1,182280,26027,23850,14.4,minimal,monthly,medium,high,2250,0,0,3823157,4610844,787687,20.6
+poultry,broiler,semi-intensive,1580,5,Onitsha,False,premium,1909,1,87266,77726,20889,2.7,intensive,weekly,high,low,1415,0,0,8480881,4350672,-4130209,-48.7
+poultry,broiler,deep litter,255,5,Sokoto,True,premium,313,0,318543,56403,31667,10.5,standard,monthly,high,low,2376,0,0,610613,1084525,473912,77.61
+poultry,broiler,intensive,707,4,Kano,True,premium,863,0,121784,124546,59893,4.3,minimal,monthly,medium,low,2385,0,0,624373,3227377,2603004,416.9
+poultry,broiler,intensive,1845,2,Jos,True,standard,2002,4,304893,144476,13794,13.1,standard,monthly,low,low,2554,0,0,1754663,8189682,6435019,366.74
+poultry,broiler,deep litter,382,5,Kaduna,True,premium,420,2,327680,65636,16501,9.9,intensive,monthly,medium,high,2543,0,0,772717,1750510,977793,126.54
+poultry,broiler,intensive,227,5,Kaduna,True,standard,249,1,33580,83363,30137,5.1,standard,monthly,medium,high,1246,0,0,294630,536834,242204,82.21
+poultry,broiler,semi-intensive,585,4,Abuja,True,standard,638,3,389700,146732,51108,12.0,intensive,weekly,high,medium,2705,0,0,1377290,2785068,1407778,102.21
+poultry,broiler,semi-intensive,1308,3,Port Harcourt,False,basic,1486,4,225887,124011,51002,9.1,standard,quarterly,high,low,2213,0,0,3572800,5262390,1689590,47.29
+poultry,broiler,intensive,1443,6,Maiduguri,False,premium,1747,0,325786,44414,9047,12.8,intensive,weekly,high,high,1813,0,0,7882847,4562581,-3320266,-42.12
+poultry,broiler,battery cage,386,4,Ibadan,True,premium,453,0,297583,131780,57998,2.7,minimal,quarterly,medium,medium,1436,0,0,632111,1078660,446549,70.64
+poultry,broiler,deep litter,1194,5,Lagos,False,standard,1486,1,333201,34144,7968,7.5,intensive,weekly,high,low,1482,0,0,4852813,3273590,-1579223,-32.54
+poultry,broiler,intensive,1962,5,Jos,False,basic,2414,3,226325,115264,34395,13.3,standard,monthly,low,high,3408,0,0,4594284,11594384,7000100,152.37
+poultry,broiler,intensive,322,4,Kaduna,False,premium,334,1,467686,15910,54556,2.3,standard,monthly,high,high,3430,0,0,2099852,2158115,58263,2.77
+poultry,broiler,battery cage,918,6,Enugu,True,standard,1013,2,128818,44581,7111,12.5,standard,quarterly,low,low,2044,0,0,662460,3283686,2621226,395.68
+poultry,broiler,intensive,187,2,Ekiti,True,basic,228,3,260142,76430,40373,4.8,minimal,weekly,high,medium,2159,0,0,554595,768708,214113,38.61
+poultry,broiler,deep litter,1720,6,Uyo,False,basic,1875,1,376141,72945,32103,5.9,minimal,quarterly,high,high,1917,0,0,4136189,6205406,2069217,50.03
+poultry,broiler,battery cage,1332,5,Abuja,False,premium,1600,4,197108,124137,31755,3.9,standard,weekly,high,medium,2187,0,0,7212800,5598947,-1613853,-22.37
+poultry,broiler,deep litter,1789,3,Port Harcourt,False,basic,2090,3,322178,50151,30455,5.2,minimal,monthly,high,low,3042,0,0,4517484,10318294,5800810,128.41
+poultry,broiler,intensive,1784,4,Calabar,True,basic,1927,4,346104,25367,9769,4.4,intensive,quarterly,high,high,2088,0,0,2477440,7122185,4644745,187.48
+poultry,broiler,deep litter,1031,3,Jos,True,basic,1320,0,421579,140546,20898,11.0,intensive,weekly,medium,low,3461,0,0,1614023,6351558,4737535,293.52
+poultry,broiler,battery cage,708,4,Ekiti,False,standard,763,4,492847,145358,35540,3.3,intensive,monthly,medium,low,2718,0,0,3187145,3721681,534536,16.77
+poultry,broiler,intensive,690,5,Uyo,True,premium,720,2,320094,124465,24345,4.0,standard,weekly,medium,high,2206,0,0,1055404,2922509,1867105,176.91
+poultry,broiler,deep litter,1072,6,Benin City,False,premium,1278,3,271607,59101,53022,12.3,minimal,weekly,high,high,3200,0,0,5690130,6016922,326792,5.74
+poultry,broiler,intensive,426,6,Maiduguri,True,basic,546,0,430733,16673,32026,3.8,intensive,weekly,low,high,1818,0,0,862832,1490076,627244,72.7
+poultry,broiler,battery cage,68,3,Abeokuta,True,premium,81,4,283338,142888,6030,2.1,intensive,monthly,low,low,3368,0,0,496856,448429,-48427,-9.75
+poultry,broiler,deep litter,1529,4,Lagos,False,basic,1578,0,304928,54032,20792,4.5,intensive,monthly,medium,medium,2825,0,0,3972902,8250102,4277200,107.66
+poultry,broiler,battery cage,211,4,Ekiti,True,premium,225,0,372745,23305,11127,7.3,standard,quarterly,medium,low,1238,0,0,517952,484298,-33654,-6.5
+poultry,broiler,intensive,1489,3,Sokoto,False,premium,1839,4,479818,39998,39613,13.9,minimal,weekly,high,high,3147,0,0,8004429,8069091,64662,0.81
+poultry,broiler,intensive,605,2,Benin City,True,basic,773,2,38209,69305,43471,3.9,intensive,monthly,low,medium,1865,0,0,665235,2168641,1503406,226.0
+poultry,broiler,battery cage,1204,3,Calabar,False,standard,1476,1,444448,35559,37819,11.7,standard,weekly,low,medium,2150,0,0,4370626,4571468,200842,4.6
+poultry,broiler,deep litter,1767,2,Owerri,False,standard,1782,2,440804,133109,37152,5.0,intensive,monthly,medium,low,2756,0,0,6707215,9252719,2545504,37.95
+poultry,broiler,deep litter,225,6,Enugu,True,basic,243,3,403123,55442,53474,7.1,standard,weekly,low,low,2462,0,0,692039,1029239,337200,48.73
+poultry,broiler,deep litter,960,4,Ibadan,True,basic,1013,3,322020,149333,31741,3.3,minimal,monthly,high,low,2528,0,0,1271094,4693586,3422492,269.26
+poultry,broiler,intensive,1818,5,Jos,False,standard,2242,4,157266,59455,49912,6.9,minimal,monthly,medium,medium,3219,0,0,5993333,10896688,4903355,81.81
+poultry,broiler,semi-intensive,348,2,Osun,False,standard,379,0,219333,80981,21160,11.4,standard,quarterly,high,low,3075,0,0,1443774,1896217,452443,31.34
+poultry,broiler,deep litter,269,3,Lagos,False,standard,336,3,451567,101387,33850,6.4,intensive,quarterly,low,medium,2513,0,0,1481229,1265466,-215763,-14.57
+poultry,broiler,battery cage,1285,3,Ogun,True,standard,1658,2,415285,143714,42740,12.2,standard,monthly,medium,medium,2695,0,0,1501239,6081160,4579921,305.08
+poultry,broiler,semi-intensive,283,6,Uyo,True,premium,348,0,411269,136011,51423,4.7,standard,quarterly,low,medium,3245,0,0,718978,1750347,1031369,143.45
+poultry,broiler,semi-intensive,335,4,Benin City,True,premium,377,3,68779,132720,44186,8.2,standard,quarterly,high,high,2913,0,0,538810,1791670,1252860,232.52
+poultry,broiler,deep litter,1163,2,Calabar,True,basic,1431,2,117209,26612,41911,14.8,intensive,quarterly,medium,medium,2963,0,0,1203357,5871931,4668574,387.96
+poultry,broiler,intensive,266,2,Benin City,True,premium,325,4,334358,72942,34214,6.9,standard,quarterly,high,high,3249,0,0,687564,1609204,921640,134.04
+poultry,broiler,intensive,358,4,Sokoto,True,standard,402,0,90853,52139,27828,6.1,standard,weekly,high,medium,2626,0,0,510920,1765523,1254603,245.56
+poultry,broiler,battery cage,1025,2,Ekiti,False,basic,1117,0,41841,104935,47465,3.4,minimal,quarterly,low,high,1914,0,0,2013616,3790294,1776678,88.23
+poultry,broiler,deep litter,1180,3,Calabar,False,standard,1262,3,360175,63352,17215,10.3,standard,monthly,low,high,2008,0,0,4157742,4250775,93033,2.24
+poultry,broiler,battery cage,970,6,Ondo,True,premium,1032,2,424435,31400,42837,3.3,intensive,weekly,medium,medium,2007,0,0,1565672,3765092,2199420,140.48
+poultry,broiler,deep litter,987,2,Sokoto,False,premium,1102,3,337759,44945,27801,6.6,standard,quarterly,low,high,2418,0,0,4926030,4458105,-467925,-9.5
+poultry,broiler,intensive,1931,6,Port Harcourt,False,basic,2069,0,125968,112859,50445,3.8,standard,monthly,high,low,2771,0,0,4730572,10294941,5564369,117.63
+poultry,broiler,battery cage,916,3,Calabar,True,premium,961,2,103555,64046,25616,12.9,intensive,weekly,medium,low,3184,0,0,1200817,5080620,3879803,323.1
+poultry,broiler,battery cage,329,3,Calabar,False,standard,396,3,402319,131353,37027,4.2,intensive,weekly,low,medium,1333,0,0,1738649,840275,-898374,-51.67
+poultry,broiler,deep litter,612,3,Kaduna,False,premium,748,3,318214,148904,12419,9.4,standard,quarterly,medium,high,1370,0,0,3340637,1519253,-1821384,-54.52
+poultry,broiler,semi-intensive,1606,5,Osun,True,premium,2005,1,186085,23449,34473,5.4,minimal,monthly,low,low,2059,0,0,886407,6256379,5369972,605.81
+poultry,broiler,deep litter,1710,6,Owerri,False,basic,2026,1,456523,69248,57785,2.8,standard,quarterly,medium,high,3406,0,0,4131806,11322361,7190555,174.03
+poultry,broiler,deep litter,394,4,Jos,False,premium,510,0,101087,122897,8885,14.9,intensive,weekly,high,low,2222,0,0,2281669,1490047,-791622,-34.69
+poultry,broiler,semi-intensive,349,4,Ondo,False,basic,409,2,359154,123586,29587,7.9,intensive,weekly,medium,high,2339,0,0,1419727,1503645,83918,5.91
+poultry,broiler,battery cage,1472,4,Sokoto,False,premium,1473,0,413218,135179,46604,10.6,standard,weekly,high,medium,2092,0,0,7881401,5506010,-2375391,-30.14
+poultry,broiler,battery cage,929,3,Benin City,False,standard,1023,4,98468,142228,56662,6.5,intensive,weekly,low,low,3082,0,0,3641758,5354143,1712385,47.02
+poultry,broiler,semi-intensive,83,2,Ekiti,False,basic,107,3,136073,49580,47598,5.9,standard,weekly,high,medium,2225,0,0,449051,347558,-101493,-22.6
+poultry,broiler,semi-intensive,218,4,Abuja,False,premium,237,1,255040,38907,51117,3.2,minimal,monthly,low,low,2126,0,0,1304264,897274,-406990,-31.2
+poultry,broiler,intensive,1113,5,Lagos,False,basic,1442,3,393872,49648,36306,2.9,standard,weekly,high,low,1622,0,0,3373626,3505865,132239,3.92
+poultry,broiler,deep litter,691,4,Port Harcourt,False,basic,823,1,65867,17221,44997,10.5,standard,monthly,high,low,1820,0,0,1751935,2251140,499205,28.49
+poultry,broiler,battery cage,1933,5,Onitsha,True,basic,2014,0,339106,115671,28038,14.5,standard,weekly,low,medium,1545,0,0,1739265,5106889,3367624,193.62
+poultry,broiler,deep litter,558,6,Lagos,False,basic,644,4,128905,117695,24368,10.4,minimal,monthly,medium,low,2187,0,0,1470668,2186860,716192,48.7
+poultry,broiler,intensive,1073,6,Maiduguri,True,standard,1373,1,232814,125326,28947,9.1,minimal,monthly,low,low,1476,0,0,816287,2879254,2062967,252.73
+poultry,broiler,semi-intensive,78,4,Abuja,True,standard,89,4,432186,123903,32759,11.1,minimal,quarterly,high,high,1825,0,0,649298,253098,-396200,-61.02
+poultry,broiler,deep litter,618,2,Kano,True,basic,717,3,337461,32331,25327,11.1,intensive,weekly,low,low,1553,0,0,1044019,1706443,662424,63.45
+poultry,broiler,intensive,1943,5,Ekiti,True,standard,2331,1,92622,18320,51392,3.8,minimal,weekly,medium,medium,3342,0,0,1425284,12493506,11068222,776.56
+poultry,broiler,semi-intensive,1109,4,Abeokuta,True,premium,1368,2,414269,45947,55556,13.7,standard,monthly,medium,high,1461,0,0,1292072,2796550,1504478,116.44
+poultry,broiler,intensive,588,6,Sokoto,False,premium,651,3,480552,58746,29096,4.0,minimal,quarterly,high,high,1672,0,0,3346694,1887621,-1459073,-43.6
+poultry,broiler,intensive,517,6,Abuja,True,basic,524,2,230791,54343,16728,14.1,minimal,quarterly,high,high,2917,0,0,650837,2590897,1940060,298.09
+poultry,broiler,semi-intensive,509,4,Osun,False,standard,635,4,225458,46300,37901,10.8,minimal,weekly,low,high,1388,0,0,1938459,1260382,-678077,-34.98
+poultry,broiler,battery cage,871,2,Jos,False,standard,893,3,34178,111709,18151,5.8,standard,quarterly,high,low,3100,0,0,3103663,5086988,1983325,63.9
+poultry,broiler,battery cage,804,6,Onitsha,True,basic,805,3,42535,76078,40490,6.5,intensive,weekly,medium,low,2741,0,0,1083703,4121039,3037336,280.27
+poultry,broiler,intensive,1788,4,Onitsha,True,standard,2051,0,104644,88354,11096,2.6,minimal,quarterly,medium,high,2725,0,0,874594,9491240,8616646,985.22
+poultry,broiler,intensive,988,2,Maiduguri,True,premium,1231,0,340323,31327,33507,10.6,minimal,weekly,medium,medium,2490,0,0,997957,4398695,3400738,340.77
+poultry,broiler,deep litter,1946,5,Ogun,False,standard,2082,1,101361,43566,15184,3.4,standard,monthly,medium,medium,1694,0,0,6290011,6368884,78873,1.25
+poultry,broiler,semi-intensive,1147,4,Ekiti,False,standard,1238,0,77406,56317,57926,10.9,intensive,quarterly,high,low,2080,0,0,4177474,4251424,73950,1.77
+poultry,broiler,semi-intensive,1761,4,Kano,True,standard,1970,0,385039,93339,22050,12.7,minimal,weekly,medium,medium,3477,0,0,1557028,10690753,9133725,586.61
+poultry,broiler,semi-intensive,1582,6,Ibadan,False,basic,1963,1,93676,18134,9041,12.8,minimal,weekly,low,medium,2724,0,0,3363951,7515538,4151587,123.41
+poultry,broiler,deep litter,1455,2,Kano,True,basic,1541,3,454305,48761,11027,13.8,standard,weekly,low,medium,1407,0,0,1678093,3529347,1851254,110.32
+poultry,broiler,battery cage,394,6,Ondo,False,basic,439,3,120600,107784,19071,13.8,standard,monthly,medium,low,1341,0,0,1133955,910882,-223073,-19.67
+poultry,broiler,semi-intensive,1307,6,Jos,False,standard,1653,3,61970,37995,23335,7.0,standard,weekly,high,high,2220,0,0,4828500,5396864,568364,11.77
+poultry,broiler,intensive,1341,6,Ondo,False,standard,1560,3,210372,146699,26076,7.0,minimal,weekly,medium,high,2097,0,0,4741397,5230463,489066,10.31
+poultry,broiler,intensive,110,4,Sokoto,False,premium,142,1,82499,79974,48048,5.1,intensive,quarterly,low,low,2790,0,0,730271,582496,-147775,-20.24
+poultry,broiler,semi-intensive,776,3,Enugu,False,premium,938,4,44788,107191,42201,9.3,intensive,weekly,medium,high,2465,0,0,4229380,3469892,-759488,-17.96
+poultry,broiler,intensive,409,5,Kano,True,basic,482,0,306010,140301,5044,6.3,intensive,weekly,low,medium,1926,0,0,819455,1476214,656759,80.15
+poultry,broiler,intensive,1931,4,Lagos,True,premium,2339,1,435991,44077,39491,13.2,minimal,monthly,high,high,2820,0,0,1871259,9453249,7581990,405.18
+poultry,broiler,deep litter,1250,2,Jos,False,basic,1615,3,445153,142716,47544,6.1,intensive,quarterly,high,high,2661,0,0,3916663,6246698,2330034,59.49
+poultry,broiler,semi-intensive,507,6,Ondo,False,premium,611,1,123170,15471,51006,14.3,standard,quarterly,low,low,2503,0,0,2458472,2175102,-283370,-11.53
+poultry,broiler,semi-intensive,1936,6,Uyo,True,standard,2017,0,154778,105914,25939,4.2,minimal,quarterly,high,high,2575,0,0,1399831,9551643,8151812,582.34
+poultry,broiler,deep litter,964,2,Onitsha,True,premium,983,2,442625,43320,52213,2.0,standard,monthly,high,medium,1881,0,0,1405758,3554037,2148279,152.82
+poultry,broiler,battery cage,1861,5,Ondo,False,premium,2070,3,443521,74135,15659,7.9,minimal,monthly,low,medium,2269,0,0,8907815,7778046,-1129769,-12.68
+poultry,broiler,intensive,1999,2,Ogun,True,standard,2095,0,316809,39406,27147,9.7,intensive,monthly,high,low,2966,0,0,2482312,10707835,8225523,331.37
+poultry,broiler,battery cage,1980,3,Kaduna,True,basic,2176,1,244580,84537,48292,5.7,minimal,weekly,low,medium,3451,0,0,1466409,12887000,11420591,778.81
+poultry,broiler,semi-intensive,1770,5,Abuja,False,basic,1997,2,461959,140915,18085,3.3,minimal,weekly,high,medium,1535,0,0,4868959,5254581,385622,7.92
+poultry,broiler,deep litter,1019,2,Ondo,False,standard,1292,2,77781,116587,17116,6.8,standard,monthly,low,medium,1382,0,0,3370384,2624993,-745391,-22.12
+poultry,broiler,battery cage,589,5,Benin City,True,standard,688,1,424387,40350,10616,10.7,intensive,monthly,high,low,3467,0,0,1123253,3647125,2523872,224.69
+poultry,broiler,battery cage,174,5,Calabar,False,premium,220,3,186684,35697,30873,13.7,intensive,weekly,high,high,3316,0,0,1184154,995874,-188280,-15.9
+poultry,broiler,semi-intensive,1689,6,Ibadan,False,basic,2169,1,141091,65521,13269,2.6,minimal,quarterly,medium,low,1805,0,0,3471206,5938760,2467554,71.09
+poultry,broiler,deep litter,1758,6,Ogun,True,basic,1962,3,319435,100492,23101,8.8,minimal,quarterly,high,high,3340,0,0,1717578,10710017,8992439,523.55
+poultry,broiler,intensive,1650,5,Osun,True,basic,1930,4,427608,41267,11922,9.3,minimal,monthly,high,medium,2883,0,0,1883297,8629107,6745810,358.19
+poultry,broiler,battery cage,590,5,Uyo,False,basic,620,3,105420,120308,7541,7.1,standard,quarterly,low,low,3146,0,0,1457519,3448708,1991189,136.61
+poultry,broiler,deep litter,1935,4,Lagos,False,standard,2115,3,479962,40747,19939,3.7,intensive,monthly,medium,medium,2907,0,0,7313148,10833837,3520689,48.14
+poultry,broiler,semi-intensive,1288,2,Ekiti,True,standard,1574,4,484656,113018,58806,2.7,minimal,weekly,medium,high,3275,0,0,1686880,8208617,6521737,386.62
+poultry,broiler,intensive,876,3,Kaduna,True,basic,1095,1,47338,134655,8313,13.9,intensive,weekly,medium,medium,3101,0,0,1110106,4677772,3567666,321.38
+poultry,broiler,intensive,1084,5,Lagos,True,standard,1242,3,123104,139408,43461,9.2,standard,weekly,medium,high,1570,0,0,1281573,3090614,1809041,141.16
+poultry,broiler,battery cage,633,2,Abuja,True,premium,781,1,479373,73025,47426,4.9,minimal,monthly,high,medium,3302,0,0,1042924,3975496,2932572,281.19
+poultry,broiler,battery cage,91,2,Port Harcourt,True,premium,112,1,162325,95074,51710,14.6,intensive,monthly,medium,medium,2628,0,0,391009,408465,17456,4.46
+poultry,broiler,semi-intensive,990,4,Ekiti,False,premium,1144,4,238222,41820,5481,8.6,intensive,monthly,high,high,2357,0,0,5483023,4265510,-1217513,-22.21
+poultry,broiler,battery cage,661,2,Kano,False,standard,788,2,166916,93326,17344,3.9,minimal,weekly,high,medium,2509,0,0,2524986,3187539,662553,26.24
+poultry,broiler,intensive,1444,3,Sokoto,False,standard,1836,3,233567,24258,43209,11.2,intensive,weekly,medium,high,2110,0,0,5571634,5411188,-160446,-2.88
+poultry,broiler,battery cage,1455,6,Abeokuta,False,basic,1821,4,124967,92013,11396,8.1,intensive,monthly,high,high,1949,0,0,4229626,5212191,982565,23.23
+poultry,broiler,intensive,1989,4,Enugu,False,basic,2433,2,250448,101852,29358,5.4,standard,monthly,low,medium,1419,0,0,4558558,5339964,781406,17.14
+poultry,broiler,intensive,1824,6,Sokoto,True,premium,1889,3,307787,93212,32073,2.7,minimal,weekly,low,medium,2876,0,0,1618672,10208374,8589702,530.66
+poultry,broiler,semi-intensive,1216,5,Ogun,True,basic,1393,1,194319,30207,5308,7.9,minimal,weekly,high,low,3205,0,0,1263434,7178790,5915356,468.2
+poultry,broiler,semi-intensive,1658,2,Owerri,False,premium,1871,3,280295,115484,5305,2.5,minimal,quarterly,medium,low,2519,0,0,7903534,8144179,240645,3.04
+poultry,broiler,semi-intensive,1600,6,Lagos,True,premium,1952,1,393606,105269,25453,3.7,standard,quarterly,high,medium,1884,0,0,1764328,5805734,4041406,229.06
+poultry,layer,battery cage,183,3,Jos,False,premium,211,4,394245,128682,22536,4.1,standard,monthly,low,low,0,81,0,1405563,213229,-1192334,-84.83
+poultry,layer,semi-intensive,89,6,Port Harcourt,True,premium,89,4,217193,47286,53049,7.4,minimal,monthly,high,medium,0,98,0,393178,242297,-150881,-38.37
+poultry,layer,intensive,1326,3,Ibadan,True,basic,1600,3,505897,114681,21199,5.9,standard,quarterly,low,low,0,118,0,1404227,2208546,804319,57.28
+poultry,layer,battery cage,1454,3,Osun,True,premium,1680,4,183826,124792,18751,5.6,intensive,weekly,medium,low,0,43,0,2072169,885312,-1186857,-57.28
+poultry,layer,semi-intensive,1069,6,Benin City,True,standard,1294,2,208163,25329,76845,5.5,minimal,quarterly,medium,medium,0,60,0,818112,1818369,1000257,122.26
+poultry,layer,intensive,55,3,Ibadan,False,basic,70,4,118693,41552,38540,6.8,standard,monthly,medium,medium,0,36,0,325285,27680,-297605,-91.49
+poultry,layer,intensive,254,5,Jos,False,premium,277,5,161531,39903,11014,1.1,minimal,quarterly,high,low,0,72,0,1437998,452171,-985827,-68.56
+poultry,layer,battery cage,782,10,Kano,False,standard,824,3,459692,134678,40629,8.5,intensive,monthly,medium,high,0,51,0,3371999,1824602,-1547398,-45.89
+poultry,layer,intensive,281,5,Kaduna,True,standard,357,3,499447,62516,54774,8.0,intensive,weekly,high,high,0,46,0,996087,297298,-698789,-70.15
+poultry,layer,intensive,1039,10,Osun,False,basic,1058,5,369502,18240,73788,7.9,intensive,quarterly,high,low,0,115,0,3292805,5502284,2209479,67.1
+poultry,layer,intensive,1838,8,Osun,True,standard,2028,5,443572,53968,78183,9.0,intensive,weekly,low,high,0,50,0,2689423,3345160,655737,24.38
+poultry,layer,deep litter,1085,10,Kaduna,True,standard,1189,2,331668,28199,71444,3.0,intensive,monthly,medium,low,0,40,0,1462061,2104900,642839,43.97
+poultry,layer,deep litter,990,10,Kano,False,standard,1083,3,58632,41907,57879,4.7,intensive,quarterly,low,low,0,107,0,3450168,5047564,1597396,46.3
+poultry,layer,semi-intensive,1317,7,Ekiti,False,standard,1643,1,516535,102024,78420,7.9,intensive,monthly,high,high,0,76,0,5438179,3226466,-2211713,-40.67
+poultry,layer,intensive,1516,10,Ibadan,True,basic,1671,5,346166,158573,73417,4.4,minimal,weekly,low,medium,0,47,0,1715156,3405846,1690690,98.57
+poultry,layer,intensive,1733,9,Benin City,True,basic,1795,3,266061,134811,29979,7.5,minimal,monthly,low,high,0,116,0,1297351,8367790,7070440,544.99
+poultry,layer,deep litter,1255,4,Ekiti,True,standard,1256,5,90931,160024,61729,8.5,standard,quarterly,low,high,0,104,0,1159809,2388516,1228707,105.94
+poultry,layer,intensive,405,5,Ondo,False,premium,512,3,300297,86721,57149,9.7,standard,monthly,low,low,0,82,0,2327417,749716,-1577701,-67.79
+poultry,layer,battery cage,1283,11,Calabar,False,premium,1566,4,267900,67661,32487,6.6,standard,quarterly,medium,high,0,46,0,6430223,3031755,-3398468,-52.85
+poultry,layer,battery cage,1504,5,Ibadan,False,premium,1720,4,477757,154959,42477,8.9,standard,weekly,high,low,0,33,0,8420793,1130369,-7290424,-86.58
+poultry,layer,intensive,830,5,Abuja,True,standard,1016,1,340538,80683,24192,8.6,intensive,monthly,low,high,0,34,0,1109413,644827,-464586,-41.88
+poultry,layer,intensive,784,10,Owerri,True,premium,936,3,289136,148935,42701,7.2,minimal,monthly,medium,medium,0,117,0,951172,4256179,3305007,347.47
+poultry,layer,intensive,690,11,Lagos,False,basic,818,3,276504,111401,76645,7.6,minimal,quarterly,low,medium,0,87,0,1792800,3050725,1257925,70.17
+poultry,layer,semi-intensive,413,4,Kaduna,True,standard,418,2,317075,49096,26093,6.3,standard,weekly,medium,medium,0,120,0,743314,928754,185440,24.95
+poultry,layer,intensive,1969,5,Port Harcourt,False,premium,1999,5,355783,143594,77110,4.2,intensive,monthly,high,low,0,53,0,11012187,2499350,-8512837,-77.3
+poultry,layer,semi-intensive,1116,4,Osun,False,basic,1232,1,388005,101787,52290,3.6,intensive,quarterly,medium,high,0,113,0,3136782,2431362,-705420,-22.49
+poultry,layer,battery cage,68,4,Ekiti,True,premium,80,4,295671,25453,47065,4.4,minimal,monthly,medium,high,0,66,0,412389,85811,-326578,-79.19
+poultry,layer,battery cage,100,11,Maiduguri,False,standard,101,5,241863,98968,72357,1.7,minimal,weekly,high,high,0,30,0,768188,162195,-605993,-78.89
+poultry,layer,semi-intensive,1333,4,Onitsha,False,basic,1415,5,496379,33905,25152,1.2,intensive,monthly,low,low,0,39,0,3887936,1027263,-2860673,-73.58
+poultry,layer,battery cage,161,5,Calabar,True,premium,200,2,467433,116720,64129,6.7,standard,monthly,low,medium,0,116,0,744882,435618,-309264,-41.52
+poultry,layer,intensive,292,11,Owerri,True,premium,343,5,116115,108768,70907,2.0,intensive,monthly,high,low,0,66,0,675390,1038761,363371,53.8
+poultry,layer,deep litter,1617,10,Ondo,True,standard,1692,1,183006,117496,76529,3.7,intensive,weekly,medium,high,0,112,0,2074881,8720158,6645277,320.27
+poultry,layer,semi-intensive,814,3,Ibadan,True,basic,953,3,129261,94872,32532,7.7,intensive,monthly,low,medium,0,112,0,989265,1262221,272956,27.59
+poultry,layer,semi-intensive,1793,11,Kaduna,True,basic,2124,2,243765,45047,28770,7.0,intensive,weekly,high,medium,0,112,0,2648482,10271738,7623256,287.83
+poultry,layer,battery cage,1175,4,Kano,False,basic,1244,4,550856,101730,51810,2.2,intensive,weekly,low,medium,0,109,0,3759396,2505147,-1254249,-33.36
+poultry,layer,battery cage,192,6,Sokoto,False,standard,227,2,199797,163256,79299,4.3,standard,monthly,low,low,0,70,0,1037552,385862,-651690,-62.81
+poultry,layer,deep litter,554,6,Benin City,False,basic,666,2,543268,136332,63373,4.2,standard,monthly,high,low,0,52,0,2072573,827942,-1244631,-60.05
+poultry,layer,intensive,1372,12,Benin City,True,premium,1452,5,120176,34765,7441,8.6,intensive,weekly,high,high,0,81,0,2151782,6094479,3942697,183.23
+poultry,layer,semi-intensive,1625,12,Abuja,False,premium,2060,4,535036,53963,52948,4.5,intensive,quarterly,medium,low,0,89,0,8726322,8287012,-439310,-5.03
+poultry,layer,intensive,1076,11,Ondo,False,premium,1079,1,213899,149777,23398,5.0,minimal,quarterly,high,high,0,48,0,5363574,2698608,-2664966,-49.69
+poultry,layer,battery cage,1557,10,Abuja,True,standard,1665,2,427380,76346,10610,7.0,intensive,monthly,medium,medium,0,88,0,1993486,6371244,4377758,219.6
+poultry,layer,intensive,1855,3,Ogun,True,premium,2393,5,326780,84026,76349,6.1,standard,quarterly,medium,medium,0,105,0,1924780,2743406,818626,42.53
+poultry,layer,battery cage,1388,4,Ondo,True,premium,1556,2,550511,141382,5864,5.5,minimal,monthly,low,low,0,39,0,1322357,1023095,-299262,-22.63
+poultry,layer,semi-intensive,1103,7,Port Harcourt,True,basic,1222,5,164078,75383,59344,8.3,intensive,weekly,medium,high,0,91,0,1677555,3221471,1543916,92.03
+poultry,layer,semi-intensive,1031,6,Osun,True,basic,1044,4,208956,50317,72193,1.4,intensive,weekly,low,low,0,63,0,1465566,1921310,455744,31.1
+poultry,layer,deep litter,1939,5,Owerri,True,premium,2362,2,129913,71778,63877,6.5,standard,monthly,low,low,0,82,0,1428968,3716578,2287610,160.09
+poultry,layer,semi-intensive,1280,5,Owerri,False,basic,1558,2,515497,171377,14023,3.1,standard,weekly,low,low,0,55,0,3580897,1705440,-1875457,-52.37
+poultry,layer,deep litter,1120,11,Port Harcourt,True,basic,1279,4,80932,154311,70972,7.8,minimal,monthly,high,low,0,107,0,1258215,6077086,4818871,382.99
+poultry,layer,deep litter,1154,3,Maiduguri,False,standard,1456,5,595552,127448,35079,9.4,standard,monthly,medium,high,0,119,0,4623979,1866260,-2757719,-59.64
+poultry,layer,deep litter,1229,4,Port Harcourt,False,standard,1511,0,337026,171838,76267,4.7,minimal,weekly,high,high,0,30,0,4640831,702742,-3938089,-84.86
+poultry,layer,intensive,1233,11,Maiduguri,True,standard,1475,5,371246,122176,52483,2.0,standard,quarterly,high,medium,0,63,0,1748080,4186898,2438818,139.51
+poultry,layer,deep litter,1800,11,Uyo,False,premium,1948,5,456760,68397,59162,6.0,intensive,monthly,low,medium,0,101,0,9584319,9399060,-185259,-1.93
+poultry,layer,battery cage,1186,10,Jos,False,premium,1327,1,164870,75233,63536,8.0,minimal,weekly,low,high,0,81,0,5699939,4419036,-1280903,-22.47
+poultry,layer,intensive,1659,8,Kaduna,False,premium,1661,0,192387,138645,62065,1.8,standard,weekly,medium,low,0,107,0,8273347,6972711,-1300636,-15.72
+poultry,layer,deep litter,127,9,Owerri,False,premium,163,0,223785,144595,62536,1.1,intensive,quarterly,medium,low,0,34,0,1037341,192173,-845168,-81.47
+poultry,layer,semi-intensive,1655,12,Owerri,True,premium,1672,1,40301,56273,16382,10.0,standard,monthly,high,medium,0,81,0,1519706,7238970,5719264,376.34
+poultry,layer,intensive,1250,6,Kano,True,premium,1356,4,405004,106088,41242,3.0,minimal,monthly,medium,high,0,30,0,1364834,1091250,-273584,-20.05
+poultry,layer,deep litter,584,5,Maiduguri,True,premium,596,2,396480,45673,72277,9.6,intensive,quarterly,medium,high,0,86,0,1025430,1135062,109632,10.69
+poultry,layer,deep litter,822,12,Enugu,False,standard,990,4,68679,141345,20239,3.3,standard,quarterly,low,high,0,119,0,2799013,5675400,2876387,102.76
+poultry,layer,deep litter,520,8,Abeokuta,True,premium,649,1,341244,39381,57288,7.1,standard,weekly,high,low,0,90,0,957913,1739088,781175,81.55
+poultry,layer,semi-intensive,692,8,Uyo,False,basic,888,5,239405,145809,31170,3.1,minimal,monthly,low,low,0,55,0,1869584,1475206,-394378,-21.09
+poultry,layer,battery cage,1759,6,Port Harcourt,True,basic,2244,5,556596,175911,5868,7.9,intensive,weekly,medium,medium,0,109,0,2937125,5297528,2360403,80.36
+poultry,layer,battery cage,695,10,Sokoto,True,premium,753,1,174475,29194,73909,8.2,standard,quarterly,low,high,0,74,0,607703,2360637,1752934,288.45
+poultry,layer,deep litter,856,5,Ibadan,False,standard,1032,0,260989,114464,18205,3.9,intensive,monthly,low,high,0,63,0,3175658,1295620,-1880038,-59.2
+poultry,layer,deep litter,535,7,Owerri,False,standard,564,3,260759,124862,53799,4.3,standard,monthly,medium,low,0,103,0,2178170,1845742,-332428,-15.26
+poultry,layer,semi-intensive,318,12,Ibadan,False,basic,370,3,245587,53232,24601,5.3,minimal,weekly,medium,medium,0,47,0,1038920,849232,-189688,-18.26
+poultry,layer,battery cage,1879,11,Sokoto,False,standard,2195,4,90026,119438,17972,7.2,minimal,weekly,medium,medium,0,110,0,6428136,10549458,4121322,64.11
+poultry,layer,battery cage,247,10,Benin City,False,standard,288,2,400857,20199,58970,2.1,intensive,quarterly,low,high,0,103,0,1288951,1245337,-43614,-3.38
+poultry,layer,semi-intensive,1380,11,Jos,False,standard,1658,3,508640,35554,54947,6.5,standard,quarterly,low,low,0,111,0,4842641,7877282,3034641,62.66
+poultry,layer,deep litter,1704,8,Owerri,False,basic,1744,2,279303,97177,46533,6.9,intensive,monthly,high,high,0,80,0,4938613,5076557,137944,2.79
+poultry,layer,battery cage,605,10,Uyo,False,standard,635,0,171113,76506,37983,9.5,intensive,quarterly,low,low,0,51,0,2206477,1396189,-810288,-36.72
+poultry,layer,intensive,863,4,Kano,False,premium,876,3,589435,36823,18622,3.4,minimal,weekly,high,medium,0,69,0,4916730,1150448,-3766282,-76.6
+poultry,layer,battery cage,519,6,Ekiti,True,basic,601,1,69959,24215,51771,8.7,standard,monthly,medium,high,0,64,0,483295,909786,426491,88.25
+poultry,layer,semi-intensive,1173,10,Calabar,True,premium,1383,5,496106,152221,74964,3.8,standard,monthly,high,low,0,41,0,1954941,2313273,358332,18.33
+poultry,layer,battery cage,954,7,Osun,False,basic,1040,0,588736,50730,50073,3.6,intensive,weekly,high,medium,0,91,0,3265339,2929104,-336235,-10.3
+poultry,layer,deep litter,663,3,Jos,True,basic,772,1,471736,161945,62292,4.6,minimal,quarterly,high,high,0,79,0,1110348,749515,-360833,-32.5
+poultry,layer,semi-intensive,1746,9,Benin City,True,standard,2073,4,325071,89626,74722,8.3,standard,weekly,low,low,0,47,0,1973519,3386288,1412769,71.59
+poultry,layer,deep litter,643,4,Owerri,False,standard,778,3,236911,99054,7542,2.4,intensive,weekly,low,low,0,66,0,2626157,828390,-1797767,-68.46
+poultry,layer,deep litter,601,5,Lagos,True,basic,628,3,267738,104630,60082,3.8,standard,monthly,medium,high,0,34,0,883200,491438,-391762,-44.36
+poultry,layer,semi-intensive,726,4,Abuja,False,standard,741,3,230425,65382,37778,8.4,minimal,weekly,high,low,0,79,0,2838285,1050725,-1787560,-62.98
+poultry,layer,semi-intensive,1629,10,Abuja,True,standard,1988,0,586453,69643,66974,4.5,standard,monthly,low,high,0,35,0,1537570,2722466,1184896,77.06
+poultry,layer,intensive,1575,11,Benin City,False,premium,1716,2,94617,72091,19801,3.1,standard,monthly,low,low,0,65,0,7431509,5456076,-1975433,-26.58
+poultry,layer,deep litter,1247,4,Enugu,True,basic,1464,5,538357,171293,25315,4.3,minimal,weekly,low,medium,0,41,0,1670215,978571,-691644,-41.41
+poultry,layer,battery cage,1454,12,Abuja,True,standard,1735,5,152608,47984,68942,3.1,intensive,quarterly,medium,medium,0,54,0,1759884,4564920,2805036,159.39
+poultry,layer,battery cage,93,9,Port Harcourt,False,basic,106,3,349030,157274,69237,2.7,minimal,quarterly,medium,medium,0,89,0,763866,362408,-401458,-52.56
+poultry,layer,semi-intensive,613,12,Kano,True,standard,667,2,424945,134034,5094,8.0,intensive,monthly,high,low,0,32,0,1269023,1082803,-186220,-14.67
+poultry,layer,semi-intensive,1319,8,Ogun,True,premium,1701,3,239092,152381,70214,7.9,minimal,quarterly,medium,medium,0,82,0,1154162,3984541,2830379,245.23
+poultry,layer,intensive,1362,8,Ibadan,True,basic,1703,1,227316,23198,31486,2.0,minimal,weekly,low,high,0,112,0,1031100,5979725,4948625,479.94
+poultry,layer,deep litter,1762,9,Maiduguri,False,basic,1955,4,114316,18430,32359,6.9,minimal,monthly,high,low,0,76,0,4305805,5610243,1304438,30.29
+poultry,layer,battery cage,1192,9,Abuja,False,premium,1206,0,358667,35430,33298,9.6,minimal,weekly,high,low,0,98,0,6148995,4752075,-1396920,-22.72
+poultry,layer,semi-intensive,839,6,Maiduguri,True,premium,996,1,475352,42659,51918,7.1,intensive,quarterly,medium,low,0,51,0,1262104,1192529,-69575,-5.51
+poultry,layer,deep litter,1672,5,Maiduguri,False,premium,1751,4,504531,107359,46307,6.0,standard,monthly,medium,high,0,85,0,8683797,3339820,-5343977,-61.54
+poultry,layer,semi-intensive,1741,8,Uyo,True,standard,2140,5,306431,109374,64297,5.0,standard,weekly,high,low,0,66,0,2569302,4366428,1797126,69.95
+poultry,layer,semi-intensive,1270,3,Jos,True,standard,1645,1,370201,20688,41170,9.3,intensive,quarterly,high,high,0,49,0,1733809,846639,-887170,-51.17
+poultry,layer,deep litter,243,3,Abeokuta,True,basic,262,4,301993,76078,38586,8.3,minimal,quarterly,medium,high,0,57,0,556382,190521,-365861,-65.76
+poultry,layer,battery cage,1553,4,Sokoto,True,standard,1937,5,139996,171036,44373,1.3,intensive,monthly,low,low,0,72,0,1908405,2207248,298843,15.66
+poultry,layer,deep litter,762,9,Ibadan,True,premium,911,4,51989,115266,12094,3.7,minimal,monthly,high,high,0,49,0,827049,1618042,790993,95.64
+poultry,layer,semi-intensive,719,11,Port Harcourt,True,premium,876,3,507262,171010,71155,1.8,standard,monthly,medium,low,0,46,0,1288677,1786327,497650,38.62
+poultry,layer,deep litter,738,4,Uyo,True,premium,826,0,457885,146549,61949,8.0,minimal,weekly,medium,high,0,55,0,1109183,746856,-362327,-32.67
+poultry,layer,semi-intensive,1049,9,Calabar,True,basic,1071,3,379121,165999,16743,2.0,standard,monthly,medium,medium,0,54,0,1348613,2498089,1149476,85.23
+poultry,layer,intensive,706,8,Jos,True,standard,836,3,192901,130464,10882,9.3,minimal,weekly,high,medium,0,49,0,1004947,1255070,250123,24.89
+poultry,layer,intensive,1601,4,Abuja,True,premium,2046,2,54400,104986,19585,3.7,standard,weekly,medium,low,0,98,0,1539821,3021855,1482034,96.25
+poultry,layer,battery cage,483,6,Calabar,False,premium,588,1,59281,113725,74048,1.4,minimal,weekly,medium,low,0,119,0,2493004,1700170,-792834,-31.8
+poultry,layer,intensive,1315,7,Ekiti,True,basic,1468,2,417717,43283,7500,3.6,intensive,monthly,low,medium,0,95,0,1586250,4214969,2628719,165.72
+poultry,layer,battery cage,1503,4,Sokoto,True,basic,1592,3,62532,25420,37426,9.3,standard,monthly,medium,medium,0,50,0,1252628,1363221,110593,8.83
+poultry,layer,battery cage,87,8,Abeokuta,False,basic,112,4,329279,31255,38774,8.9,minimal,quarterly,medium,low,0,49,0,579833,155344,-424489,-73.21
+poultry,layer,semi-intensive,749,9,Kano,False,premium,964,4,278475,124401,36504,6.2,standard,monthly,high,medium,0,87,0,4184380,2750530,-1433850,-34.27
+poultry,layer,semi-intensive,1160,5,Port Harcourt,True,basic,1267,5,589249,50455,61369,10.0,minimal,quarterly,high,low,0,70,0,1658073,1827000,168927,10.19
+poultry,layer,intensive,188,11,Kaduna,False,basic,229,2,474152,122807,44760,5.0,intensive,quarterly,medium,low,0,54,0,1088219,530442,-557777,-51.26
+poultry,layer,semi-intensive,268,5,Lagos,False,premium,313,1,283461,75532,8418,4.2,intensive,monthly,low,high,0,107,0,1653811,686790,-967021,-58.47
+poultry,layer,semi-intensive,1010,8,Ondo,False,standard,1051,1,277264,23448,58554,7.9,minimal,monthly,medium,low,0,115,0,3389266,4278966,889700,26.25
+poultry,layer,intensive,465,6,Kaduna,False,premium,533,2,519770,79692,61040,4.6,minimal,quarterly,high,medium,0,70,0,2834377,931581,-1902796,-67.13
+poultry,layer,intensive,857,12,Maiduguri,True,standard,974,0,297657,150974,75499,4.6,intensive,weekly,high,medium,0,96,0,1552530,4709249,3156719,203.33
+poultry,layer,semi-intensive,1617,3,Jos,False,standard,2046,2,523757,58643,60372,3.6,minimal,quarterly,high,low,0,89,0,5776747,2080982,-3695765,-63.98
+poultry,layer,intensive,1749,10,Maiduguri,True,basic,2157,5,181879,118040,59206,3.9,minimal,weekly,medium,high,0,55,0,1845775,4622170,2776395,150.42
+poultry,layer,intensive,1857,10,Benin City,False,premium,2218,5,211960,47386,16952,2.0,standard,quarterly,medium,low,0,97,0,9143473,8826321,-317152,-3.47
+poultry,layer,semi-intensive,1498,9,Ondo,False,basic,1843,2,197380,57499,23953,2.6,intensive,weekly,medium,medium,0,69,0,4173632,4530356,356724,8.55
+poultry,layer,battery cage,1545,10,Kaduna,True,basic,1990,0,305406,18200,65115,5.5,standard,quarterly,low,high,0,93,0,1045346,6789116,5743770,549.46
+poultry,layer,deep litter,537,6,Ekiti,False,standard,549,4,46892,79150,76741,3.5,intensive,quarterly,low,low,0,53,0,2015158,823946,-1191212,-59.11
+poultry,layer,battery cage,353,3,Abuja,True,basic,423,4,352938,101798,16495,1.4,standard,weekly,low,high,0,66,0,771281,344577,-426704,-55.32
+poultry,layer,semi-intensive,1301,12,Ekiti,False,basic,1337,2,378503,111618,54668,8.4,standard,quarterly,low,medium,0,90,0,3179314,6435266,3255952,102.41
+poultry,layer,battery cage,325,4,Ogun,False,premium,345,1,101010,43652,79890,7.6,intensive,quarterly,low,medium,0,118,0,1760177,708708,-1051469,-59.74
+poultry,layer,deep litter,1288,7,Owerri,False,standard,1491,4,411042,49003,78745,5.5,intensive,quarterly,medium,medium,0,53,0,5014590,2257832,-2756758,-54.97
+poultry,layer,semi-intensive,1859,12,Jos,True,basic,1924,3,163654,69350,59346,4.7,standard,monthly,high,high,0,57,0,2058400,6058964,4000564,194.35
+poultry,layer,battery cage,73,6,Benin City,True,standard,79,4,379658,16607,19920,7.2,standard,monthly,high,high,0,108,0,489185,219491,-269694,-55.13
+poultry,layer,semi-intensive,109,5,Ogun,False,premium,124,3,77285,50587,68110,2.4,standard,quarterly,medium,medium,0,82,0,705557,218087,-487470,-69.09
+poultry,layer,battery cage,1950,3,Uyo,False,premium,2263,1,387832,107692,13678,9.7,standard,weekly,medium,medium,0,110,0,9869202,2905403,-6963800,-70.56
+poultry,layer,deep litter,1144,5,Kaduna,True,standard,1386,2,73164,86171,59246,1.8,minimal,monthly,medium,medium,0,57,0,847781,1600856,753075,88.83
+poultry,layer,semi-intensive,1125,7,Ibadan,False,basic,1387,0,505330,147643,8268,8.2,intensive,weekly,low,medium,0,91,0,3361241,3289309,-71932,-2.14
+poultry,layer,battery cage,1550,11,Ogun,True,basic,1932,4,179164,68788,9791,5.1,intensive,quarterly,low,low,0,69,0,1613993,5582255,3968262,245.87
+poultry,layer,intensive,1959,3,Ogun,False,basic,2019,5,367659,20893,45913,6.7,minimal,monthly,low,low,0,66,0,4548365,1809470,-2738895,-60.22
+poultry,layer,battery cage,616,11,Ekiti,True,standard,643,2,160020,18999,78351,5.6,minimal,quarterly,medium,high,0,70,0,549970,2238790,1688820,307.08
+poultry,layer,battery cage,605,5,Uyo,True,basic,617,4,395193,156709,63149,1.5,minimal,monthly,high,low,0,43,0,1129301,640619,-488682,-43.27
+poultry,layer,intensive,835,3,Osun,False,basic,1011,4,507493,176563,51612,3.8,minimal,quarterly,high,high,0,40,0,2635293,481962,-2153331,-81.71
+poultry,layer,semi-intensive,1939,10,Kano,False,basic,2204,5,528003,138350,35368,9.5,minimal,quarterly,medium,medium,0,80,0,4822096,7019180,2197084,45.56
+poultry,layer,battery cage,425,8,Ekiti,False,basic,433,0,408512,140475,65455,8.6,standard,monthly,high,high,0,46,0,1591942,714748,-877194,-55.1
+poultry,layer,deep litter,1090,4,Ibadan,False,premium,1302,2,598624,135841,57535,6.3,minimal,quarterly,low,high,0,50,0,5560750,1021330,-4539420,-81.63
+poultry,layer,intensive,1037,9,Ogun,True,premium,1220,3,398823,157744,35953,2.6,intensive,weekly,high,high,0,103,0,1992470,4681526,2689056,134.96
+poultry,layer,intensive,1763,10,Uyo,False,standard,2056,3,224731,95749,58188,1.6,minimal,quarterly,high,medium,0,71,0,6064343,6158512,94169,1.55
+poultry,layer,intensive,1062,3,Onitsha,True,premium,1349,5,40193,53463,24558,5.1,standard,monthly,high,high,0,87,0,1233314,1315229,81915,6.64
+poultry,layer,battery cage,450,6,Jos,False,standard,546,2,133624,167758,6064,6.5,intensive,monthly,low,medium,0,37,0,1814946,467032,-1347914,-74.27
+poultry,layer,intensive,806,11,Lagos,False,basic,1014,0,286668,128171,56677,6.6,intensive,monthly,medium,medium,0,85,0,2365616,3519359,1153743,48.77
+poultry,layer,semi-intensive,1166,6,Sokoto,True,basic,1360,2,477503,55440,42810,10.0,intensive,weekly,low,low,0,39,0,1741753,1227798,-513955,-29.51
+poultry,layer,semi-intensive,1377,3,Sokoto,False,basic,1411,5,476056,134545,60797,6.6,standard,quarterly,medium,high,0,87,0,3804073,1678384,-2125689,-55.88
+poultry,layer,semi-intensive,837,8,Kaduna,False,premium,838,3,288250,146525,40291,4.7,intensive,quarterly,medium,low,0,34,0,4597291,1084819,-3512472,-76.4
+poultry,layer,battery cage,1213,10,Ibadan,False,premium,1242,5,591978,88248,65940,5.7,intensive,quarterly,low,low,0,90,0,6720191,5147366,-1572826,-23.4
+poultry,layer,battery cage,1341,4,Owerri,True,standard,1556,0,531644,134022,72195,9.2,intensive,quarterly,medium,medium,0,75,0,1777136,1826442,49306,2.77
+poultry,layer,battery cage,1684,7,Kaduna,True,premium,2150,5,358841,162772,39136,1.6,standard,quarterly,low,high,0,36,0,1697449,2087891,390442,23.0
+poultry,layer,intensive,1394,7,Jos,False,basic,1447,0,331345,81073,22372,6.5,standard,monthly,low,high,0,44,0,3222790,2007221,-1215569,-37.72
+poultry,layer,semi-intensive,1286,5,Ekiti,False,basic,1386,5,287669,142118,28699,8.2,minimal,monthly,low,low,0,106,0,3159086,3128452,-30634,-0.97
+poultry,layer,deep litter,1962,5,Osun,False,basic,2350,5,215409,70274,50229,1.5,standard,weekly,low,low,0,89,0,5044712,4299968,-744744,-14.76
+poultry,layer,battery cage,866,10,Sokoto,True,standard,1043,3,537643,83845,24025,5.8,standard,weekly,medium,medium,0,78,0,1424913,3181511,1756598,123.28
+poultry,layer,intensive,1439,8,Ibadan,False,standard,1702,5,325831,102809,40432,3.4,minimal,monthly,high,high,0,80,0,5361672,4448237,-913435,-17.04
+poultry,layer,semi-intensive,994,6,Maiduguri,False,premium,1199,1,368487,158553,6386,7.1,minimal,weekly,medium,low,0,97,0,5155526,2687170,-2468356,-47.88
+poultry,layer,battery cage,262,10,Enugu,False,standard,277,0,136407,29911,33419,9.6,intensive,weekly,high,low,0,41,0,1169137,485538,-683599,-58.47
+poultry,layer,semi-intensive,1803,12,Ondo,True,basic,2179,2,348877,137409,14924,6.7,standard,monthly,high,high,0,71,0,2123910,7166168,5042258,237.4
+poultry,layer,intensive,577,5,Benin City,True,standard,644,0,310782,84380,28321,5.0,standard,weekly,high,medium,0,52,0,971633,712595,-259038,-26.66
+poultry,layer,intensive,1371,10,Port Harcourt,False,basic,1623,0,503031,82894,18538,1.3,minimal,quarterly,high,medium,0,87,0,3449288,5886320,2437032,70.65
+poultry,layer,semi-intensive,88,10,Lagos,True,premium,98,1,385852,117584,5485,5.6,standard,monthly,medium,medium,0,38,0,566121,157837,-408284,-72.12
+poultry,layer,intensive,1156,6,Ondo,False,basic,1352,2,389636,94384,57509,1.5,intensive,weekly,medium,high,0,73,0,3547129,2493665,-1053464,-29.7
+poultry,layer,battery cage,214,10,Onitsha,True,premium,216,3,240281,93347,56131,9.1,intensive,quarterly,medium,medium,0,40,0,587709,389052,-198657,-33.8
+poultry,layer,semi-intensive,1862,10,Port Harcourt,True,basic,1876,4,290069,143249,55956,1.6,intensive,quarterly,medium,medium,0,98,0,2304724,8977819,6673095,289.54
+poultry,layer,intensive,1758,10,Abuja,False,basic,1936,5,84894,121301,20491,2.9,intensive,quarterly,high,medium,0,116,0,5017236,9900704,4883468,97.33
+poultry,layer,semi-intensive,1832,11,Uyo,True,basic,1852,1,552643,19997,66763,9.2,intensive,weekly,low,high,0,113,0,2379803,10338379,7958576,334.42
+poultry,layer,semi-intensive,317,3,Abuja,False,basic,360,1,107064,42874,19965,5.5,intensive,weekly,low,low,0,84,0,946553,377452,-569101,-60.12
+poultry,layer,battery cage,740,9,Ibadan,True,standard,925,1,87800,170473,27734,4.0,minimal,monthly,low,medium,0,51,0,582007,1630368,1048361,180.13
+poultry,layer,semi-intensive,1476,8,Ekiti,True,premium,1494,0,434401,56354,7048,8.9,minimal,weekly,low,low,0,41,0,1235803,2205203,969400,78.44
+poultry,layer,battery cage,1497,12,Osun,False,premium,1553,1,324111,152124,64037,4.7,minimal,quarterly,high,low,0,106,0,7463897,9073437,1609540,21.56
+poultry,layer,intensive,418,10,Jos,False,standard,418,1,241224,45803,74494,9.8,intensive,monthly,high,high,0,58,0,1866321,1093404,-772917,-41.41
+poultry,layer,battery cage,1000,6,Abuja,True,basic,1238,5,537457,145420,28111,2.4,minimal,weekly,high,medium,0,66,0,1760988,1932480,171492,9.74
+poultry,layer,battery cage,479,9,Ogun,False,basic,494,0,224431,56430,8809,5.4,minimal,weekly,low,high,0,86,0,1247670,1753629,505959,40.55
+poultry,layer,battery cage,1263,12,Osun,True,premium,1519,2,281238,43870,47746,3.1,minimal,quarterly,medium,low,0,78,0,972779,5727604,4754825,488.79
+poultry,layer,intensive,1875,6,Sokoto,False,basic,2375,1,266665,174759,64636,2.6,standard,weekly,medium,high,0,54,0,4818560,2958525,-1860035,-38.6
+poultry,layer,battery cage,1344,8,Onitsha,False,basic,1356,4,102549,88558,22891,2.0,standard,monthly,medium,low,0,73,0,3305198,3845990,540792,16.36
+poultry,layer,semi-intensive,500,7,Owerri,True,premium,645,1,130674,122923,73389,5.4,minimal,quarterly,medium,medium,0,65,0,539486,1076075,536589,99.46
+poultry,layer,semi-intensive,79,9,Enugu,False,standard,92,4,196206,165392,5665,4.8,minimal,weekly,medium,high,0,94,0,627963,318130,-309833,-49.34
+poultry,layer,deep litter,118,9,Sokoto,True,standard,135,0,53026,121592,33574,2.2,standard,weekly,high,low,0,32,0,320292,166182,-154110,-48.12
+poultry,layer,semi-intensive,1032,7,Ekiti,True,standard,1175,1,465051,63482,53551,6.6,intensive,quarterly,low,high,0,39,0,1330284,1315707,-14577,-1.1
+poultry,layer,intensive,838,8,Jos,False,standard,1013,4,257208,36222,49000,7.6,minimal,quarterly,high,medium,0,36,0,3086880,1115009,-1971871,-63.88
+poultry,layer,battery cage,277,9,Ekiti,True,standard,307,5,110260,161999,31832,2.2,standard,weekly,high,low,0,113,0,636491,1377557,741066,116.43
+poultry,layer,semi-intensive,1029,12,Enugu,False,standard,1306,4,483473,87651,12138,1.6,standard,monthly,medium,high,0,97,0,3978962,5892960,1913998,48.1
+poultry,layer,deep litter,1748,4,Calabar,False,standard,2073,5,108815,64375,65014,1.8,standard,weekly,medium,low,0,43,0,6356204,1476221,-4879983,-76.78
+poultry,layer,intensive,387,7,Port Harcourt,False,basic,488,4,63792,91852,59596,9.7,intensive,weekly,medium,medium,0,83,0,1260140,1015184,-244956,-19.44
+poultry,layer,battery cage,959,3,Onitsha,True,basic,1209,1,584861,103048,58961,6.2,intensive,quarterly,medium,medium,0,105,0,1538045,1416779,-121266,-7.88
+poultry,layer,deep litter,1413,11,Ekiti,False,premium,1468,2,220079,83159,34724,5.4,standard,weekly,low,medium,0,66,0,7049712,4852214,-2197498,-31.17
+poultry,layer,semi-intensive,983,5,Calabar,False,basic,1269,5,200940,57271,36182,2.1,standard,quarterly,low,medium,0,63,0,2432418,1515712,-916706,-37.69
+poultry,layer,semi-intensive,807,5,Calabar,True,premium,883,2,195130,112757,63776,5.9,minimal,quarterly,medium,low,0,33,0,754988,626494,-128494,-17.02
+poultry,layer,semi-intensive,878,10,Ekiti,False,basic,879,5,572056,101843,43739,5.3,standard,quarterly,high,low,0,102,0,2890688,4240477,1349789,46.69
+poultry,layer,battery cage,1542,10,Ibadan,False,basic,1606,4,162553,95761,8250,4.6,minimal,monthly,medium,low,0,71,0,3581864,5222291,1640427,45.8
+poultry,layer,semi-intensive,162,12,Uyo,True,standard,171,0,507096,37905,72081,4.5,standard,monthly,high,high,0,95,0,746682,881847,135165,18.1
+poultry,layer,battery cage,1982,3,Ondo,True,premium,2489,2,444868,112735,6597,3.6,standard,monthly,medium,high,0,41,0,1951600,1175049,-776551,-39.79
+poultry,layer,deep litter,491,10,Ekiti,False,basic,609,3,474313,51586,16282,2.3,standard,monthly,high,medium,0,38,0,1745131,911443,-833688,-47.77
+poultry,layer,deep litter,1961,12,Kano,True,standard,2336,2,474649,60847,77851,5.2,intensive,weekly,low,low,0,78,0,2574347,8700251,6125904,237.96
+poultry,layer,deep litter,642,11,Abuja,False,premium,700,4,525964,73856,8517,8.1,minimal,monthly,medium,high,0,111,0,3593637,3601938,8301,0.23
+poultry,layer,battery cage,1017,4,Osun,True,standard,1293,5,296639,22456,20644,7.9,standard,weekly,high,high,0,76,0,1560139,1423719,-136420,-8.74
+poultry,layer,deep litter,1240,10,Benin City,False,premium,1544,2,577422,165801,7299,8.6,minimal,quarterly,low,low,0,70,0,6175522,3966760,-2208762,-35.77
+poultry,layer,battery cage,994,5,Kaduna,True,standard,1101,5,413276,27770,42992,3.6,intensive,weekly,high,low,0,110,0,1925338,2635094,709756,36.86
+poultry,layer,semi-intensive,425,4,Calabar,False,standard,530,5,355697,86161,52516,1.9,intensive,monthly,low,low,0,47,0,1981874,391910,-1589964,-80.23
+poultry,layer,battery cage,1111,7,Sokoto,False,standard,1417,1,147392,72114,25257,5.5,minimal,quarterly,high,high,0,97,0,3716638,3564394,-152244,-4.1
+poultry,layer,intensive,1782,11,Osun,False,basic,1844,1,58223,140702,50640,3.8,standard,weekly,medium,high,0,96,0,4348165,9051420,4703255,108.17
+poultry,layer,semi-intensive,1613,8,Jos,True,premium,2007,1,174966,52318,34697,3.8,minimal,weekly,low,medium,0,118,0,1149131,7324052,6174921,537.36
+poultry,layer,intensive,1612,4,Lagos,False,standard,1632,0,74385,149605,12768,5.2,standard,weekly,low,medium,0,115,0,5314558,3514805,-1799753,-33.86
+poultry,layer,intensive,71,4,Owerri,True,premium,90,1,408609,22670,16898,2.3,intensive,monthly,high,medium,0,75,0,526277,104051,-422226,-80.23
+poultry,layer,semi-intensive,378,11,Maiduguri,True,basic,470,0,594527,71884,30106,9.7,minimal,quarterly,low,high,0,42,0,800467,788482,-11985,-1.5
+poultry,layer,deep litter,1942,6,Abeokuta,True,standard,2334,0,229633,108014,54756,4.8,intensive,weekly,medium,low,0,70,0,2334403,3882446,1548043,66.31
+poultry,layer,intensive,303,10,Maiduguri,True,standard,372,5,342274,161048,10322,1.7,standard,weekly,medium,medium,0,88,0,816644,1310536,493892,60.48
+poultry,layer,deep litter,1279,7,Enugu,False,standard,1656,3,237955,33247,67347,9.5,standard,weekly,low,high,0,92,0,4559249,3727134,-832115,-18.25
+poultry,layer,deep litter,1426,4,Ekiti,True,basic,1487,3,146663,59229,13481,4.3,minimal,monthly,low,high,0,81,0,932373,2210785,1278412,137.11
+poultry,layer,deep litter,301,6,Sokoto,False,premium,370,4,326232,119919,51674,5.3,intensive,monthly,medium,high,0,65,0,2017875,555842,-1462033,-72.45
+poultry,layer,intensive,351,10,Ibadan,False,standard,403,5,181147,22791,18055,7.6,minimal,monthly,high,low,0,52,0,1415393,843242,-572151,-40.42
+poultry,layer,battery cage,833,12,Port Harcourt,False,premium,988,0,585205,144024,66082,2.8,intensive,monthly,medium,high,0,63,0,4835361,3060575,-1774786,-36.7
+poultry,layer,intensive,1160,8,Abuja,False,basic,1293,2,434617,131013,65248,1.3,minimal,quarterly,high,medium,0,120,0,3153878,5495616,2341738,74.25
+poultry,layer,deep litter,386,10,Port Harcourt,False,premium,431,0,554382,160171,75699,6.1,standard,quarterly,low,high,0,37,0,2498302,670540,-1827762,-73.16
+poultry,layer,deep litter,851,7,Uyo,False,premium,1023,2,376050,31101,8689,6.3,minimal,monthly,medium,high,0,104,0,4287890,2902489,-1385401,-32.31
+poultry,layer,deep litter,105,8,Ibadan,False,standard,136,3,408332,29797,37011,3.2,intensive,monthly,high,low,0,118,0,863640,479741,-383899,-44.45
+poultry,layer,intensive,184,7,Ogun,True,basic,213,0,523298,125748,79455,5.6,standard,monthly,low,high,0,90,0,820501,547142,-273359,-33.32
+poultry,layer,battery cage,1254,3,Ondo,False,standard,1469,3,144917,68977,49035,5.5,intensive,monthly,low,high,0,68,0,4526529,1208731,-3317798,-73.3
+poultry,layer,semi-intensive,794,9,Sokoto,True,premium,844,2,89840,92940,57694,8.2,intensive,quarterly,low,high,0,104,0,855824,3411215,2555391,298.59
+poultry,layer,battery cage,244,12,Benin City,True,premium,302,3,487852,69981,50523,8.2,intensive,monthly,high,medium,0,85,0,901156,1142359,241203,26.77
+poultry,layer,battery cage,1408,11,Onitsha,False,standard,1514,4,515244,158540,28671,8.9,intensive,quarterly,high,low,0,103,0,5876855,7266428,1389573,23.64
+poultry,layer,deep litter,1072,6,Benin City,False,premium,1305,0,587639,67598,52746,5.2,minimal,weekly,high,high,0,68,0,5853583,2073162,-3780421,-64.58
+poultry,layer,deep litter,1778,9,Ogun,True,premium,1886,3,319901,90247,26048,3.3,intensive,weekly,medium,low,0,44,0,2480896,3404265,923369,37.22
+poultry,layer,intensive,357,6,Enugu,False,standard,408,3,482519,24700,31475,2.4,minimal,weekly,medium,medium,0,114,0,1698944,1191637,-507307,-29.86
+poultry,layer,intensive,1177,5,Sokoto,True,basic,1480,0,369153,172705,44056,8.8,standard,monthly,high,high,0,41,0,1527514,1100260,-427254,-27.97
+poultry,layer,semi-intensive,862,5,Ibadan,True,premium,1033,4,590775,81009,70070,9.0,minimal,quarterly,low,medium,0,72,0,1151304,1411956,260652,22.64
+poultry,layer,deep litter,1754,12,Enugu,False,basic,1829,1,264509,86970,62602,4.7,intensive,weekly,medium,high,0,77,0,4886781,7722616,2835835,58.03
+poultry,layer,battery cage,1482,4,Calabar,False,standard,1785,2,191950,110157,67288,7.4,standard,weekly,high,high,0,34,0,5630495,933186,-4697309,-83.43
+poultry,layer,semi-intensive,1773,3,Benin City,False,standard,2112,5,420481,46995,75111,8.8,standard,monthly,low,medium,0,62,0,6304837,1503788,-4801049,-76.15
+poultry,layer,semi-intensive,666,4,Jos,True,basic,848,5,372591,121506,9440,3.5,minimal,monthly,medium,high,0,82,0,969737,1054012,84275,8.69
+poultry,layer,deep litter,1947,8,Ibadan,True,premium,2099,0,408948,125328,76791,7.6,standard,quarterly,low,low,0,112,0,1438542,8059645,6621103,460.26
+poultry,layer,deep litter,1363,5,Port Harcourt,True,standard,1444,2,368961,165944,15778,2.0,minimal,quarterly,high,high,0,46,0,1470708,1536101,65393,4.45
+poultry,layer,deep litter,1784,12,Ogun,False,standard,2251,1,313342,60476,47936,8.2,minimal,weekly,medium,medium,0,53,0,6041354,5207924,-833430,-13.8
+poultry,layer,semi-intensive,855,9,Lagos,True,premium,1020,5,279816,38324,65610,2.8,intensive,weekly,low,medium,0,109,0,1367000,4076349,2709349,198.2
+poultry,layer,battery cage,928,12,Port Harcourt,True,standard,975,4,163050,18700,73922,4.9,standard,quarterly,medium,low,0,58,0,928472,3071197,2142725,230.78
+poultry,layer,semi-intensive,1511,6,Benin City,False,premium,1735,1,492259,69160,33254,10.0,standard,quarterly,high,low,0,83,0,7809698,3386151,-4423547,-56.64
+poultry,layer,semi-intensive,419,9,Lagos,False,standard,448,3,300380,111898,65052,1.8,standard,weekly,medium,high,0,80,0,1901930,1481249,-420681,-22.12
+poultry,layer,deep litter,1456,6,Osun,False,basic,1497,0,94644,102257,35781,5.2,standard,quarterly,high,high,0,120,0,3472282,4969037,1496755,43.11
+poultry,layer,intensive,1582,3,Benin City,False,standard,2045,5,428918,49665,78342,1.4,minimal,monthly,low,high,0,93,0,5461125,2175994,-3285131,-60.15
+poultry,layer,deep litter,1955,8,Port Harcourt,True,standard,2371,3,188683,83263,20314,3.8,minimal,monthly,medium,high,0,76,0,1465260,5717358,4252098,290.19
+poultry,layer,battery cage,1946,9,Benin City,False,premium,2128,1,370870,143784,24826,6.0,intensive,quarterly,medium,low,0,54,0,9928930,4445053,-5483877,-55.23
+poultry,layer,semi-intensive,354,3,Kaduna,True,standard,381,5,529824,129407,20207,10.0,standard,weekly,medium,medium,0,120,0,1033438,573480,-459958,-44.51
+poultry,layer,deep litter,1198,10,Sokoto,True,premium,1509,0,406586,39530,31703,8.8,minimal,weekly,high,high,0,64,0,1436219,3496243,2060024,143.43
+poultry,layer,semi-intensive,1203,12,Uyo,True,premium,1479,1,476646,35141,37264,7.9,intensive,weekly,medium,low,0,66,0,1812201,4387533,2575332,142.11
+poultry,layer,deep litter,1445,4,Abeokuta,True,standard,1511,0,522589,140791,64513,6.7,standard,quarterly,high,low,0,72,0,1775518,1941386,165868,9.34
+poultry,layer,deep litter,139,12,Ogun,True,basic,174,5,336698,99717,12279,7.7,intensive,quarterly,medium,low,0,81,0,591169,623523,32354,5.47
+poultry,layer,semi-intensive,572,5,Ondo,True,basic,718,1,447374,120485,42347,6.8,intensive,weekly,low,medium,0,92,0,1153606,1226139,72533,6.29
+poultry,layer,battery cage,1690,9,Owerri,True,standard,2027,2,577555,67395,69175,5.0,standard,monthly,medium,high,0,106,0,1897125,7658235,5761110,303.68
+poultry,layer,deep litter,916,4,Abeokuta,True,standard,1089,0,82402,149569,49793,9.8,intensive,weekly,high,high,0,49,0,1380964,809707,-571257,-41.37
+poultry,layer,intensive,1956,10,Jos,False,standard,2002,3,354985,53956,21749,7.2,standard,weekly,high,medium,0,67,0,7472290,6080813,-1391477,-18.62
+poultry,layer,intensive,1214,3,Abuja,True,premium,1368,0,527227,164023,38211,4.2,intensive,weekly,high,low,0,44,0,2186261,767588,-1418673,-64.89
+cattle,beef,intensive,99,20,Kaduna,False,basic,101,5,724212,214598,86966,6.1,intensive,monthly,high,medium,2898,0,0,6104476,67350245,61245769,1003.29
+cattle,beef,intensive,28,12,Kano,False,premium,28,4,137570,53065,61764,1.8,minimal,quarterly,medium,medium,4333,0,0,4468499,29785042,25316543,566.56
+cattle,beef,semi-intensive,56,21,Owerri,False,premium,67,5,928369,208679,21486,1.9,minimal,weekly,low,low,4350,0,0,9600534,59742900,50142366,522.29
+cattle,beef,intensive,29,6,Sokoto,True,premium,31,5,1229489,150094,21284,3.1,standard,weekly,medium,medium,1589,0,0,1429867,11163122,9733255,680.71
+cattle,beef,intensive,19,11,Ekiti,False,standard,19,3,1327308,177207,36389,3.1,standard,weekly,medium,low,1920,0,0,3078004,8837280,5759276,187.11
+cattle,beef,semi-intensive,85,19,Sokoto,False,basic,97,3,1176584,359874,90149,7.5,standard,weekly,high,low,3663,0,0,5970107,72000844,66030737,1106.02
+cattle,beef,extensive,7,19,Ogun,True,standard,8,3,1092661,111310,74852,5.4,intensive,monthly,medium,high,3286,0,0,1285823,5439973,4154150,323.07
+cattle,beef,semi-intensive,7,11,Onitsha,False,standard,7,4,560749,358102,99780,3.4,intensive,quarterly,high,medium,2037,0,0,1586856,3443548,1856692,117.0
+cattle,beef,semi-intensive,42,18,Abeokuta,False,basic,49,2,280757,399729,73293,1.9,minimal,weekly,high,medium,1913,0,0,2891579,19704856,16813278,581.46
+cattle,beef,semi-intensive,58,21,Enugu,True,premium,58,0,852430,186738,56798,5.7,minimal,quarterly,low,low,2883,0,0,1111916,39420700,38308784,3445.29
+cattle,beef,extensive,60,9,Enugu,True,premium,64,2,813711,236248,16117,6.4,intensive,monthly,low,high,3611,0,0,1117076,50698440,49581364,4438.5
+cattle,beef,extensive,82,9,Abuja,False,standard,105,0,322071,370115,89908,6.5,minimal,quarterly,low,high,1931,0,0,7364644,37012442,29647798,402.57
+cattle,beef,intensive,26,9,Abeokuta,True,premium,28,3,1160942,311300,23014,2.1,standard,monthly,low,low,4975,0,0,1512156,31658412,30146256,1993.59
+cattle,beef,semi-intensive,30,20,Lagos,True,standard,33,4,459162,94687,44867,3.6,standard,monthly,high,high,2505,0,0,628716,18111150,17482434,2780.66
+cattle,beef,semi-intensive,24,22,Enugu,True,standard,26,3,1062074,320614,99417,3.5,minimal,monthly,low,low,4439,0,0,1494105,25701810,24207705,1620.21
+cattle,beef,intensive,71,8,Ogun,False,standard,91,1,1010315,82227,61546,6.3,intensive,quarterly,low,high,1736,0,0,6885563,28872718,21987155,319.32
+cattle,beef,semi-intensive,85,22,Osun,False,premium,102,2,757866,230437,11035,6.8,intensive,quarterly,low,high,3154,0,0,13815213,62464970,48649757,352.15
+cattle,beef,extensive,62,12,Owerri,False,premium,68,5,948309,153439,49522,1.6,intensive,monthly,medium,high,4444,0,0,10519470,67779888,57260418,544.33
+cattle,beef,extensive,99,10,Calabar,False,basic,101,4,754840,323330,54657,6.3,minimal,weekly,low,high,3926,0,0,6152127,91046884,84894758,1379.93
+cattle,beef,semi-intensive,38,13,Osun,True,premium,38,2,644748,378723,76518,3.5,minimal,quarterly,low,medium,2720,0,0,1114239,24935600,23821361,2137.9
+cattle,beef,semi-intensive,78,6,Ogun,True,premium,101,4,1416475,398924,79899,6.9,minimal,monthly,medium,medium,4231,0,0,1945998,76811690,74865692,3847.16
+cattle,beef,extensive,96,24,Port Harcourt,False,premium,117,0,787544,320769,86332,2.3,standard,monthly,low,low,4414,0,0,15642645,103499472,87856827,561.65
+cattle,beef,intensive,59,19,Kano,True,standard,74,3,550435,283918,20233,3.6,intensive,monthly,high,high,3625,0,0,925386,51543875,50618489,5469.99
+cattle,beef,extensive,55,14,Sokoto,False,standard,66,3,974349,135376,28919,4.5,standard,quarterly,medium,low,4385,0,0,5575769,57580531,52004762,932.69
+cattle,beef,intensive,70,22,Onitsha,False,standard,70,1,1272363,243636,25566,5.2,standard,weekly,low,medium,3841,0,0,7190565,63722190,56531625,786.19
+cattle,beef,extensive,42,7,Port Harcourt,True,standard,45,2,735982,204130,73691,1.2,minimal,weekly,high,medium,1699,0,0,1051603,17625426,16573823,1576.05
+cattle,beef,intensive,44,15,Kaduna,False,basic,45,2,241693,73426,64732,4.4,standard,quarterly,medium,medium,4700,0,0,2607351,49425200,46817849,1795.61
+cattle,beef,extensive,53,21,Owerri,True,basic,61,3,1043570,399815,68861,2.0,intensive,monthly,low,high,4221,0,0,1559946,54809685,53249739,3413.56
+cattle,beef,semi-intensive,84,19,Enugu,False,standard,97,5,1029240,195424,94661,1.6,minimal,quarterly,low,high,4080,0,0,8083425,84309120,76225695,942.99
+cattle,beef,extensive,95,15,Ibadan,True,basic,122,4,1309753,77721,84743,4.7,standard,quarterly,low,low,4196,0,0,1531592,94971215,93439623,6100.82
+cattle,beef,intensive,73,11,Benin City,True,basic,91,4,1031616,94379,79932,5.2,standard,quarterly,low,medium,1595,0,0,1251552,27595095,26343543,2104.87
+cattle,beef,intensive,48,19,Osun,True,premium,52,2,290893,110106,23019,4.8,standard,weekly,low,medium,4646,0,0,460018,53075904,52615886,11437.79
+cattle,beef,semi-intensive,16,10,Osun,True,basic,18,2,480544,64245,17667,3.1,minimal,monthly,low,medium,2827,0,0,569656,10957452,10387796,1823.52
+cattle,beef,intensive,38,18,Abuja,True,basic,46,4,595957,308463,76666,6.3,standard,weekly,medium,low,2803,0,0,1017186,24950904,23933718,2352.93
+cattle,beef,semi-intensive,64,23,Kano,False,basic,71,1,139054,191117,82623,7.7,intensive,weekly,low,high,4168,0,0,3673594,61553024,57879430,1575.55
+cattle,beef,extensive,21,15,Osun,False,basic,26,4,526680,124641,58929,4.8,minimal,weekly,high,medium,3773,0,0,1781250,18857454,17076204,958.66
+cattle,beef,intensive,62,7,Ekiti,False,premium,80,0,226196,302804,45822,5.2,intensive,monthly,medium,high,2371,0,0,9927522,34839474,24911952,250.94
+cattle,beef,semi-intensive,79,22,Abuja,True,premium,91,0,730484,97036,61813,5.9,minimal,quarterly,high,medium,3269,0,0,934758,60753548,59818790,6399.39
+cattle,beef,semi-intensive,31,22,Ogun,False,premium,35,1,1488895,218631,54778,2.5,intensive,monthly,low,high,2047,0,0,6437104,15467644,9030540,140.29
+cattle,beef,extensive,87,6,Sokoto,True,basic,104,3,1265577,306364,61483,4.8,intensive,quarterly,low,high,1626,0,0,1705199,33667956,31962757,1874.43
+cattle,beef,extensive,90,20,Ibadan,False,standard,112,2,911075,142896,11105,1.9,standard,weekly,medium,low,2407,0,0,8341576,53128507,44786931,536.91
+cattle,beef,semi-intensive,100,6,Abeokuta,True,basic,124,5,735811,165945,40704,7.9,standard,weekly,medium,medium,4383,0,0,1042460,100918575,99876115,9580.81
+cattle,beef,intensive,95,12,Onitsha,False,basic,119,4,1149258,309004,32344,4.9,intensive,quarterly,high,high,4295,0,0,6352231,97007944,90655713,1427.15
+cattle,beef,intensive,82,24,Kano,True,premium,83,2,1295173,169519,78561,6.1,standard,weekly,high,low,4338,0,0,1629353,83504331,81874978,5025.0
+cattle,beef,extensive,91,23,Benin City,False,basic,116,5,1463211,77191,52336,4.0,standard,monthly,low,high,3622,0,0,6210988,79104480,72893492,1173.62
+cattle,beef,semi-intensive,64,21,Maiduguri,True,premium,68,2,980934,329136,68833,3.2,standard,weekly,medium,low,3842,0,0,1433303,59504896,58071593,4051.59
+cattle,beef,extensive,8,13,Osun,True,basic,8,2,751807,82948,92050,5.4,minimal,monthly,medium,low,3927,0,0,931205,7429884,6498679,697.88
+cattle,beef,semi-intensive,85,16,Enugu,True,standard,91,2,214153,224896,78114,6.6,minimal,quarterly,high,medium,4629,0,0,574538,91874078,91299540,15890.95
+cattle,beef,extensive,17,20,Ibadan,True,basic,21,3,756994,84093,26716,1.4,standard,weekly,medium,high,4064,0,0,883103,17030192,16147089,1828.45
+cattle,beef,intensive,60,8,Abuja,True,standard,75,3,300970,373644,63884,2.6,intensive,quarterly,high,low,3357,0,0,805998,49045770,48239772,5985.1
+cattle,beef,semi-intensive,54,20,Owerri,True,standard,64,5,154467,288066,77792,3.3,minimal,weekly,low,low,3937,0,0,560825,51395566,50834742,9064.28
+cattle,beef,extensive,96,8,Onitsha,True,premium,110,2,982915,302391,91376,4.1,minimal,weekly,low,low,2022,0,0,1434282,46538352,45104070,3144.71
+cattle,beef,semi-intensive,44,24,Maiduguri,False,standard,51,4,405397,127284,71541,3.2,standard,monthly,medium,low,3620,0,0,4159422,38545760,34386338,826.71
+cattle,beef,intensive,80,10,Enugu,True,standard,88,1,1443340,155518,18965,3.4,intensive,monthly,high,high,3414,0,0,1705823,65958480,64252657,3766.67
+cattle,beef,extensive,81,16,Uyo,False,premium,88,2,440325,104970,69546,7.1,minimal,monthly,low,low,4116,0,0,12801291,77431221,64629930,504.87
+cattle,beef,semi-intensive,33,13,Owerri,True,basic,37,2,888344,157644,62469,2.3,minimal,monthly,low,low,2965,0,0,1123307,23898641,22775334,2027.53
+cattle,beef,intensive,8,23,Port Harcourt,False,standard,8,4,854784,73018,13890,2.4,standard,weekly,low,medium,4444,0,0,1588492,8674688,7086196,446.1
+cattle,beef,extensive,27,16,Enugu,True,basic,27,2,312211,61006,98795,2.0,intensive,weekly,medium,low,2749,0,0,501712,18184635,17682923,3524.52
+cattle,beef,semi-intensive,63,13,Abeokuta,True,premium,81,4,1009572,84276,25531,2.0,minimal,weekly,low,high,3049,0,0,1163479,47061315,45897836,3944.88
+cattle,beef,semi-intensive,93,17,Owerri,False,premium,99,0,1391904,357927,34785,7.0,standard,weekly,medium,low,1718,0,0,15804366,37147455,21343089,135.05
+cattle,beef,intensive,85,14,Maiduguri,False,basic,103,3,1491464,372377,18503,2.2,standard,quarterly,high,medium,3542,0,0,6206719,73611615,67404896,1086.0
+cattle,beef,intensive,71,20,Ogun,False,premium,85,5,1137654,298385,45171,5.1,intensive,quarterly,high,low,2348,0,0,12218185,39551473,27333288,223.71
+cattle,beef,semi-intensive,33,12,Enugu,False,basic,36,3,1298250,132422,59034,2.8,minimal,weekly,low,medium,3320,0,0,3161156,26623080,23461924,742.19
+cattle,beef,intensive,71,17,Uyo,True,standard,81,2,993601,286533,71282,4.0,standard,monthly,medium,medium,3066,0,0,1401116,52244640,50843524,3628.79
+cattle,beef,semi-intensive,8,11,Enugu,False,premium,8,0,717648,313069,77212,4.8,minimal,monthly,low,low,1985,0,0,2310729,3779440,1468711,63.56
+cattle,beef,intensive,14,17,Calabar,True,standard,14,2,624337,208710,99592,6.9,minimal,quarterly,high,low,4581,0,0,942089,14927188,13985100,1484.48
+cattle,beef,semi-intensive,96,23,Lagos,False,standard,119,3,950937,354062,95892,1.1,intensive,quarterly,low,medium,2432,0,0,9160091,57725952,48565861,530.19
+cattle,beef,semi-intensive,34,12,Enugu,False,premium,42,2,280094,214141,34621,4.0,intensive,monthly,low,medium,3343,0,0,5657756,27278880,21621124,382.15
+cattle,beef,semi-intensive,76,6,Port Harcourt,True,standard,97,0,1148157,395426,56486,3.4,standard,monthly,high,medium,4624,0,0,1660869,84868896,83208027,5009.91
+cattle,beef,semi-intensive,93,23,Ogun,True,premium,114,1,422313,223146,84473,5.4,intensive,quarterly,high,medium,3061,0,0,825257,67325164,66499908,8058.08
+cattle,beef,intensive,31,18,Calabar,False,basic,35,2,1294359,286734,93755,7.3,minimal,weekly,low,high,3764,0,0,3243448,27041517,23798069,733.73
+cattle,beef,extensive,27,7,Owerri,False,basic,28,0,909278,198802,36986,2.6,intensive,quarterly,low,medium,1735,0,0,2513291,11406758,8893466,353.86
+cattle,beef,intensive,52,22,Kaduna,False,standard,58,0,370821,331255,64842,4.3,minimal,monthly,low,low,2342,0,0,4945118,29136822,24191704,489.2
+cattle,beef,extensive,44,19,Sokoto,True,premium,51,2,1332059,156416,75860,6.0,standard,monthly,low,low,2084,0,0,1590735,21548560,19957825,1254.63
+cattle,beef,semi-intensive,62,8,Owerri,True,premium,68,4,1129614,291279,70646,5.0,intensive,weekly,medium,high,3369,0,0,1565939,49608525,48042586,3067.97
+cattle,beef,semi-intensive,49,15,Owerri,True,standard,52,4,1006130,290033,60418,7.4,minimal,quarterly,high,low,3111,0,0,1394556,35289628,33895072,2430.53
+cattle,beef,intensive,94,7,Kaduna,False,premium,109,5,239972,163904,74682,3.9,intensive,weekly,medium,low,4594,0,0,14696058,103748599,89052541,605.96
+cattle,beef,semi-intensive,18,22,Osun,False,basic,19,4,193606,292308,13501,1.5,intensive,quarterly,high,medium,3061,0,0,1420565,13567882,12147318,855.1
+cattle,beef,intensive,48,18,Ondo,True,basic,51,5,386220,221500,97856,6.2,standard,monthly,low,low,3746,0,0,741576,42164976,41423400,5585.86
+cattle,beef,extensive,89,13,Ekiti,True,standard,110,1,457751,59471,89559,1.7,standard,weekly,high,high,3100,0,0,695781,67802425,67106644,9644.79
+cattle,beef,extensive,26,8,Lagos,False,basic,29,1,554395,68059,98479,4.7,standard,quarterly,low,high,4823,0,0,2033283,29876074,27842790,1369.35
+cattle,beef,semi-intensive,71,9,Jos,False,basic,83,0,891455,155768,42728,3.6,minimal,weekly,low,low,3227,0,0,4675451,55217197,50541746,1081.0
+cattle,beef,semi-intensive,8,6,Onitsha,True,basic,10,0,1492737,138018,31895,1.3,intensive,weekly,medium,medium,3802,0,0,1670650,7505148,5834498,349.24
+cattle,beef,extensive,85,12,Onitsha,False,standard,88,1,322057,236948,52384,2.2,standard,quarterly,medium,low,3094,0,0,7460264,64301055,56840791,761.91
+cattle,beef,intensive,32,20,Kano,False,premium,37,0,241203,164588,63883,3.1,intensive,monthly,low,high,3696,0,0,5293674,28651392,23357718,441.24
+cattle,beef,semi-intensive,77,11,Ibadan,False,premium,93,5,378777,224088,32980,5.4,intensive,monthly,high,medium,1776,0,0,12285945,32341848,20055903,163.24
+cattle,beef,extensive,47,6,Uyo,False,standard,54,5,587431,313937,87000,5.9,minimal,weekly,low,high,4608,0,0,4783618,50949504,46165886,965.08
+cattle,beef,intensive,20,15,Osun,True,premium,20,1,885432,311476,48877,2.4,standard,weekly,high,low,2475,0,0,1265785,12078000,10812215,854.19
+cattle,beef,extensive,97,20,Ogun,True,standard,106,0,1192349,267523,94940,6.7,minimal,weekly,high,medium,2903,0,0,1632412,65681101,64048689,3923.56
+cattle,beef,extensive,36,12,Abuja,True,premium,43,1,1375200,250008,78350,3.3,standard,quarterly,low,low,3513,0,0,1720658,30573639,28852981,1676.86
+cattle,beef,intensive,13,12,Port Harcourt,True,basic,13,4,1251015,157150,40973,4.6,standard,quarterly,medium,medium,2172,0,0,1458563,6734286,5275723,361.71
+cattle,beef,intensive,97,12,Osun,True,premium,104,2,1308844,285023,93309,2.4,standard,weekly,medium,medium,3047,0,0,1769626,72116396,70346770,3975.23
+cattle,beef,semi-intensive,26,21,Osun,False,basic,32,3,141546,249973,66019,7.0,standard,quarterly,high,low,3764,0,0,1780288,22753380,20973092,1178.07
+cattle,beef,semi-intensive,98,11,Ondo,False,standard,111,3,1278897,367731,73025,1.5,minimal,quarterly,medium,low,2133,0,0,9611103,51474622,41863520,435.57
+cattle,beef,intensive,29,6,Maiduguri,False,standard,32,3,927640,245635,60336,4.4,intensive,quarterly,low,medium,1659,0,0,3577536,11498529,7920993,221.41
+cattle,beef,extensive,20,18,Kaduna,True,standard,25,5,831022,317181,74044,5.4,standard,quarterly,low,high,3078,0,0,1235747,14558940,13323193,1078.15
+cattle,beef,intensive,59,13,Sokoto,True,standard,70,5,159257,399005,94585,2.0,intensive,monthly,high,low,2541,0,0,729547,36730155,36000608,4934.65
+cattle,beef,extensive,36,24,Kaduna,True,basic,44,5,906035,258491,86829,7.8,minimal,quarterly,low,medium,2179,0,0,1270255,18081342,16811087,1323.44
+cattle,beef,extensive,59,14,Jos,False,premium,64,3,286381,107291,93385,5.0,standard,weekly,medium,high,2358,0,0,9390157,33041475,23651318,251.87
+cattle,beef,extensive,100,18,Jos,True,basic,124,0,303152,86617,64767,4.7,intensive,monthly,high,medium,2198,0,0,559536,52367350,51807814,9259.07
+cattle,beef,intensive,27,17,Port Harcourt,True,standard,28,0,1045104,347319,37862,2.3,minimal,quarterly,low,low,2562,0,0,1437710,16895749,15458039,1075.18
+cattle,beef,extensive,57,20,Owerri,True,premium,59,2,279740,248038,26342,2.9,standard,weekly,high,low,3457,0,0,613970,47833645,47219675,7690.88
+cattle,beef,intensive,67,9,Abuja,False,basic,80,0,303092,160660,78463,6.5,standard,quarterly,high,medium,3490,0,0,3940790,54657762,50716972,1286.97
+cattle,beef,extensive,65,16,Osun,False,standard,78,2,761072,175617,57344,5.7,standard,quarterly,low,medium,2852,0,0,6228158,43703335,37475177,601.71
+cattle,beef,semi-intensive,17,6,Ondo,True,basic,20,4,686085,180305,58290,4.2,intensive,quarterly,medium,high,3192,0,0,941255,12996228,12054973,1280.73
+cattle,beef,intensive,89,12,Ogun,True,premium,98,0,782675,282944,40612,5.2,standard,quarterly,high,low,2926,0,0,1170756,61718118,60547362,5171.65
+cattle,beef,extensive,59,21,Ibadan,False,standard,69,5,400231,322658,84959,6.5,intensive,quarterly,low,low,3539,0,0,5582423,48807234,43224811,774.3
+cattle,beef,extensive,16,15,Calabar,False,basic,20,0,1111180,397415,80866,2.7,minimal,weekly,high,high,1866,0,0,2402261,7262472,4860211,202.32
+cattle,beef,extensive,18,19,Lagos,True,standard,22,2,562162,185071,97285,4.3,intensive,weekly,high,low,3689,0,0,867918,15886678,15018760,1730.44
+cattle,beef,intensive,86,21,Ogun,True,premium,105,4,235616,387634,54987,3.6,intensive,quarterly,high,high,3063,0,0,779287,63483738,62704451,8046.39
+cattle,beef,semi-intensive,88,23,Enugu,True,standard,91,0,333586,96734,54595,6.2,minimal,quarterly,low,high,3006,0,0,509115,62031816,61522701,12084.24
+cattle,beef,semi-intensive,21,16,Uyo,True,standard,21,4,498160,253500,65535,3.2,standard,quarterly,low,high,4218,0,0,830320,21435876,20605556,2481.64
+cattle,beef,intensive,82,24,Ibadan,False,basic,95,3,762545,125864,48905,6.9,standard,quarterly,medium,low,3963,0,0,5092664,75635836,70543172,1385.19
+cattle,beef,extensive,41,10,Abuja,False,standard,47,5,358922,193367,85231,4.3,minimal,monthly,medium,high,3042,0,0,3946220,29839738,25893518,656.16
+cattle,beef,intensive,12,16,Onitsha,True,premium,14,1,1122371,255420,49203,7.9,intensive,weekly,low,high,3106,0,0,1438394,8581878,7143484,496.63
+cattle,beef,extensive,48,19,Sokoto,False,standard,53,4,693577,198040,35571,5.9,intensive,monthly,low,low,2824,0,0,4812788,31888608,27075820,562.58
+cattle,beef,extensive,79,7,Jos,False,premium,82,1,1026697,302938,48152,7.3,minimal,weekly,high,low,4511,0,0,13294937,82588516,69293579,521.2
+cattle,beef,semi-intensive,88,6,Uyo,True,premium,108,1,889694,273929,99056,6.9,minimal,weekly,medium,medium,2235,0,0,1319879,45777270,44457391,3368.29
+cattle,beef,extensive,11,9,Ogun,False,basic,13,3,613804,67822,25571,2.7,standard,monthly,high,high,2206,0,0,1267647,5902704,4635058,365.64
+cattle,beef,extensive,88,18,Kano,False,premium,98,5,1469850,283370,58145,1.1,minimal,weekly,low,medium,4127,0,0,15077365,89795266,74717901,495.56
+cattle,beef,intensive,90,22,Lagos,False,standard,108,0,1343357,144946,60326,4.4,intensive,quarterly,medium,medium,3840,0,0,8818379,82598400,73780021,836.66
+cattle,beef,semi-intensive,21,9,Kano,True,standard,26,0,925851,341535,80309,6.5,intensive,monthly,low,high,4928,0,0,1363445,24190320,22826875,1674.21
+cattle,beef,extensive,79,23,Ibadan,True,premium,100,1,1356409,144339,10697,4.9,standard,weekly,low,low,3855,0,0,1566745,72405574,70838829,4521.4
+cattle,beef,intensive,31,11,Calabar,False,basic,31,0,1161469,206540,57652,7.8,minimal,monthly,high,low,2517,0,0,2995811,17985224,14989412,500.35
+cattle,beef,extensive,43,7,Jos,False,basic,50,5,756274,324027,56152,5.2,intensive,weekly,high,low,4214,0,0,3348803,42944874,39596071,1182.39
+cattle,beef,intensive,10,13,Onitsha,True,standard,12,1,381454,365697,82361,2.5,standard,monthly,low,high,4048,0,0,835012,9867000,9031988,1081.66
+cattle,beef,extensive,59,8,Benin City,False,standard,70,1,938985,289110,20912,7.6,intensive,monthly,high,low,3695,0,0,6033907,50359155,44325248,734.6
+cattle,beef,extensive,31,8,Benin City,True,premium,34,5,1458474,318135,89291,2.1,minimal,monthly,medium,medium,1606,0,0,1887600,12185124,10297524,545.54
+cattle,beef,intensive,82,13,Benin City,True,premium,84,4,953082,84581,53169,5.5,standard,monthly,medium,low,4769,0,0,1156432,92387452,91231020,7889.01
+cattle,beef,intensive,33,14,Ibadan,False,basic,36,0,359005,142133,79006,6.1,standard,quarterly,medium,low,3666,0,0,2247469,28399586,26152117,1163.63
+cattle,beef,semi-intensive,49,24,Calabar,False,premium,50,0,458083,216721,61060,2.3,intensive,quarterly,high,high,3935,0,0,8133639,47095064,38961425,479.02
+cattle,beef,extensive,56,21,Port Harcourt,False,basic,67,5,426088,394752,26563,2.0,intensive,quarterly,medium,low,4471,0,0,3704803,61342120,57637317,1555.75
+cattle,beef,extensive,86,17,Enugu,False,premium,97,3,842394,295715,75828,3.0,standard,quarterly,high,low,2750,0,0,14189187,57351250,43162063,304.19
+cattle,beef,semi-intensive,86,8,Osun,False,basic,102,0,603393,99090,31641,5.0,minimal,quarterly,medium,high,3518,0,0,5066374,71855150,66788776,1318.28
+cattle,beef,extensive,6,19,Maiduguri,True,standard,6,5,1216543,115374,63145,1.1,minimal,quarterly,low,high,3240,0,0,1398212,4806540,3408328,243.76
+cattle,beef,extensive,94,23,Abeokuta,True,premium,112,4,1377571,72206,89609,4.1,minimal,quarterly,high,low,2216,0,0,1612236,49940884,48328648,2997.62
+cattle,beef,intensive,14,17,Maiduguri,False,basic,15,3,457530,245708,24841,3.4,intensive,weekly,high,low,2688,0,0,1446979,9088128,7641149,528.08
+cattle,beef,semi-intensive,43,21,Benin City,True,basic,52,4,925484,164013,49953,7.5,intensive,quarterly,low,medium,4030,0,0,1177075,40073312,38896238,3304.48
+cattle,beef,semi-intensive,67,7,Lagos,False,standard,72,0,110809,233354,34400,3.8,minimal,weekly,medium,medium,2309,0,0,5778763,37206071,31427308,543.84
+cattle,beef,extensive,15,22,Port Harcourt,False,basic,19,0,426380,394265,42785,2.6,standard,monthly,medium,medium,3254,0,0,1622430,11885235,10262805,632.56
+cattle,beef,semi-intensive,28,23,Ibadan,False,premium,35,1,393337,235460,66880,1.0,intensive,weekly,low,low,2666,0,0,4922277,18475380,13553103,275.34
+cattle,beef,semi-intensive,10,10,Osun,False,basic,10,1,1105154,398778,44838,1.8,standard,quarterly,medium,high,4425,0,0,2054520,10863375,8808855,428.75
+cattle,beef,semi-intensive,21,16,Maiduguri,False,basic,21,0,144359,116125,30387,3.4,minimal,quarterly,low,low,4278,0,0,1346646,21695877,20349231,1511.1
+cattle,beef,extensive,48,19,Lagos,False,standard,52,3,273255,274894,42472,5.3,intensive,quarterly,low,low,2651,0,0,4470221,30125964,25655743,573.93
+cattle,beef,extensive,19,14,Enugu,False,basic,21,0,1153470,370392,33748,2.3,intensive,quarterly,high,low,2439,0,0,2526135,11318789,8792654,348.07
+cattle,beef,semi-intensive,20,10,Abuja,False,basic,25,3,137038,373206,36167,1.6,minimal,monthly,medium,high,2755,0,0,1558411,13554600,11996189,769.77
+cattle,beef,intensive,94,13,Ogun,False,standard,95,3,1450299,77082,49883,1.8,standard,monthly,medium,high,3212,0,0,9167764,74123324,64955560,708.52
+cattle,beef,intensive,36,16,Kaduna,True,basic,36,5,774527,161137,47397,4.3,intensive,weekly,medium,low,2533,0,0,1028061,21816729,20788668,2022.12
+cattle,beef,semi-intensive,67,17,Jos,True,basic,80,5,1257141,118318,53412,3.5,standard,quarterly,high,high,3976,0,0,1494196,64267070,62772874,4201.11
+cattle,beef,extensive,52,13,Benin City,True,premium,57,0,373647,380070,88883,1.8,intensive,quarterly,low,low,4386,0,0,877700,55991676,55113976,6279.36
+cattle,beef,intensive,62,9,Calabar,False,standard,75,1,1218951,130568,15742,1.9,standard,quarterly,high,medium,4610,0,0,6373311,70097355,63724044,999.86
+cattle,beef,semi-intensive,76,17,Ekiti,True,standard,77,3,1198410,314172,12867,2.2,standard,quarterly,low,medium,1686,0,0,1569149,31329252,29760103,1896.58
+cattle,beef,extensive,77,7,Onitsha,False,standard,92,4,257256,136779,67376,6.3,standard,quarterly,medium,medium,3987,0,0,6677236,71914516,65237280,977.01
+cattle,beef,intensive,39,12,Lagos,True,premium,41,5,118583,318852,69695,4.5,intensive,quarterly,medium,medium,4991,0,0,547105,46472449,45925344,8394.25
+cattle,beef,extensive,33,15,Benin City,True,basic,35,4,599576,203009,15123,5.5,standard,weekly,medium,low,4131,0,0,849058,32206309,31357251,3693.18
+cattle,beef,extensive,36,12,Ibadan,True,premium,39,4,874080,220163,20911,7.6,intensive,monthly,high,low,3172,0,0,1160154,26378352,25218198,2173.69
+cattle,beef,semi-intensive,83,15,Abuja,True,standard,88,2,470640,184211,12049,4.8,intensive,weekly,high,high,4318,0,0,774800,85297772,84522972,10909.01
+cattle,beef,extensive,53,14,Owerri,True,standard,56,2,527648,354959,92549,6.7,standard,weekly,medium,low,4489,0,0,1020206,55494140,54473934,5339.5
+cattle,beef,semi-intensive,97,19,Port Harcourt,False,basic,111,3,488031,142332,34754,5.0,intensive,weekly,high,medium,1586,0,0,5646067,36537475,30891408,547.13
+cattle,beef,intensive,44,11,Ondo,True,basic,45,3,614334,288563,94557,7.8,minimal,quarterly,high,low,4476,0,0,1029354,45395592,44366238,4310.1
+cattle,beef,semi-intensive,6,9,Ondo,True,basic,7,5,191729,119299,42550,6.4,standard,weekly,high,high,1555,0,0,360778,2183220,1822442,505.14
+cattle,beef,extensive,6,9,Ogun,True,basic,6,4,1031819,135534,50289,3.3,minimal,weekly,low,high,4334,0,0,1221842,6286467,5064625,414.51
+cattle,beef,intensive,39,23,Lagos,True,basic,45,0,1172782,267728,28590,1.0,minimal,weekly,low,medium,3078,0,0,1488600,29710395,28221795,1895.86
+cattle,beef,extensive,23,17,Jos,True,premium,25,5,335738,307855,32224,7.9,minimal,weekly,medium,medium,1812,0,0,695367,9595899,8900532,1279.98
+cattle,beef,intensive,83,16,Abeokuta,True,basic,98,1,998898,328124,53888,5.2,intensive,monthly,low,high,4314,0,0,1447310,84860694,83413384,5763.34
+cattle,beef,semi-intensive,43,15,Ibadan,False,standard,51,2,260158,51142,29482,6.4,minimal,monthly,low,medium,3329,0,0,3800132,33496398,29696266,781.45
+cattle,beef,intensive,97,21,Ibadan,False,premium,105,0,777492,116865,33838,6.4,standard,monthly,medium,medium,3471,0,0,15536395,78784758,63248363,407.1
+cattle,beef,extensive,93,19,Ogun,True,premium,118,3,977992,338011,75156,4.8,standard,quarterly,high,low,3075,0,0,1472534,68062050,66589516,4522.1
+cattle,beef,extensive,15,24,Osun,True,premium,15,2,106010,156577,12248,3.5,standard,weekly,low,low,2930,0,0,286085,10602938,10316852,3606.22
+cattle,beef,semi-intensive,51,10,Ekiti,True,premium,65,3,608553,160487,39437,1.4,minimal,weekly,high,high,2086,0,0,856927,26224149,25367222,2960.25
+cattle,beef,extensive,53,6,Osun,False,basic,64,5,1319718,88676,72498,6.9,minimal,weekly,low,medium,2078,0,0,4170642,25633688,21463046,514.62
+cattle,beef,intensive,15,13,Lagos,False,basic,18,3,393836,326535,49257,4.3,intensive,monthly,medium,high,4347,0,0,1534628,15600296,14065668,916.55
+cattle,beef,intensive,6,15,Port Harcourt,True,premium,6,1,1155487,134068,11424,3.8,standard,quarterly,medium,high,4413,0,0,1304429,6367959,5063530,388.18
+cattle,beef,extensive,38,24,Jos,True,standard,48,2,292804,323416,59487,7.8,minimal,quarterly,low,medium,4035,0,0,689957,35342565,34652608,5022.43
+cattle,beef,semi-intensive,12,13,Kaduna,True,premium,13,2,1468811,386535,63097,6.8,minimal,weekly,medium,high,3237,0,0,1926843,9050652,7123809,369.71
+cattle,beef,intensive,29,14,Ibadan,True,standard,34,2,158822,175582,46989,2.1,minimal,weekly,low,high,1544,0,0,398793,10958926,10560133,2648.02
+cattle,beef,extensive,44,12,Onitsha,True,basic,47,4,1284464,73527,83890,7.9,standard,weekly,low,medium,1881,0,0,1479281,19056411,17577130,1188.22
+cattle,beef,semi-intensive,44,6,Jos,False,premium,46,3,846244,117904,98432,1.7,standard,quarterly,high,low,3556,0,0,7701080,38451028,30749948,399.29
+cattle,beef,extensive,24,6,Ondo,False,premium,30,0,708424,134527,29862,5.8,minimal,quarterly,low,high,2448,0,0,4479413,13836096,9356683,208.88
+cattle,beef,extensive,32,10,Kaduna,False,standard,39,2,709939,238909,91719,7.0,standard,weekly,high,high,3087,0,0,3634167,22967280,19333113,531.98
+cattle,beef,extensive,35,12,Owerri,True,basic,40,3,304275,57833,28693,6.4,standard,quarterly,low,medium,1885,0,0,410926,15438150,15027224,3656.92
+cattle,beef,intensive,63,16,Jos,True,basic,68,2,841067,96781,19323,2.3,standard,monthly,medium,medium,4625,0,0,1001271,71168344,70167073,7007.8
+cattle,beef,intensive,61,10,Uyo,False,basic,67,2,940830,264451,91223,7.4,minimal,monthly,medium,high,4960,0,0,4380054,70042640,65662586,1499.13
+cattle,beef,semi-intensive,84,16,Kano,False,premium,95,5,189497,375380,94392,1.4,minimal,quarterly,high,low,2133,0,0,13328569,44165898,30837329,231.36
+cattle,beef,semi-intensive,18,15,Kaduna,False,basic,19,3,296090,232943,71063,4.3,intensive,monthly,low,low,2238,0,0,1516296,9637947,8121651,535.62
+cattle,beef,semi-intensive,98,9,Osun,True,standard,107,2,818114,366863,73739,2.5,intensive,monthly,low,medium,3361,0,0,1342016,80285888,78943872,5882.48
+cattle,beef,intensive,9,23,Sokoto,True,premium,9,4,165689,365137,59844,1.4,standard,monthly,medium,low,1721,0,0,597870,3818038,3220168,538.61
+cattle,beef,extensive,32,6,Osun,False,standard,38,0,397245,86311,45901,3.8,standard,quarterly,medium,medium,3649,0,0,3106257,28082704,24976447,804.07
+cattle,beef,intensive,32,14,Abuja,True,standard,35,2,445051,154126,55780,7.6,standard,monthly,high,high,4710,0,0,683757,34816320,34132563,4991.91
+cattle,beef,semi-intensive,25,19,Uyo,False,basic,29,4,516410,90794,97551,5.0,minimal,monthly,high,high,4542,0,0,1976005,26968125,24992120,1264.78
+cattle,beef,intensive,99,16,Port Harcourt,False,basic,113,2,338250,263063,44446,4.6,minimal,monthly,low,high,3340,0,0,5640309,78862410,73222101,1298.19
+cattle,beef,intensive,86,24,Abuja,True,premium,111,3,1245225,137084,88766,3.6,standard,weekly,low,high,3862,0,0,1539875,80043812,78503937,5098.07
+cattle,beef,semi-intensive,6,17,Lagos,False,standard,6,0,1146752,390216,69768,3.9,standard,monthly,high,medium,3642,0,0,2091536,5249943,3158407,151.01
+cattle,beef,intensive,47,9,Ekiti,False,standard,49,4,441116,334564,67131,3.7,intensive,quarterly,high,medium,4097,0,0,4658036,46358579,41700543,895.24
+cattle,beef,intensive,41,9,Ibadan,True,premium,41,3,317422,310259,91766,7.5,minimal,quarterly,medium,high,3880,0,0,740972,36787250,36046278,4864.73
+cattle,beef,semi-intensive,9,15,Onitsha,True,standard,10,0,510119,296192,26310,3.5,standard,monthly,high,high,4713,0,0,839821,10233101,9393280,1118.49
+cattle,beef,intensive,99,18,Abeokuta,True,premium,107,5,654694,211164,64357,5.7,minimal,monthly,low,low,1607,0,0,989615,37506175,36516560,3689.98
+cattle,beef,extensive,24,17,Owerri,False,standard,25,4,1001816,176789,82841,7.8,minimal,quarterly,high,medium,4893,0,0,3200046,27068076,23868030,745.87
+cattle,beef,semi-intensive,11,24,Port Harcourt,False,premium,11,2,1184808,133070,67331,2.6,intensive,weekly,high,low,4086,0,0,3049509,10944351,7894842,258.89
+cattle,beef,extensive,78,18,Benin City,True,standard,82,0,153771,279334,11512,5.4,intensive,weekly,low,high,4398,0,0,514817,81129906,80615089,15658.98
+cattle,beef,extensive,74,8,Ondo,True,premium,90,3,1430565,381088,56939,2.3,intensive,weekly,medium,low,3693,0,0,1953692,66749128,64795436,3316.56
+cattle,beef,semi-intensive,36,18,Abuja,False,basic,46,5,148529,384698,85937,7.1,minimal,monthly,high,low,1938,0,0,2451564,16203618,13752054,560.95
+cattle,beef,semi-intensive,23,15,Kaduna,True,basic,26,2,536149,254891,23195,4.4,minimal,monthly,low,medium,4062,0,0,824585,22328814,21504229,2607.89
+cattle,beef,extensive,14,12,Osun,False,standard,16,3,437858,144270,49158,1.1,minimal,quarterly,high,high,3984,0,0,1761436,13790616,12029180,682.92
+cattle,beef,semi-intensive,9,9,Abeokuta,False,premium,10,0,432164,323546,43357,7.5,minimal,quarterly,low,high,1594,0,0,2151542,3317513,1165971,54.19
+cattle,beef,intensive,71,22,Onitsha,False,basic,90,0,786900,122647,38804,1.6,intensive,weekly,medium,medium,3472,0,0,4569351,60641952,56072601,1227.15
+cattle,beef,semi-intensive,30,8,Calabar,False,standard,36,3,1014488,318779,62421,7.5,standard,weekly,low,high,4965,0,0,3819688,34444688,30625000,801.77
+cattle,beef,semi-intensive,96,14,Ibadan,False,basic,118,5,1123057,277263,68478,4.0,intensive,monthly,medium,high,1940,0,0,6374398,44697600,38323202,601.21
+cattle,beef,semi-intensive,82,18,Onitsha,False,standard,104,0,1042467,137686,14424,7.7,standard,quarterly,medium,medium,3973,0,0,7797627,75175120,67377492,864.08
+cattle,beef,semi-intensive,87,22,Ondo,True,basic,91,2,1000489,147472,56890,2.7,minimal,quarterly,medium,medium,2094,0,0,1246176,44314798,43068622,3456.06
+cattle,beef,intensive,45,9,Ogun,True,premium,49,3,1290069,218590,40493,4.9,standard,monthly,high,low,3659,0,0,1591902,39146726,37554824,2359.12
+cattle,beef,extensive,32,9,Benin City,True,premium,40,3,1012692,216609,51958,2.4,minimal,monthly,medium,low,2624,0,0,1300459,20488192,19187733,1475.46
+cattle,beef,intensive,58,9,Ekiti,True,premium,63,3,595812,352206,12787,3.0,intensive,quarterly,low,medium,2664,0,0,1008655,37469160,36460505,3614.76
+cattle,beef,intensive,21,18,Calabar,True,standard,25,0,1085437,99870,64405,6.1,standard,monthly,medium,medium,1826,0,0,1262312,9001724,7739412,613.11
+cattle,beef,semi-intensive,76,16,Owerri,True,standard,82,3,1134601,386119,25913,6.9,intensive,weekly,low,low,1695,0,0,1626433,29982855,28356422,1743.47
+cattle,beef,intensive,6,10,Ogun,False,basic,6,1,873596,331835,10647,7.5,minimal,monthly,low,low,1696,0,0,1518478,2353200,834722,54.97
+cattle,beef,semi-intensive,43,8,Ogun,False,standard,52,1,1323590,291536,25715,1.9,minimal,quarterly,medium,high,3330,0,0,5099116,35117348,30018232,588.69
+cattle,beef,extensive,90,9,Maiduguri,True,premium,102,3,688338,218774,73269,2.6,standard,monthly,high,low,2945,0,0,1065881,64539675,63473794,5955.05
+cattle,beef,extensive,76,13,Onitsha,True,basic,98,0,545593,56882,97883,2.5,standard,weekly,medium,low,2894,0,0,757358,53611350,52853992,6978.73
+cattle,beef,extensive,31,24,Maiduguri,False,standard,37,5,422959,314509,23849,7.4,minimal,monthly,medium,medium,4041,0,0,3263017,29000236,25737220,788.76
+cattle,beef,semi-intensive,70,12,Onitsha,True,standard,78,5,744133,352641,94984,1.7,standard,weekly,high,low,2485,0,0,1275758,42748212,41472454,3250.81
+cattle,beef,intensive,7,20,Benin City,True,standard,8,3,838106,189239,25509,7.5,minimal,monthly,medium,low,2116,0,0,1057054,3425275,2368221,224.04
+cattle,beef,semi-intensive,55,22,Maiduguri,False,basic,62,2,305128,75760,95016,3.7,standard,weekly,medium,low,3149,0,0,3272654,41696696,38424042,1174.09
+cattle,beef,extensive,27,14,Owerri,False,premium,30,5,204588,388870,42629,7.7,minimal,weekly,low,low,3856,0,0,4706337,24023844,19317507,410.46
+cattle,beef,intensive,39,13,Calabar,True,standard,41,4,948422,255472,61496,1.7,intensive,quarterly,medium,medium,2342,0,0,1303415,22446313,21142898,1622.12
+cattle,beef,semi-intensive,26,12,Jos,False,premium,26,1,1155371,376169,72489,6.2,intensive,weekly,low,medium,4291,0,0,5528729,26162227,20633498,373.21
+cattle,beef,intensive,13,11,Ogun,False,basic,16,5,1095309,274354,53785,1.1,standard,weekly,low,high,4614,0,0,2085148,14830550,12745402,611.25
+cattle,beef,semi-intensive,6,17,Uyo,True,standard,7,3,329399,73685,12279,5.0,standard,weekly,high,high,2185,0,0,421963,3113625,2691662,637.89
+cattle,beef,intensive,23,9,Jos,False,standard,26,2,1244447,184920,96954,4.4,standard,monthly,low,medium,2733,0,0,3380121,15023301,11643180,344.46
+cattle,beef,extensive,95,16,Owerri,False,basic,102,4,1441758,60867,29385,7.9,minimal,quarterly,low,medium,3539,0,0,6327135,77411201,71084066,1123.48
+cattle,beef,extensive,8,13,Osun,False,basic,9,1,892258,384880,24146,7.8,intensive,quarterly,high,medium,3658,0,0,1709484,6745352,5035868,294.58
+cattle,beef,extensive,27,14,Abeokuta,False,standard,31,2,748697,149914,15387,5.1,intensive,monthly,high,low,3275,0,0,3105048,20978831,17873783,575.64
+cattle,beef,semi-intensive,63,24,Jos,True,basic,72,5,408556,294484,99249,2.1,standard,quarterly,high,high,2166,0,0,863714,33398096,32534382,3766.8
+cattle,beef,semi-intensive,43,21,Kano,False,basic,48,1,693530,360940,26178,1.4,standard,weekly,medium,medium,4204,0,0,3265048,44560298,41295250,1264.77
+cattle,beef,semi-intensive,5,7,Port Harcourt,False,standard,6,4,1495289,343994,30321,7.7,intensive,monthly,low,high,2305,0,0,2274354,2659394,385040,16.93
+cattle,beef,intensive,60,24,Jos,True,basic,68,2,621621,383994,60625,4.0,minimal,monthly,medium,high,2772,0,0,1099240,39916800,38817560,3531.31
+cattle,beef,semi-intensive,27,24,Ogun,True,premium,33,2,384564,268267,82651,2.4,standard,weekly,medium,high,4073,0,0,758432,26832924,26074492,3437.95
+cattle,beef,intensive,64,23,Ondo,False,basic,66,3,756954,314144,99805,6.0,standard,monthly,medium,medium,3222,0,0,4418903,48458880,44039977,996.63
+cattle,beef,intensive,57,20,Calabar,True,standard,58,1,1390185,208539,41804,5.1,standard,weekly,high,high,3816,0,0,1697528,51604722,49907194,2939.99
+cattle,beef,semi-intensive,42,7,Port Harcourt,False,premium,42,4,1065152,78493,21096,1.4,intensive,weekly,medium,high,1898,0,0,7515141,19649994,12134853,161.47
+cattle,beef,semi-intensive,42,24,Ogun,True,basic,51,5,1171269,77797,36878,4.6,intensive,quarterly,medium,low,2415,0,0,1328994,24191055,22862061,1720.25
+cattle,beef,semi-intensive,91,10,Jos,True,standard,108,1,340561,85201,10004,2.1,minimal,quarterly,low,low,2336,0,0,465341,52027976,51562635,11080.61
+cattle,beef,intensive,18,21,Maiduguri,False,standard,18,0,728985,262104,73402,7.9,minimal,quarterly,medium,high,4290,0,0,2511241,17779905,15268664,608.01
+cattle,beef,semi-intensive,61,9,Port Harcourt,True,basic,63,5,1478804,176186,32383,4.6,intensive,quarterly,low,medium,3467,0,0,1743798,50439649,48695851,2792.52
+cattle,beef,extensive,42,15,Ibadan,False,standard,50,3,909124,106274,70812,3.9,standard,weekly,low,medium,3372,0,0,4479810,34025166,29545356,659.52
+cattle,beef,semi-intensive,20,24,Lagos,False,basic,23,5,1399975,283035,15587,7.4,standard,weekly,medium,high,3377,0,0,2718597,15635510,12916913,475.13
+cattle,beef,intensive,40,6,Abeokuta,True,standard,50,4,919198,318983,18226,2.2,minimal,monthly,high,high,3806,0,0,1290407,37222680,35932273,2784.57
+cattle,beef,extensive,48,20,Port Harcourt,False,premium,52,3,243046,388236,73405,3.6,standard,quarterly,high,low,3859,0,0,7946687,44640912,36694225,461.76
+cattle,beef,extensive,95,22,Maiduguri,False,basic,114,4,1317868,232502,86610,5.3,standard,weekly,low,low,4989,0,0,6467730,112208846,105741116,1634.9
+cattle,beef,intensive,98,11,Ibadan,True,standard,125,3,778762,171390,41013,1.7,minimal,quarterly,medium,medium,1763,0,0,1042615,42459210,41416596,3972.38
+cattle,dairy,intensive,12,14,Abuja,True,standard,14,4,141780,141261,52094,1.1,standard,monthly,low,high,0,0,809,343535,16130036,15786501,4595.31
+cattle,dairy,semi-intensive,30,14,Ekiti,False,basic,31,1,990296,327101,115994,4.8,minimal,quarterly,low,high,0,0,597,2943141,28644538,25701397,873.26
+cattle,dairy,intensive,31,7,Lagos,False,standard,36,0,794523,147152,99438,4.5,intensive,quarterly,high,medium,0,0,789,3551338,19621010,16069672,452.5
+cattle,dairy,semi-intensive,31,24,Maiduguri,False,standard,36,4,369141,85208,67524,2.9,standard,weekly,high,low,0,0,660,3037523,57215981,54178458,1783.64
+cattle,dairy,intensive,71,15,Ibadan,False,basic,72,4,773989,61818,39362,5.0,standard,monthly,medium,high,0,0,1132,4481969,137436120,132954151,2966.42
+cattle,dairy,semi-intensive,13,11,Kano,True,premium,16,4,734813,259306,91087,0.8,intensive,weekly,high,medium,0,0,938,1103406,15967311,14863905,1347.09
+cattle,dairy,semi-intensive,8,7,Osun,False,basic,8,0,372109,157077,81707,5.0,standard,quarterly,low,low,0,0,1410,1014293,9001440,7987147,787.46
+cattle,dairy,extensive,14,24,Abuja,False,basic,17,4,249016,339105,72753,5.7,standard,quarterly,low,low,0,0,472,1369624,17946271,16576647,1210.31
+cattle,dairy,intensive,68,22,Abeokuta,False,standard,74,1,124969,79022,13454,4.8,minimal,quarterly,high,medium,0,0,437,5699945,74684628,68984683,1210.27
+cattle,dairy,intensive,75,21,Ondo,False,premium,77,3,368925,110598,67403,1.1,intensive,monthly,medium,low,0,0,1102,11871926,205986942,194115016,1635.08
+cattle,dairy,intensive,60,7,Enugu,True,premium,60,3,176007,57811,104349,1.9,minimal,weekly,low,low,0,0,1298,377167,64176235,63799068,16915.34
+cattle,dairy,intensive,28,15,Ogun,False,premium,33,1,693233,118008,89445,2.7,intensive,weekly,high,low,0,0,556,5135686,27265795,22130109,430.91
+cattle,dairy,intensive,37,23,Sokoto,False,basic,41,2,849515,339095,48362,5.3,minimal,quarterly,medium,medium,0,0,1431,3104547,138388633,135284086,4357.61
+cattle,dairy,semi-intensive,18,7,Osun,False,standard,18,1,1172605,170867,49968,4.6,minimal,weekly,medium,high,0,0,690,2845140,9952891,7107751,249.82
+cattle,dairy,extensive,9,13,Ekiti,False,basic,9,0,646857,195734,87101,2.6,minimal,weekly,medium,high,0,0,1186,1385092,16218503,14833411,1070.93
+cattle,dairy,semi-intensive,68,6,Ondo,False,basic,72,3,466771,395991,66503,3.4,intensive,monthly,low,high,0,0,1112,4390465,52592440,48201975,1097.88
+cattle,dairy,semi-intensive,8,16,Uyo,True,basic,8,4,990323,274158,112578,4.5,intensive,weekly,low,high,0,0,1194,1385859,17514547,16128688,1163.8
+cattle,dairy,semi-intensive,41,23,Osun,False,basic,52,3,579598,119139,11990,2.0,intensive,monthly,low,low,0,0,1005,2797627,111451284,108653657,3883.78
+cattle,dairy,semi-intensive,48,24,Abuja,False,standard,51,2,105877,115172,50225,3.6,standard,monthly,low,medium,0,0,1347,4140074,179505746,175365672,4235.81
+cattle,dairy,intensive,7,20,Ekiti,True,standard,8,4,536848,264229,17678,3.7,minimal,monthly,high,high,0,0,1043,824705,16874071,16049366,1946.07
+cattle,dairy,intensive,13,20,Benin City,False,standard,16,1,556932,380478,32871,1.3,intensive,quarterly,low,low,0,0,634,2019706,19523650,17503944,866.66
+cattle,dairy,extensive,9,11,Maiduguri,False,premium,9,4,558050,81883,103657,6.0,standard,weekly,high,medium,0,0,491,2103940,5483095,3379155,160.61
+cattle,dairy,intensive,35,17,Kano,False,basic,40,1,507906,220807,84758,2.5,intensive,monthly,low,high,0,0,1273,2591471,88619895,86028424,3319.68
+cattle,dairy,intensive,41,10,Ogun,False,standard,52,2,1067098,204173,91515,0.7,standard,weekly,medium,low,0,0,452,4677636,22082731,17405095,372.09
+cattle,dairy,semi-intensive,18,12,Maiduguri,False,basic,20,4,148366,394488,105192,1.3,intensive,weekly,low,low,0,0,1431,1567846,36609330,35041484,2235.01
+cattle,dairy,extensive,78,23,Osun,True,premium,96,4,1070546,395609,78740,3.4,standard,monthly,low,high,0,0,1000,1599495,207960480,206360985,12901.63
+cattle,dairy,intensive,36,16,Abeokuta,True,standard,39,0,585511,283312,106049,5.8,standard,monthly,low,medium,0,0,1435,992872,93434342,92441470,9310.51
+cattle,dairy,extensive,14,17,Sokoto,True,standard,17,1,342733,331865,42105,4.8,standard,quarterly,high,high,0,0,682,727553,18542980,17815427,2448.68
+cattle,dairy,semi-intensive,38,15,Ogun,True,basic,42,4,391214,351996,74775,4.0,minimal,weekly,medium,low,0,0,741,848385,48657024,47808639,5635.25
+cattle,dairy,semi-intensive,20,19,Calabar,False,premium,20,0,984753,62546,100445,1.4,minimal,weekly,high,high,0,0,1194,4163744,53684150,49520406,1189.32
+cattle,dairy,intensive,59,17,Ondo,True,premium,64,2,785986,360104,89791,3.9,intensive,weekly,low,high,0,0,1126,1294881,130239871,128944990,9958.06
+cattle,dairy,extensive,62,19,Ekiti,False,standard,76,1,464724,359098,117492,5.7,minimal,weekly,low,high,0,0,1157,5935414,154230969,148295555,2498.49
+cattle,dairy,semi-intensive,63,18,Ekiti,True,premium,76,2,283211,171772,48974,3.2,minimal,quarterly,high,high,0,0,1440,546482,189684634,189138152,34610.13
+cattle,dairy,semi-intensive,59,15,Ondo,False,basic,75,0,521829,275725,78044,2.0,intensive,monthly,low,medium,0,0,983,3869848,102306708,98436860,2543.69
+cattle,dairy,semi-intensive,26,9,Benin City,False,standard,27,1,684983,186015,89451,4.6,minimal,quarterly,medium,low,0,0,596,3051499,15965839,12914340,423.21
+cattle,dairy,extensive,31,23,Kaduna,True,premium,39,4,489222,53494,74011,5.1,minimal,monthly,low,medium,0,0,1273,633777,103363068,102729291,16209.06
+cattle,dairy,intensive,61,22,Ekiti,False,basic,74,0,1011984,276631,74651,1.9,minimal,monthly,high,high,0,0,638,4452916,100791393,96338477,2163.49
+cattle,dairy,extensive,50,8,Enugu,True,standard,52,2,659040,287745,92657,4.5,intensive,weekly,high,high,0,0,1044,1104442,47856960,46752518,4233.13
+cattle,dairy,intensive,9,19,Maiduguri,False,basic,11,0,96715,178929,27940,3.7,minimal,quarterly,low,medium,0,0,1362,756059,26914155,26158096,3459.8
+cattle,dairy,intensive,24,21,Sokoto,False,basic,25,0,1162772,162296,10419,2.9,standard,quarterly,high,low,0,0,764,2552887,44866725,42313838,1657.49
+cattle,dairy,extensive,9,19,Benin City,False,premium,10,2,1095510,328114,96106,5.7,standard,weekly,medium,high,0,0,1393,2877380,26955051,24077671,836.79
+cattle,dairy,extensive,67,18,Abeokuta,False,standard,68,0,682451,269988,68611,2.3,intensive,monthly,low,low,0,0,1351,6431300,191019835,184588535,2870.16
+cattle,dairy,semi-intensive,45,9,Ondo,True,standard,56,3,944032,173134,13796,2.1,intensive,weekly,medium,low,0,0,1061,1182712,50481743,49299031,4168.3
+cattle,dairy,semi-intensive,38,16,Ondo,False,standard,42,0,642702,304544,105444,1.7,intensive,weekly,medium,medium,0,0,1239,4130690,88860684,84729994,2051.23
+cattle,dairy,intensive,33,24,Calabar,True,premium,34,4,771397,117746,89293,3.5,intensive,weekly,medium,low,0,0,1082,1018036,99234115,98216079,9647.6
+cattle,dairy,intensive,50,23,Abuja,True,standard,58,1,909478,170237,48035,4.9,standard,monthly,medium,low,0,0,909,1160250,119295342,118135092,10181.87
+cattle,dairy,intensive,6,7,Maiduguri,True,premium,6,3,168678,132284,47105,2.2,minimal,quarterly,high,low,0,0,469,352417,2311757,1959340,555.97
+cattle,dairy,semi-intensive,39,9,Ondo,True,premium,49,0,240488,88739,76127,4.5,intensive,monthly,low,low,0,0,710,434604,28559466,28124862,6471.38
+cattle,dairy,semi-intensive,17,24,Onitsha,False,standard,19,0,713662,193680,70149,1.6,standard,quarterly,high,medium,0,0,1171,2349816,56414845,54065029,2300.82
+cattle,dairy,intensive,42,19,Enugu,False,premium,45,2,1198209,315600,42062,2.6,standard,quarterly,medium,medium,0,0,621,7882121,57920819,50038698,634.84
+cattle,dairy,extensive,62,13,Lagos,False,basic,70,3,308481,387022,50712,2.3,intensive,weekly,low,high,0,0,746,3911315,70493598,66582283,1702.3
+cattle,dairy,extensive,31,21,Enugu,True,basic,34,3,1177661,347082,109690,1.8,standard,monthly,medium,medium,0,0,1091,1657683,83694799,82037116,4948.9
+cattle,dairy,semi-intensive,24,7,Uyo,False,basic,25,1,1104934,336045,75511,2.2,intensive,weekly,medium,medium,0,0,1389,2741690,27386191,24644501,898.88
+cattle,dairy,extensive,70,23,Kano,True,standard,84,3,346930,57143,31245,3.4,minimal,weekly,low,medium,0,0,632,480818,117950918,117470100,24431.3
+cattle,dairy,semi-intensive,9,19,Kaduna,False,basic,11,4,956918,259403,11213,2.1,standard,monthly,high,high,0,0,955,1686534,19185071,17498537,1037.54
+cattle,dairy,extensive,71,16,Abeokuta,True,basic,77,1,858574,322304,89235,1.9,standard,weekly,medium,high,0,0,677,1326913,90535156,89208243,6722.99
+cattle,dairy,extensive,26,22,Sokoto,True,standard,29,1,1066696,85152,10734,2.2,minimal,weekly,high,low,0,0,1339,1184682,89886963,88702281,7487.43
+cattle,dairy,intensive,47,9,Owerri,False,premium,49,2,554018,230857,92420,0.6,minimal,monthly,medium,medium,0,0,1026,7953145,51767281,43814136,550.9
+cattle,dairy,semi-intensive,52,18,Calabar,True,basic,61,0,533910,196793,33373,1.9,minimal,weekly,high,high,0,0,1184,805676,130460129,129654453,16092.63
+cattle,dairy,extensive,47,24,Owerri,False,premium,59,3,518947,138132,10350,4.8,minimal,weekly,high,low,0,0,693,7762079,89301865,81539786,1050.49
+cattle,dairy,intensive,26,21,Ogun,True,basic,27,3,972140,398568,71825,2.3,intensive,weekly,low,high,0,0,1205,1469833,77135713,75665880,5147.92
+cattle,dairy,extensive,53,18,Sokoto,False,standard,66,2,1192928,90999,89348,5.1,minimal,quarterly,medium,high,0,0,692,5638450,75179932,69541482,1233.34
+cattle,dairy,semi-intensive,60,23,Sokoto,False,premium,62,3,810187,143329,13315,5.3,standard,quarterly,medium,high,0,0,1268,10007331,198851818,188844487,1887.06
+cattle,dairy,intensive,32,23,Ondo,False,basic,40,0,490698,281777,57315,3.4,minimal,quarterly,medium,medium,0,0,592,2441790,50507735,48065945,1968.47
+cattle,dairy,extensive,52,14,Lagos,False,basic,62,3,915283,73025,101160,4.4,standard,quarterly,low,high,0,0,462,3719368,38584466,34865098,937.39
+cattle,dairy,semi-intensive,65,20,Kaduna,False,premium,82,4,297867,70024,58435,0.7,intensive,weekly,high,high,0,0,762,10267326,118039896,107772570,1049.67
+cattle,dairy,semi-intensive,21,8,Ibadan,True,standard,25,0,739001,101105,81314,2.0,minimal,quarterly,high,high,0,0,434,933495,8574451,7640956,818.53
+cattle,dairy,extensive,47,16,Kaduna,False,premium,47,3,953209,82235,18513,1.6,intensive,weekly,high,medium,0,0,571,8167407,50702607,42535200,520.79
+cattle,dairy,intensive,27,20,Benin City,True,premium,31,1,86762,213139,45882,3.6,minimal,monthly,medium,high,0,0,576,359283,35981107,35621824,9914.7
+cattle,dairy,intensive,77,20,Ibadan,True,basic,93,1,745848,359932,92132,5.8,minimal,weekly,low,high,0,0,1167,1240262,203153227,201912965,16279.86
+cattle,dairy,extensive,63,8,Enugu,False,premium,75,1,358365,212784,16990,2.6,standard,weekly,medium,low,0,0,1046,10088539,61617266,51528727,510.77
+cattle,dairy,intensive,57,13,Benin City,True,basic,73,2,1001904,188697,22112,3.2,intensive,monthly,medium,high,0,0,1471,1266863,126615678,125348815,9894.43
+cattle,dairy,intensive,62,11,Uyo,False,basic,72,1,989856,231886,94673,5.0,standard,weekly,medium,high,0,0,1431,4466015,111257388,106791373,2391.2
+cattle,dairy,intensive,75,14,Maiduguri,True,standard,79,2,145951,110449,77768,4.1,minimal,monthly,low,medium,0,0,1061,367918,128204874,127836956,34746.05
+cattle,dairy,semi-intensive,52,24,Uyo,True,standard,62,2,96563,133230,65234,3.1,standard,quarterly,low,low,0,0,1133,322327,164418060,164095733,50909.71
+cattle,dairy,semi-intensive,44,11,Calabar,True,basic,49,4,1037235,361204,85492,4.3,intensive,monthly,medium,low,0,0,917,1530131,50969208,49439077,3231.04
+cattle,dairy,semi-intensive,52,16,Ondo,False,basic,67,1,1143173,106547,65179,2.8,standard,quarterly,medium,high,0,0,458,3944799,44446372,40501573,1026.71
+cattle,dairy,intensive,25,22,Jos,True,premium,30,1,778660,78206,21848,2.2,minimal,monthly,medium,medium,0,0,738,891214,47636424,46745210,5245.12
+cattle,dairy,extensive,63,6,Port Harcourt,True,basic,68,0,467120,173828,36649,2.9,intensive,weekly,low,high,0,0,1166,734297,51355957,50621660,6893.89
+cattle,dairy,intensive,5,21,Abeokuta,True,standard,5,3,525627,297624,97613,2.6,standard,quarterly,low,low,0,0,1193,923739,14640973,13717234,1484.97
+cattle,dairy,intensive,21,16,Ondo,False,standard,26,3,905964,330030,19392,2.4,intensive,quarterly,high,low,0,0,854,2959011,33606881,30647870,1035.75
+cattle,dairy,semi-intensive,27,13,Abeokuta,False,premium,33,4,915045,90511,94617,1.8,standard,weekly,low,low,0,0,1018,5173123,42106353,36933230,713.94
+cattle,dairy,semi-intensive,60,8,Ondo,True,standard,62,2,891210,302000,14564,1.9,standard,weekly,low,medium,0,0,1459,1252774,82441670,81188896,6480.73
+cattle,dairy,intensive,18,20,Abeokuta,True,premium,22,0,417397,217261,26874,3.7,standard,quarterly,medium,low,0,0,1395,670982,58034232,57363250,8549.15
+cattle,dairy,intensive,56,19,Jos,False,standard,68,0,1024284,313224,58866,4.8,intensive,monthly,high,medium,0,0,628,5935174,76334254,70399080,1186.13
+cattle,dairy,extensive,27,19,Ondo,True,basic,27,4,620722,153606,77488,5.0,intensive,monthly,medium,low,0,0,1351,880166,79009182,78129016,8876.62
+cattle,dairy,intensive,41,7,Sokoto,False,standard,41,4,854470,182291,65797,2.4,standard,weekly,high,medium,0,0,766,4429708,25747895,21318187,481.25
+cattle,dairy,semi-intensive,42,17,Lagos,False,standard,45,0,314216,237298,105932,0.7,intensive,monthly,low,low,0,0,572,4048946,48665897,44616951,1101.94
+cattle,dairy,intensive,73,9,Port Harcourt,False,standard,92,2,1040560,373612,41994,5.6,intensive,quarterly,high,medium,0,0,483,7374641,35947256,28572615,387.44
+cattle,dairy,semi-intensive,14,16,Abuja,True,premium,18,0,880929,318766,105079,0.9,intensive,quarterly,medium,medium,0,0,1220,1315624,32498458,31182834,2370.19
+cattle,dairy,extensive,7,11,Benin City,True,standard,9,1,627305,208964,90685,3.3,minimal,quarterly,low,medium,0,0,1368,929229,12223189,11293960,1215.41
+cattle,dairy,semi-intensive,32,19,Kaduna,False,premium,38,4,916072,145032,98894,2.1,minimal,monthly,low,low,0,0,1248,5977598,89141944,83164346,1391.27
+cattle,dairy,semi-intensive,21,14,Ekiti,False,basic,22,0,760754,165897,18352,3.9,intensive,quarterly,high,medium,0,0,1261,2015478,42753045,40737567,2021.24
+cattle,dairy,semi-intensive,47,23,Sokoto,True,standard,51,2,1011938,129575,70548,5.2,standard,weekly,high,high,0,0,748,1261411,91984971,90723560,7192.23
+cattle,dairy,semi-intensive,54,14,Abuja,True,premium,61,2,254256,158816,108043,5.9,standard,monthly,medium,medium,0,0,1324,558915,113026596,112467681,20122.5
+cattle,dairy,intensive,64,6,Owerri,True,premium,70,3,951142,62272,108485,5.9,intensive,quarterly,medium,low,0,0,1168,1181099,50645975,49464876,4188.04
+cattle,dairy,semi-intensive,73,10,Owerri,True,basic,81,1,312013,349234,47925,1.5,minimal,quarterly,medium,high,0,0,1236,740197,106649496,105909299,14308.26
+cattle,dairy,semi-intensive,50,12,Owerri,False,standard,61,0,746422,313352,80205,3.4,minimal,monthly,medium,medium,0,0,986,5162479,68578272,63415793,1228.4
+cattle,dairy,intensive,62,11,Ondo,False,basic,71,2,1053123,394032,32579,4.3,minimal,monthly,high,high,0,0,1256,4626234,98371025,93744791,2026.37
+cattle,dairy,intensive,58,19,Lagos,True,basic,68,4,248832,364346,84787,4.5,minimal,monthly,high,low,0,0,740,747265,93454008,92706743,12406.14
+cattle,dairy,extensive,77,21,Kano,False,basic,94,3,1152348,151204,31152,3.0,intensive,weekly,low,medium,0,0,809,5265554,152269009,147003455,2791.79
+cattle,dairy,semi-intensive,46,10,Kano,True,basic,53,3,593900,366276,68150,5.9,minimal,monthly,high,high,0,0,627,1065126,32568386,31503260,2957.7
+cattle,dairy,intensive,47,11,Ekiti,True,basic,57,3,1170031,296525,60504,0.9,standard,monthly,high,high,0,0,647,1571710,39778621,38206911,2430.91
+cattle,dairy,semi-intensive,73,6,Sokoto,True,standard,90,0,842048,259416,103929,5.6,intensive,quarterly,medium,medium,0,0,654,1261968,32449283,31187315,2471.32
+cattle,dairy,semi-intensive,18,10,Uyo,True,premium,18,3,792684,124422,41859,4.9,minimal,monthly,low,medium,0,0,551,967965,11318422,10350457,1069.3
+cattle,dairy,intensive,63,21,Benin City,False,standard,76,2,1024507,185225,84479,2.0,minimal,weekly,low,high,0,0,990,6372011,154028952,147656941,2317.27
+cattle,dairy,semi-intensive,8,13,Uyo,False,premium,8,1,719088,299186,103464,2.9,standard,weekly,high,high,0,0,663,2329738,8034287,5704549,244.86
+cattle,dairy,semi-intensive,23,15,Benin City,True,basic,28,4,715345,127785,86576,0.6,standard,quarterly,high,high,0,0,1458,950981,59999033,59048052,6209.17
+cattle,dairy,extensive,56,21,Kaduna,False,premium,58,4,739126,324379,59068,2.6,standard,quarterly,low,high,0,0,1387,9557573,190644371,181086798,1894.69
+cattle,dairy,semi-intensive,27,21,Lagos,True,standard,28,1,550412,128689,46479,3.8,intensive,weekly,high,low,0,0,1130,759330,73963562,73204232,9640.63
+cattle,dairy,extensive,68,20,Lagos,True,premium,72,0,915696,378415,22955,5.7,intensive,weekly,medium,high,0,0,1495,1385066,230076912,228691846,16511.26
+cattle,dairy,intensive,73,8,Ekiti,True,basic,78,1,593984,169715,100392,4.4,minimal,weekly,high,medium,0,0,968,926141,64852593,63926452,6902.45
+cattle,dairy,extensive,16,12,Kano,True,premium,17,1,557282,177895,86765,4.7,standard,monthly,low,high,0,0,504,830742,11066388,10235646,1232.11
+cattle,dairy,intensive,45,8,Sokoto,True,standard,46,1,289454,334357,87250,1.7,standard,monthly,high,low,0,0,1280,749311,54355968,53606657,7154.13
+cattle,dairy,extensive,19,20,Onitsha,False,basic,20,3,647789,308266,92723,1.5,intensive,monthly,high,medium,0,0,1013,2021578,45499908,43478330,2150.71
+cattle,dairy,intensive,38,23,Ogun,False,premium,44,2,1002838,108442,109170,5.7,standard,weekly,medium,high,0,0,1363,6952750,134803208,127850458,1838.85
+cattle,dairy,intensive,68,11,Kano,False,premium,74,3,798131,384434,100041,3.5,minimal,weekly,low,low,0,0,836,11526806,72412982,60886176,528.21
+cattle,dairy,semi-intensive,44,22,Ogun,False,basic,53,4,521014,349372,98065,1.4,minimal,weekly,medium,low,0,0,723,3203651,82807908,79604257,2484.8
+cattle,dairy,extensive,25,16,Sokoto,False,premium,27,2,1069817,209183,58600,1.3,standard,quarterly,medium,high,0,0,1045,5103225,49507920,44404695,870.13
+cattle,dairy,semi-intensive,62,15,Uyo,False,standard,62,3,195988,264322,56348,4.1,minimal,monthly,medium,low,0,0,814,5513858,87117862,81604004,1479.98
+cattle,dairy,semi-intensive,31,14,Abeokuta,True,standard,34,3,763011,342588,83396,4.6,minimal,quarterly,high,medium,0,0,961,1211470,47746632,46535162,3841.21
+cattle,dairy,intensive,18,8,Kaduna,False,premium,20,4,1065392,74117,112397,4.1,intensive,quarterly,medium,low,0,0,973,3969456,16124089,12154633,306.2
+cattle,dairy,intensive,80,18,Ibadan,True,premium,88,4,854790,279703,47255,1.1,minimal,quarterly,low,medium,0,0,1247,1219748,213111302,211891554,17371.75
+cattle,dairy,extensive,24,10,Jos,True,premium,24,1,767534,350277,81642,4.7,standard,quarterly,high,medium,0,0,444,1218053,12186202,10968149,900.47
+cattle,dairy,extensive,22,8,Ogun,False,standard,26,1,466169,218436,71384,1.8,standard,monthly,low,high,0,0,930,2528089,19288051,16759962,662.95
+cattle,dairy,intensive,37,6,Ibadan,False,standard,41,3,180728,327032,17901,5.5,intensive,monthly,low,high,0,0,1295,3518961,32601366,29082405,826.45
+cattle,dairy,semi-intensive,9,22,Calabar,False,standard,10,0,238445,346383,22077,5.9,minimal,quarterly,low,high,0,0,579,1329380,12945375,11615995,873.79
+cattle,dairy,extensive,78,20,Onitsha,True,premium,88,2,1056675,286605,106853,1.3,standard,weekly,low,high,0,0,1095,1508633,202319208,200810575,13310.76
+cattle,dairy,extensive,63,22,Osun,True,standard,73,0,897779,59894,11119,1.7,standard,weekly,medium,low,0,0,1068,1016042,174610054,173594012,17085.32
+cattle,dairy,extensive,73,20,Onitsha,False,premium,91,1,476041,127743,37019,2.2,minimal,weekly,high,high,0,0,480,11652853,82245888,70593035,605.8
+cattle,dairy,semi-intensive,21,23,Kano,False,standard,26,1,502998,208822,31402,2.8,standard,weekly,low,medium,0,0,455,2437922,25633390,23195468,951.44
+cattle,dairy,intensive,22,20,Ondo,True,standard,27,1,877791,75802,68564,2.9,minimal,weekly,medium,high,0,0,655,1036457,33581064,32544607,3139.99
+cattle,dairy,extensive,16,11,Uyo,True,basic,19,0,1105734,367114,56974,4.6,standard,monthly,low,low,0,0,585,1537822,11786861,10249039,666.46
+cattle,dairy,semi-intensive,69,17,Benin City,True,standard,69,3,960833,259876,23115,2.5,standard,weekly,medium,high,0,0,1015,1305924,139299615,137993691,10566.75
+cattle,dairy,extensive,34,8,Ondo,False,basic,43,2,757948,73786,28446,5.2,minimal,quarterly,low,low,0,0,1462,2572930,45238257,42665327,1658.24
+cattle,dairy,extensive,24,10,Sokoto,True,basic,28,1,694642,244879,90944,2.8,minimal,monthly,low,low,0,0,1462,1040065,40926643,39886578,3835.01
+cattle,dairy,semi-intensive,24,11,Ibadan,True,basic,27,2,926524,377843,58913,5.5,standard,quarterly,medium,low,0,0,452,1378280,13531795,12153515,881.79
+cattle,dairy,semi-intensive,47,6,Abuja,True,standard,47,3,1181433,138992,30731,1.1,standard,weekly,low,medium,0,0,535,1388756,17905252,16516496,1189.3
+cattle,dairy,semi-intensive,19,21,Osun,False,basic,23,0,733117,299688,71536,5.4,standard,weekly,medium,high,0,0,1148,2068591,51998063,49929472,2413.69
+cattle,dairy,semi-intensive,17,21,Uyo,True,basic,18,1,379044,168254,96403,1.0,minimal,quarterly,medium,medium,0,0,615,650926,26083134,25432208,3907.08
+cattle,dairy,semi-intensive,36,13,Kaduna,False,standard,43,3,1170344,321006,85650,5.9,standard,weekly,medium,medium,0,0,1167,4489400,61671936,57182536,1273.72
+cattle,dairy,extensive,23,24,Abuja,False,premium,23,1,462043,57508,28737,4.0,minimal,weekly,medium,medium,0,0,423,4013238,26898739,22885501,570.25
+cattle,dairy,semi-intensive,78,21,Abeokuta,True,premium,98,4,930724,287032,38159,3.0,standard,quarterly,medium,low,0,0,972,1312465,185324630,184012165,14020.35
+cattle,dairy,semi-intensive,70,16,Kaduna,False,standard,86,3,1036964,397733,22648,4.2,standard,quarterly,medium,low,0,0,1148,7104595,147810970,140706375,1980.5
+cattle,dairy,extensive,59,6,Port Harcourt,True,basic,76,0,332240,338602,103414,2.1,standard,monthly,medium,medium,0,0,569,809656,23663526,22853870,2822.66
+cattle,dairy,semi-intensive,69,11,Maiduguri,True,basic,86,1,115062,154164,106129,4.6,intensive,quarterly,low,high,0,0,1486,425380,129119016,128693636,30253.8
+cattle,dairy,extensive,72,7,Abeokuta,True,premium,92,4,429707,246331,30807,1.1,minimal,quarterly,high,high,0,0,863,762645,51620103,50857458,6668.56
+cattle,dairy,extensive,24,23,Osun,True,standard,24,3,701798,254352,78386,5.8,standard,monthly,medium,low,0,0,1014,1052536,63271653,62219117,5911.35
+cattle,dairy,semi-intensive,5,8,Calabar,False,basic,6,4,220120,81049,108981,2.8,minimal,monthly,low,low,0,0,1201,662900,5603386,4940486,745.28
+cattle,dairy,semi-intensive,25,19,Uyo,True,basic,31,0,554596,194817,28407,5.4,minimal,quarterly,high,high,0,0,710,792195,38284620,37492425,4732.73
+cattle,dairy,intensive,31,20,Benin City,False,basic,36,4,732551,324853,23449,4.7,intensive,monthly,low,high,0,0,1297,2660303,91961450,89301147,3356.8
+cattle,dairy,extensive,43,9,Owerri,False,basic,43,2,650640,71480,60004,5.1,standard,weekly,high,medium,0,0,1272,2977274,56059024,53081750,1782.9
+cattle,dairy,extensive,79,11,Sokoto,False,basic,91,0,840321,176506,97151,3.2,intensive,monthly,medium,low,0,0,615,5131128,62079970,56948842,1109.87
+cattle,dairy,semi-intensive,40,14,Maiduguri,False,standard,48,2,827972,93564,11694,1.1,standard,weekly,high,medium,0,0,853,4175230,56691062,52515832,1257.79
+cattle,dairy,extensive,80,19,Benin City,True,premium,91,4,868156,368047,78022,5.3,intensive,monthly,low,high,0,0,620,1390225,107094336,105704111,7603.38
+cattle,dairy,extensive,80,9,Ibadan,True,basic,88,4,964640,256435,104147,4.6,standard,quarterly,medium,medium,0,0,1470,1383222,121165632,119782410,8659.67
+cattle,dairy,extensive,9,18,Osun,True,basic,10,0,769883,101801,48309,5.6,minimal,quarterly,medium,medium,0,0,1134,923368,20810442,19887074,2153.75
+cattle,dairy,intensive,49,17,Benin City,False,basic,53,2,416786,159775,83200,4.7,intensive,quarterly,medium,high,0,0,1221,3152636,116314755,113162119,3589.44
+cattle,dairy,semi-intensive,49,11,Kano,False,standard,58,1,743820,210345,23277,5.5,minimal,quarterly,medium,medium,0,0,1418,4918267,86671847,81753580,1662.24
+cattle,dairy,intensive,28,18,Benin City,False,standard,30,3,838043,133475,32091,2.3,minimal,weekly,high,medium,0,0,1436,3270209,84851747,81581538,2494.69
+cattle,dairy,extensive,76,15,Calabar,True,standard,90,0,496535,98949,21867,4.4,intensive,monthly,medium,low,0,0,1096,681951,143335757,142653806,20918.48
+cattle,dairy,semi-intensive,73,17,Port Harcourt,False,basic,91,2,252410,219783,39468,2.9,minimal,weekly,high,low,0,0,960,4227361,138817267,134589906,3183.78
+cattle,dairy,intensive,8,21,Enugu,True,basic,9,1,384877,56510,48901,1.8,minimal,quarterly,medium,medium,0,0,1248,493688,24706806,24213118,4904.54
+cattle,dairy,extensive,76,23,Onitsha,False,basic,95,4,918057,378862,85426,5.4,standard,quarterly,medium,high,0,0,1145,5237445,227205739,221968294,4238.1
+cattle,dairy,semi-intensive,38,19,Abeokuta,True,standard,44,0,362051,218643,118455,5.9,minimal,quarterly,high,low,0,0,597,720999,48672359,47951360,6650.68
+cattle,dairy,extensive,69,21,Ogun,True,premium,73,2,549686,293944,45275,3.7,minimal,monthly,high,medium,0,0,1418,940655,237439052,236498397,25141.88
+cattle,dairy,intensive,80,19,Kaduna,True,premium,90,0,808976,299889,102577,1.3,intensive,monthly,low,high,0,0,965,1271442,173727792,172456350,13563.84
+cattle,dairy,extensive,77,14,Lagos,False,standard,93,1,910988,162828,96743,3.0,intensive,quarterly,high,medium,0,0,1076,7409484,135015619,127606135,1722.2
+cattle,dairy,extensive,34,24,Osun,True,premium,43,4,739467,53552,89900,0.8,standard,quarterly,low,low,0,0,530,904169,51482419,50578250,5593.89
+cattle,dairy,extensive,72,19,Kaduna,True,basic,93,1,460083,65459,95119,5.6,intensive,weekly,medium,low,0,0,592,696261,91740488,91044227,13076.16
+cattle,dairy,extensive,56,24,Ondo,False,standard,67,1,799942,145939,22564,2.2,minimal,quarterly,medium,medium,0,0,1423,5472245,224452408,218980163,4001.65
+cattle,dairy,semi-intensive,16,11,Ondo,True,basic,17,0,792444,286835,108541,1.0,standard,weekly,high,low,0,0,521,1203020,10893485,9690465,805.51
+cattle,dairy,intensive,52,9,Lagos,True,basic,57,2,137993,347836,83841,2.6,minimal,weekly,low,high,0,0,1420,600870,77673773,77072903,12826.88
+cattle,dairy,intensive,28,23,Abeokuta,True,premium,35,4,864687,350933,33190,5.4,intensive,weekly,high,low,0,0,1311,1288010,95843120,94555110,7341.18
+cattle,dairy,extensive,8,7,Ibadan,False,standard,8,1,1167349,137758,23070,3.2,intensive,weekly,high,medium,0,0,1331,1978177,8658102,6679925,337.68
+cattle,dairy,semi-intensive,75,18,Ibadan,True,standard,80,1,582165,307303,34686,4.9,minimal,monthly,low,medium,0,0,602,954154,92745324,91791170,9620.16
+cattle,dairy,extensive,71,8,Ogun,False,premium,84,2,751752,121028,68707,4.7,standard,quarterly,medium,medium,0,0,1291,11635862,83858816,72222954,620.69
+cattle,dairy,semi-intensive,53,8,Lagos,False,basic,58,3,895390,210378,75223,6.0,standard,quarterly,high,low,0,0,1480,3877366,70784256,66906890,1725.58
+cattle,dairy,intensive,10,12,Jos,True,premium,10,0,138642,74750,49707,2.6,standard,quarterly,low,high,0,0,1288,267349,18064973,17797624,6657.08
+cattle,dairy,intensive,70,22,Maiduguri,False,premium,84,1,286885,289722,34340,5.4,intensive,monthly,low,high,0,0,816,11166947,142653773,131486826,1177.46
+cattle,dairy,extensive,68,12,Owerri,True,basic,86,1,323963,202275,10621,5.5,intensive,monthly,low,medium,0,0,867,591259,80227325,79636066,13468.9
+cattle,dairy,intensive,52,18,Port Harcourt,True,premium,55,2,966761,349127,103083,5.3,intensive,monthly,low,high,0,0,958,1463171,101899624,100436453,6864.3
+cattle,dairy,semi-intensive,57,6,Osun,False,standard,71,1,1103864,182867,88660,0.6,intensive,monthly,low,high,0,0,1319,5980991,53806969,47825978,799.63
+cattle,dairy,intensive,21,13,Ibadan,True,basic,26,3,219461,146132,80377,2.3,intensive,monthly,high,high,0,0,1215,471170,38887922,38416752,8153.48
+cattle,dairy,semi-intensive,41,23,Jos,False,basic,50,3,503889,95352,82712,5.2,minimal,weekly,high,low,0,0,1360,2770903,145894925,143124022,5165.25
+cattle,dairy,intensive,66,9,Enugu,True,standard,69,0,586990,278562,90651,2.5,intensive,weekly,medium,high,0,0,484,1022203,33637032,32614829,3190.64
+cattle,dairy,intensive,69,12,Ogun,True,premium,69,1,795857,181492,33006,2.4,minimal,quarterly,low,medium,0,0,1178,1032780,114236974,113204194,10961.11
+cattle,dairy,extensive,24,15,Kano,True,basic,28,2,1000380,63269,67741,0.9,minimal,quarterly,high,medium,0,0,729,1147590,31209365,30061775,2619.56
+cattle,dairy,semi-intensive,23,23,Abuja,True,premium,23,4,116620,374317,104435,1.4,standard,monthly,low,low,0,0,612,611472,38305863,37694391,6164.53
+cattle,dairy,semi-intensive,34,6,Lagos,True,standard,41,0,550848,379403,14613,3.6,minimal,weekly,high,medium,0,0,1190,972064,28082477,27110413,2788.95
+cattle,dairy,semi-intensive,41,18,Enugu,False,premium,44,3,1084806,130288,69535,3.5,standard,weekly,low,medium,0,0,757,7467429,64693523,57226094,766.34
+cattle,dairy,intensive,54,14,Abeokuta,True,standard,67,1,169244,291136,63788,4.4,intensive,weekly,medium,low,0,0,1122,580868,97309175,96728307,16652.37
+cattle,dairy,semi-intensive,31,18,Osun,False,premium,35,3,1052065,240610,54276,2.3,standard,weekly,high,high,0,0,821,6031051,53709754,47678703,790.55
+cattle,dairy,extensive,36,12,Onitsha,True,premium,43,4,842136,292942,81854,5.2,standard,monthly,high,medium,0,0,837,1252932,41133796,39880864,3183.0
+cattle,dairy,semi-intensive,55,10,Ibadan,False,standard,69,4,944273,76678,36137,1.7,intensive,weekly,high,medium,0,0,1459,5534088,94657002,89122914,1610.44
+cattle,dairy,semi-intensive,60,11,Lagos,True,standard,70,1,653193,345364,110825,1.4,standard,quarterly,low,low,0,0,1242,1137882,96989270,95851388,8423.67
+cattle,dairy,intensive,45,20,Port Harcourt,False,standard,53,4,1192723,379297,14627,4.2,minimal,weekly,low,low,0,0,508,5218147,52559712,47341565,907.25
+cattle,dairy,semi-intensive,47,8,Abeokuta,True,premium,49,1,725003,84615,57571,3.9,standard,quarterly,medium,medium,0,0,1093,894214,47392830,46498616,5199.94
+cattle,dairy,semi-intensive,27,15,Ibadan,True,basic,28,0,1196324,374161,63697,1.4,intensive,quarterly,medium,high,0,0,975,1655107,46721610,45066503,2722.88
+cattle,dairy,extensive,36,9,Port Harcourt,False,basic,44,1,878908,297890,59724,3.1,minimal,quarterly,high,medium,0,0,1303,3059022,49090160,46031138,1504.77
+cattle,dairy,intensive,79,24,Ekiti,True,standard,101,4,801061,228140,21142,5.4,minimal,weekly,low,high,0,0,1014,1105643,218247195,217141552,19639.39
+cattle,dairy,intensive,55,10,Onitsha,False,standard,66,0,823884,366047,114768,3.2,intensive,quarterly,medium,low,0,0,1147,5747324,73279536,67532212,1175.02
+cattle,dairy,extensive,37,12,Benin City,True,standard,40,1,189075,390475,41300,4.4,standard,monthly,medium,medium,0,0,482,644900,24550998,23906098,3706.95
+cattle,dairy,extensive,39,20,Kano,False,premium,39,4,102393,350759,12518,2.2,minimal,monthly,medium,medium,0,0,473,6341020,43298798,36957778,582.84
+cattle,dairy,semi-intensive,39,18,Abeokuta,False,standard,47,1,806116,187147,82401,1.6,standard,monthly,low,medium,0,0,573,4217114,47497208,43280094,1026.3
+cattle,dairy,intensive,45,22,Lagos,True,basic,48,1,863052,84057,30185,3.6,minimal,weekly,low,low,0,0,427,1002044,48901406,47899362,4780.17
+cattle,dairy,intensive,48,8,Uyo,False,premium,60,0,335807,79447,102294,1.3,intensive,weekly,low,low,0,0,587,7760748,26697324,18936576,244.0
+cattle,dairy,extensive,5,19,Enugu,True,basic,6,3,751937,377916,79380,1.6,minimal,quarterly,medium,high,0,0,781,1211858,8760946,7549088,622.93
+cattle,dairy,extensive,65,15,Uyo,True,standard,68,0,246845,142196,35915,1.9,intensive,quarterly,low,high,0,0,653,468831,74949381,74480550,15886.44
+cattle,dairy,intensive,14,12,Ogun,True,basic,15,4,702265,365387,64038,3.3,standard,weekly,medium,medium,0,0,1106,1144990,21561160,20416170,1783.09
+cattle,dairy,intensive,35,22,Benin City,False,basic,35,0,1115831,230472,106064,0.8,standard,weekly,high,high,0,0,1313,3235617,120350630,117115013,3619.56
+cattle,dairy,semi-intensive,6,8,Uyo,False,premium,7,0,630370,217281,69085,2.5,standard,monthly,medium,medium,0,0,1401,1820336,7868016,6047680,332.23
+cattle,dairy,extensive,45,23,Onitsha,True,premium,47,2,939271,293764,70508,2.3,standard,monthly,medium,medium,0,0,712,1335043,86396501,85061458,6371.44
+cattle,dairy,semi-intensive,23,18,Lagos,True,standard,25,1,917640,241737,11828,2.9,intensive,weekly,low,high,0,0,776,1193055,37433681,36240626,3037.63
+cattle,dairy,intensive,32,9,Ondo,False,basic,34,1,125467,310740,61410,1.4,intensive,monthly,low,low,0,0,1396,2123217,47570319,45447102,2140.48
+cattle,dairy,semi-intensive,68,19,Kaduna,False,premium,69,0,220312,219493,102539,3.1,standard,weekly,low,high,0,0,1412,10786544,212130069,201343525,1866.62
+cattle,dairy,semi-intensive,32,19,Lagos,False,premium,33,2,979672,370668,25970,3.8,intensive,monthly,medium,high,0,0,1164,6206710,81698273,75491563,1216.29
+cattle,dairy,extensive,21,17,Sokoto,True,basic,23,3,596129,159815,52755,4.3,standard,quarterly,medium,medium,0,0,1097,822874,44974674,44151800,5365.56
+cattle,dairy,extensive,78,16,Onitsha,True,standard,96,4,560094,360816,89873,1.8,minimal,monthly,high,medium,0,0,439,1077083,64561236,63484153,5894.08
+cattle,dairy,intensive,45,22,Ondo,True,premium,49,4,1109576,292582,88983,5.5,intensive,monthly,low,medium,0,0,1197,1533891,134382402,132848511,8660.88
+cattle,dairy,extensive,29,14,Port Harcourt,False,basic,33,1,86403,221554,56683,5.0,standard,quarterly,low,medium,0,0,1055,1828415,48829620,47001205,2570.6
+cattle,dairy,extensive,67,16,Calabar,True,premium,70,4,332418,204989,106130,0.8,minimal,quarterly,high,medium,0,0,908,695462,115870679,115175217,16560.96
+cattle,dairy,extensive,53,19,Lagos,False,standard,56,2,133023,65110,95411,4.0,standard,weekly,medium,medium,0,0,702,4578594,81436493,76857899,1678.64
+cattle,dairy,extensive,62,18,Kaduna,False,standard,64,2,1036182,194676,35923,4.4,standard,monthly,low,high,0,0,663,6263981,84882246,78618265,1255.08
+cattle,dairy,intensive,46,6,Abuja,False,premium,52,1,741166,246623,82106,0.6,standard,quarterly,medium,medium,0,0,764,7996345,25151858,17155513,214.54
+cattle,dairy,extensive,46,7,Jos,False,premium,56,0,1153130,79286,104735,4.4,minimal,monthly,low,low,0,0,686,8253251,25340730,17087479,207.04
+cattle,dairy,extensive,24,9,Kaduna,True,basic,29,2,789168,92550,64085,2.4,minimal,monthly,medium,high,0,0,527,959003,13332004,12373001,1290.19
+cattle,dairy,extensive,72,19,Ondo,True,premium,89,1,1020568,133393,25105,4.7,standard,weekly,low,low,0,0,449,1229466,70243572,69014106,5613.34
+cattle,dairy,semi-intensive,11,13,Abuja,True,basic,13,1,368721,312450,51872,2.3,intensive,quarterly,medium,low,0,0,1444,742118,24209122,23467004,3162.17
+cattle,dairy,intensive,42,21,Osun,True,basic,44,0,517962,170327,86380,3.2,standard,quarterly,low,high,0,0,1153,792519,118128447,117335928,14805.44
+cattle,dairy,semi-intensive,70,11,Onitsha,True,premium,70,4,670174,189275,82910,2.6,standard,weekly,low,high,0,0,924,1001859,83157782,82155923,8200.35
+cattle,dairy,semi-intensive,47,12,Benin City,False,basic,56,3,140434,283593,89084,5.8,intensive,quarterly,medium,low,0,0,778,2906586,49601048,46694462,1606.51
+cattle,dairy,semi-intensive,19,7,Ibadan,True,basic,23,2,529508,361038,117198,2.2,standard,weekly,high,high,0,0,870,1027694,13579726,12552032,1221.38
+cattle,dairy,intensive,77,14,Maiduguri,True,standard,77,1,780306,158188,75482,5.7,standard,quarterly,medium,medium,0,0,1200,1058251,146383776,145325525,13732.61
+cattle,dairy,semi-intensive,26,21,Calabar,False,premium,32,1,242894,373155,24058,5.4,minimal,quarterly,low,low,0,0,961,4548557,59564625,55016068,1209.53
+cattle,dairy,semi-intensive,5,15,Ondo,True,basic,5,1,480106,271860,107235,5.3,minimal,monthly,medium,high,0,0,445,861701,3792735,2931034,340.15
+cattle,dairy,intensive,43,7,Jos,True,standard,48,1,332339,383819,107551,5.7,minimal,monthly,low,low,0,0,630,840909,21458531,20617622,2451.83
+cattle,dairy,semi-intensive,16,13,Uyo,False,standard,16,4,1086056,83178,105870,4.3,minimal,weekly,medium,high,0,0,1172,2567904,27995236,25427332,990.2
+cattle,dairy,semi-intensive,8,7,Osun,False,standard,8,0,172345,394252,18258,5.8,standard,quarterly,medium,high,0,0,1381,1229055,8742061,7513006,611.28
+cattle,dairy,intensive,30,14,Benin City,True,basic,36,0,172532,345285,119496,5.2,intensive,quarterly,medium,low,0,0,496,660563,23698483,23037920,3487.62
+cattle,dairy,intensive,41,17,Owerri,False,standard,51,4,423712,245699,96324,5.5,intensive,quarterly,high,low,0,0,1056,4093910,83466029,79372119,1938.79
+cattle,dairy,intensive,49,19,Uyo,False,standard,55,2,693311,127402,116722,4.2,standard,quarterly,high,medium,0,0,1137,4897860,121690563,116792703,2384.57
+cattle,dairy,extensive,60,8,Benin City,True,standard,76,3,1025330,332702,99173,1.4,minimal,monthly,high,high,0,0,697,1505205,39585139,38079934,2529.88
+cattle,dairy,extensive,48,23,Kaduna,True,basic,59,3,251428,269664,24664,5.9,intensive,weekly,high,low,0,0,408,610556,50862781,50252225,8230.57
+cattle,dairy,extensive,37,23,Kaduna,True,premium,44,2,1105884,111300,52662,4.5,standard,quarterly,medium,high,0,0,1204,1292971,117419618,116126647,8981.38
+cattle,dairy,semi-intensive,33,24,Osun,True,basic,39,3,406529,148739,103874,0.5,intensive,weekly,medium,low,0,0,547,697092,51726946,51029854,7320.39
+cattle,dairy,semi-intensive,44,13,Jos,True,premium,52,1,129294,58503,14076,2.1,minimal,weekly,high,low,0,0,537,239273,36085627,35846354,14981.36
+cattle,dairy,intensive,37,20,Osun,False,premium,41,4,709597,229919,60822,2.6,standard,monthly,high,high,0,0,1379,6587338,119271365,112684027,1710.62
+cattle,dairy,extensive,80,7,Sokoto,True,standard,87,0,616414,298301,114573,2.6,intensive,weekly,medium,high,0,0,1118,1109288,73176230,72066942,6496.68
+cattle,dairy,semi-intensive,67,6,Abuja,False,basic,76,4,273040,93497,42163,4.5,intensive,quarterly,low,medium,0,0,1177,3817325,54223448,50406123,1320.46

@@ -1,0 +1,62 @@
+{
+  "categorical_features": [
+    "livestockType",
+    "productionType",
+    "productionSystem",
+    "location",
+    "housingType",
+    "vaccinationProgram",
+    "vetServiceFrequency",
+    "medicationIntensity",
+    "diseaseRiskLevel"
+  ],
+  "numeric_features": [
+    "numberOfAnimals",
+    "cycleDuration",
+    "hasHousing",
+    "capacity",
+    "equipmentCount",
+    "feedPrice",
+    "laborCost",
+    "electricityCost",
+    "mortalityRate",
+    "sellingPricePerKg",
+    "eggPricePerEgg",
+    "milkPricePerLiter",
+    "feedPerAnimal",
+    "laborPerAnimal",
+    "electricPerAnimal"
+  ],
+  "targets": [
+    "totalCostEstimation",
+    "projectedRevenue",
+    "projectedProfit",
+    "roi"
+  ],
+  "all_features": [
+    "livestockType",
+    "productionType",
+    "productionSystem",
+    "location",
+    "housingType",
+    "vaccinationProgram",
+    "vetServiceFrequency",
+    "medicationIntensity",
+    "diseaseRiskLevel",
+    "numberOfAnimals",
+    "cycleDuration",
+    "hasHousing",
+    "capacity",
+    "equipmentCount",
+    "feedPrice",
+    "laborCost",
+    "electricityCost",
+    "mortalityRate",
+    "sellingPricePerKg",
+    "eggPricePerEgg",
+    "milkPricePerLiter",
+    "feedPerAnimal",
+    "laborPerAnimal",
+    "electricPerAnimal"
+  ]
+}
