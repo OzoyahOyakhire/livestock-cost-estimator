@@ -27,8 +27,8 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import mean_absolute_error, r2_score
 
 # ── 1. LOAD DATA ──────────────────────────────────────────────────────────────
-DATA_PATH  = "../dataset/livestock_training_data.csv"
-MODEL_DIR  = "../saved_model"
+DATA_PATH  = "dataset/livestock_training_data.csv"
+MODEL_DIR  = "saved_model"
 os.makedirs(MODEL_DIR, exist_ok=True)
 
 df = pd.read_csv(DATA_PATH)
