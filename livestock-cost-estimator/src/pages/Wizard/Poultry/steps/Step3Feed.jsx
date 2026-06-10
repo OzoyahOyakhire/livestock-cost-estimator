@@ -2,64 +2,183 @@ import React from 'react';
 import { Lightbulb } from 'lucide-react';
 
 export default function Step3Feed({ formData, update, onNext, onBack }) {
+  const updateFeedPrices = (newPrices) => {
+    const updated = { ...formData, ...newPrices };
+    let total = 0;
+    if (formData.productionType === 'Broiler') {
+      const starter = Number(updated.broilerStarterPrice !== undefined ? updated.broilerStarterPrice : 26.00);
+      const finisher = Number(updated.broilerFinisherPrice !== undefined ? updated.broilerFinisherPrice : 23.00);
+      total = Number((starter + finisher).toFixed(2));
+    } else {
+      const chick = Number(updated.chickStarterPrice !== undefined ? updated.chickStarterPrice : 25.00);
+      const grower = Number(updated.growerFeedPrice !== undefined ? updated.growerFeedPrice : 22.00);
+      const layer = Number(updated.layerFeedPrice !== undefined ? updated.layerFeedPrice : 25.50);
+      total = Number((chick + grower + layer).toFixed(2));
+    }
+    update({ ...newPrices, totalFeedPrice: total });
+  };
+
+  React.useEffect(() => {
+    if (!formData.overrideFeedPrice) {
+      if (formData.productionType === 'Broiler') {
+        update({
+          broilerStarterPrice: 26.00,
+          broilerFinisherPrice: 23.00,
+          totalFeedPrice: 49.00
+        });
+      } else {
+        update({
+          chickStarterPrice: 25.00,
+          growerFeedPrice: 22.00,
+          layerFeedPrice: 25.50,
+          totalFeedPrice: 72.50
+        });
+      }
+    } else {
+      let total = 0;
+      if (formData.productionType === 'Broiler') {
+        const starter = Number(formData.broilerStarterPrice !== undefined ? formData.broilerStarterPrice : 26.00);
+        const finisher = Number(formData.broilerFinisherPrice !== undefined ? formData.broilerFinisherPrice : 23.00);
+        total = Number((starter + finisher).toFixed(2));
+      } else {
+        const chick = Number(formData.chickStarterPrice !== undefined ? formData.chickStarterPrice : 25.00);
+        const grower = Number(formData.growerFeedPrice !== undefined ? formData.growerFeedPrice : 22.00);
+        const layer = Number(formData.layerFeedPrice !== undefined ? formData.layerFeedPrice : 25.50);
+        total = Number((chick + grower + layer).toFixed(2));
+      }
+      if (formData.totalFeedPrice !== total) {
+        update({ totalFeedPrice: total });
+      }
+    }
+  }, [formData.productionType, formData.overrideFeedPrice]);
+
   return (
     <div className="max-w-3xl mx-auto py-12 px-6 lg:px-12 animate-in fade-in slide-in-from-bottom-4 duration-500 w-full bg-white md:my-10 md:rounded-3xl md:shadow-xl md:border md:border-gray-100">
-      <div className="mb-8">
-         <span className="inline-block px-3 py-1 bg-green-100 text-green-600 font-bold text-xs rounded-full uppercase tracking-wide mb-4">
-            STEP 3: FEED & OPERATIONAL INPUTS
-         </span>
-         <h2 className="text-3xl font-extrabold text-slate-900 mb-2">Fine-tune your daily operations</h2>
-         <p className="text-gray-500">Adjust recurring costs to get a precise profitability forecast for your poultry venture.</p>
-      </div>
-
-      <div className="bg-green-50 rounded-2xl p-6 flex gap-4 border border-green-100 mb-10 items-start">
-         <Lightbulb className="text-green-500 w-6 h-6 shrink-0 mt-0.5" />
-         <div>
-            <h4 className="font-bold text-slate-900 text-sm mb-1">Pro-Tip: Using Regional Defaults</h4>
-            <p className="text-sm text-gray-600 leading-relaxed">If you're unsure about specific costs, you can skip these inputs. The wizard will automatically apply current regional averages for your specified location.</p>
-            <button className="text-green-600 font-bold text-sm mt-2 flex items-center hover:text-green-700">View regional data map →</button>
-         </div>
-      </div>
-
       <div className="space-y-6">
-         {/* Average Feed Price */}
-         <div className="border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm">
-            <div className="flex justify-between items-center mb-6">
-               <div>
-                  <h4 className="font-bold text-slate-900 text-lg">Average Feed Price</h4>
-                  <p className="text-sm text-gray-500">Cost per 50kg bag (Standard Layer Feed)</p>
-               </div>
-               <div className="flex items-center gap-3">
-                  <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">MANUAL OVERRIDE</span>
-                  <div className="w-12 h-6 bg-green-500 rounded-full relative cursor-pointer">
-                     <div className="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+         {/* Feed Price inputs based on production type */}
+         {formData.productionType === 'Broiler' ? (
+            <div className="border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm bg-white">
+               <div className="flex justify-between items-center mb-6">
+                  <div>
+                     <h4 className="font-bold text-slate-900 text-lg">Broiler Feed Prices (per 25kg bag)</h4>
+                     <p className="text-sm text-gray-500">Enter pricing for each growth stage to compute the total feed cost.</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                     <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">MANUAL OVERRIDE</span>
+                     <div 
+                       onClick={() => update({ overrideFeedPrice: !formData.overrideFeedPrice })}
+                       className={`w-12 h-6 rounded-full relative cursor-pointer transition-colors duration-200 ${formData.overrideFeedPrice ? 'bg-green-500' : 'bg-gray-300'}`}
+                     >
+                        <div className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-transform duration-200 ${formData.overrideFeedPrice ? 'transform translate-x-6' : ''}`}></div>
+                     </div>
                   </div>
                </div>
-            </div>
 
-            <div className="bg-slate-50 border border-slate-100 rounded-xl p-4 flex items-center mb-6">
-               <span className="text-gray-400 font-bold text-xl mr-2">₦</span>
-               <input 
-                 type="number"
-                 value={formData.averageFeedPrice}
-                 onChange={(e) => update({ averageFeedPrice: Number(e.target.value) })}
-                 className="bg-transparent border-none outline-none text-4xl font-extrabold text-slate-900 w-full"
-               />
-            </div>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                     <label className="block text-sm font-bold text-slate-700 mb-2">Broiler Starter (0–4 Weeks)</label>
+                     <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 flex items-center">
+                        <span className="text-gray-400 font-bold mr-2">₦</span>
+                        <input 
+                          type="number"
+                          value={formData.broilerStarterPrice}
+                          onChange={(e) => updateFeedPrices({ broilerStarterPrice: Number(e.target.value) })}
+                          disabled={!formData.overrideFeedPrice}
+                          className="bg-transparent border-none outline-none text-lg font-bold text-slate-900 w-full disabled:text-slate-400 disabled:cursor-not-allowed"
+                        />
+                     </div>
+                     <p className="text-[10px] text-gray-400 mt-1">Protein: 22–24% (Rapid growth)</p>
+                  </div>
+                  <div>
+                     <label className="block text-sm font-bold text-slate-700 mb-2">Broiler Finisher (4–8 Weeks)</label>
+                     <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 flex items-center">
+                        <span className="text-gray-400 font-bold mr-2">₦</span>
+                        <input 
+                          type="number"
+                          value={formData.broilerFinisherPrice}
+                          onChange={(e) => updateFeedPrices({ broilerFinisherPrice: Number(e.target.value) })}
+                          disabled={!formData.overrideFeedPrice}
+                          className="bg-transparent border-none outline-none text-lg font-bold text-slate-900 w-full disabled:text-slate-400 disabled:cursor-not-allowed"
+                        />
+                     </div>
+                     <p className="text-[10px] text-gray-400 mt-1">Protein: 18–20% + High energy (Weight gain)</p>
+                  </div>
+               </div>
 
-            <div className="flex justify-between text-xs font-bold text-gray-400 mb-2">
-               <span>ECONOMIC RANGE</span>
-               <span>PREMIUM RANGE</span>
+               <div className="border-t border-gray-100 pt-4 flex justify-between items-center">
+                  <span className="text-sm font-bold text-slate-600">Total Feed Price:</span>
+                  <span className="text-lg font-extrabold text-green-600">₦{formData.totalFeedPrice}</span>
+               </div>
             </div>
-            <input 
-              type="range"
-              min="10000"
-              max="50000"
-              value={formData.averageFeedPrice * 1000} // converting to mock higher number for slider visualization
-              onChange={() => {}} // mock logic
-              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-green-500"
-            />
-         </div>
+         ) : (
+            <div className="border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm bg-white">
+               <div className="flex justify-between items-center mb-6">
+                  <div>
+                     <h4 className="font-bold text-slate-900 text-lg">Layer Feed Prices (per 25kg bag)</h4>
+                     <p className="text-sm text-gray-500">Enter pricing for each growth stage to compute the total feed cost.</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                     <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">MANUAL OVERRIDE</span>
+                     <div 
+                       onClick={() => update({ overrideFeedPrice: !formData.overrideFeedPrice })}
+                       className={`w-12 h-6 rounded-full relative cursor-pointer transition-colors duration-200 ${formData.overrideFeedPrice ? 'bg-green-500' : 'bg-gray-300'}`}
+                     >
+                        <div className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-transform duration-200 ${formData.overrideFeedPrice ? 'transform translate-x-6' : ''}`}></div>
+                     </div>
+                  </div>
+               </div>
+
+               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                  <div>
+                     <label className="block text-sm font-bold text-slate-700 mb-2">Chick Starter (0–8 Weeks)</label>
+                     <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 flex items-center">
+                        <span className="text-gray-400 font-bold mr-2">₦</span>
+                        <input 
+                          type="number"
+                          value={formData.chickStarterPrice}
+                          onChange={(e) => updateFeedPrices({ chickStarterPrice: Number(e.target.value) })}
+                          disabled={!formData.overrideFeedPrice}
+                          className="bg-transparent border-none outline-none text-lg font-bold text-slate-900 w-full disabled:text-slate-400 disabled:cursor-not-allowed"
+                        />
+                     </div>
+                     <p className="text-[10px] text-gray-400 mt-1">Protein: 18–22% (Feather development)</p>
+                  </div>
+                  <div>
+                     <label className="block text-sm font-bold text-slate-700 mb-2">Grower Mash (8–18 Weeks)</label>
+                     <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 flex items-center">
+                        <span className="text-gray-400 font-bold mr-2">₦</span>
+                        <input 
+                          type="number"
+                          value={formData.growerFeedPrice}
+                          onChange={(e) => updateFeedPrices({ growerFeedPrice: Number(e.target.value) })}
+                          disabled={!formData.overrideFeedPrice}
+                          className="bg-transparent border-none outline-none text-lg font-bold text-slate-900 w-full disabled:text-slate-400 disabled:cursor-not-allowed"
+                        />
+                     </div>
+                     <p className="text-[10px] text-gray-400 mt-1">Protein: 14–18% (Frame development)</p>
+                  </div>
+                  <div>
+                     <label className="block text-sm font-bold text-slate-700 mb-2">Layer Mash (18 Weeks+)</label>
+                     <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 flex items-center">
+                        <span className="text-gray-400 font-bold mr-2">₦</span>
+                        <input 
+                          type="number"
+                          value={formData.layerFeedPrice}
+                          onChange={(e) => updateFeedPrices({ layerFeedPrice: Number(e.target.value) })}
+                          disabled={!formData.overrideFeedPrice}
+                          className="bg-transparent border-none outline-none text-lg font-bold text-slate-900 w-full disabled:text-slate-400 disabled:cursor-not-allowed"
+                        />
+                     </div>
+                     <p className="text-[10px] text-gray-400 mt-1">Protein: 16–18% + Calcium (Egg production)</p>
+                  </div>
+               </div>
+
+               <div className="border-t border-gray-100 pt-4 flex justify-between items-center">
+                  <span className="text-sm font-bold text-slate-600">Total Feed Price:</span>
+                  <span className="text-lg font-extrabold text-green-600">₦{formData.totalFeedPrice}</span>
+               </div>
+            </div>
+         )}
 
          {/* Labor and Electricity */}
          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -79,7 +198,7 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
                     className="bg-transparent border-none outline-none text-xl font-bold text-slate-900 w-full"
                   />
                </div>
-               <input type="range" className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-green-500" />
+               
             </div>
 
             <div className="border border-gray-200 rounded-2xl p-6 shadow-sm">
@@ -98,7 +217,6 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
                     className="bg-transparent border-none outline-none text-xl font-bold text-slate-900 w-full"
                   />
                </div>
-               <input type="range" className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-green-500" />
             </div>
          </div>
       </div>
@@ -108,17 +226,15 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
           onClick={onBack}
           className="px-8 py-3 bg-white border border-gray-200 text-slate-700 rounded-xl font-bold hover:bg-gray-50 transition-all shadow-sm"
         >
-          Back: Housing
+          Back
         </button>
         <div className="flex gap-4">
-           <button className="px-6 py-3 bg-green-100 text-green-700 rounded-xl font-bold hover:bg-green-200 transition-all">
-             Save Draft
-           </button>
+           
            <button 
              onClick={onNext}
              className="px-8 py-3 bg-green-500 hover:bg-green-600 text-white rounded-xl font-bold transition-transform hover:scale-105 active:scale-95 shadow-lg shadow-green-500/30 flex items-center gap-2"
            >
-             Next Step: Health <span>→</span>
+             Next Step<span>→</span>
            </button>
         </div>
       </div>

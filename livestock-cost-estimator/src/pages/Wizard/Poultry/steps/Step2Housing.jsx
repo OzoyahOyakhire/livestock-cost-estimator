@@ -2,6 +2,17 @@ import React from 'react';
 import { Home, Lightbulb, Fan, Wind } from 'lucide-react';
 
 export default function Step2Housing({ formData, update, onNext, onBack }) {
+  const getSpacePerBird = () => {
+     const type = formData.productionType;
+     const system = formData.productionSystem;
+     if (system === 'Deep Litter System') return type === 'Broiler' ? 0.125 : 0.33;
+     if (system === 'Battery Cage System') return 0.055;
+     if (system === 'Semi-Intensive') return type === 'Broiler' ? 2.15 : 4.33;
+     if (system === 'Extensive') return type === 'Broiler' ? 10 : 20;
+     return type === 'Broiler' ? 0.10 : 0.15;
+  };
+  const spacePerBird = getSpacePerBird();
+
   return (
     <div className="max-w-3xl mx-auto py-12 px-6 lg:px-12 animate-in fade-in slide-in-from-bottom-4 duration-500 w-full bg-white md:my-10 md:rounded-3xl md:shadow-xl md:border md:border-gray-100">
       <div className="flex justify-between items-center mb-6">
@@ -62,18 +73,20 @@ export default function Step2Housing({ formData, update, onNext, onBack }) {
             </div>
 
             <div>
-               <label className="block font-bold text-xl text-slate-900 mb-4">Estimated capacity of the house</label>
+               <label className="block font-bold text-xl text-slate-900 mb-4">Required Space (m²)</label>
                <div className="relative">
-                  <div className="absolute top-1/2 -translate-y-1/2 left-5 text-gray-400">👥</div>
+                  <div className="absolute top-1/2 -translate-y-1/2 left-5 text-gray-400">📏</div>
                   <input 
                     type="number"
                     value={formData.housingCapacity}
                     onChange={(e) => update({ housingCapacity: e.target.value })}
-                    placeholder="Number of birds (e.g. 500)"
+                    placeholder="e.g. 500"
                     className="w-full pl-14 pr-5 py-4 rounded-xl bg-slate-50 border-transparent focus:bg-white border focus:border-green-500 focus:ring-4 focus:ring-green-500/10 transition-all outline-none text-slate-900 font-bold"
                   />
                </div>
-               <p className="text-sm text-gray-400 mt-3">We will calculate the required square footage based on this capacity.</p>
+               <p className="text-sm text-gray-400 mt-3">
+                 Calculated automatically based on {formData.numBirds || 0} birds ({spacePerBird} m² per bird for {formData.productionSystem || 'Standard'} {formData.productionType || 'System'}). You can adjust this if needed.
+               </p>
             </div>
           </>
         )}
@@ -123,7 +136,7 @@ export default function Step2Housing({ formData, update, onNext, onBack }) {
           onClick={onNext}
           className="px-8 py-3.5 bg-green-500 hover:bg-green-600 text-white rounded-xl font-bold transition-transform hover:scale-105 active:scale-95 shadow-lg shadow-green-500/30"
         >
-          Next Step: Flock Details
+          Next Step
         </button>
       </div>
     </div>

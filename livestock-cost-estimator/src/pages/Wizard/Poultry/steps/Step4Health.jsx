@@ -3,10 +3,7 @@ import { AlertTriangle, Info } from 'lucide-react';
 
 export default function Step4Health({ formData, update, onNext, onBack }) {
   return (
-    <div className="max-w-[1200px] mx-auto py-8 px-4 flex flex-col xl:flex-row gap-8 items-start animate-in fade-in slide-in-from-bottom-4 duration-500">
-      
-      {/* Main Main Panel */}
-      <div className="flex-1 bg-white rounded-3xl p-8 xl:p-10 shadow-xl border border-gray-100 w-full">
+    <div className="max-w-3xl mx-auto py-12 px-6 lg:px-12 animate-in fade-in slide-in-from-bottom-4 duration-500 w-full bg-white md:my-10 md:rounded-3xl md:shadow-xl md:border md:border-gray-100">
          <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold text-slate-900">Step 4 of 5 - Veterinary & Health Management Cost</h2>
             <span className="text-green-500 font-bold text-sm tracking-wide">80%</span>
@@ -113,57 +110,13 @@ export default function Step4Health({ formData, update, onNext, onBack }) {
          </div>
 
          <div className="mt-12 flex justify-between items-center w-full gap-4">
-            <button onClick={onBack} className="w-1/2 py-4 bg-slate-50 border border-transparent text-slate-700 rounded-xl font-bold hover:bg-slate-100 transition-all text-center">
+            <button onClick={onBack} className="w-1/2 py-4 bg-slate-50 border border-gray-200 text-slate-700 rounded-xl font-bold hover:bg-slate-100 transition-all text-center shadow-sm">
               Previous Step
             </button>
             <button onClick={onNext} className="w-1/2 py-4 bg-green-500 text-white rounded-xl font-bold hover:bg-green-600 transition-all text-center shadow-md shadow-green-500/20">
               Next: Summary & Forecast
             </button>
          </div>
-      </div>
-
-      {/* Right Project Summary Sidebar (from design) */}
-      <div className="w-full xl:w-80 space-y-6">
-         <div className="bg-white rounded-3xl p-6 shadow-xl border border-gray-100">
-            <div className="flex items-center gap-2 mb-6 border-b border-gray-100 pb-4">
-               <div className="w-8 h-8 rounded bg-green-50 flex items-center justify-center text-green-500 border border-green-100">📋</div>
-               <h3 className="font-bold text-slate-900">Project Summary</h3>
-            </div>
-            
-            <div className="space-y-4 mb-6">
-               <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest bg-white">INFRASTRUCTURE</div>
-               <div className="flex justify-between text-sm"><span className="text-gray-500">Total Capacity</span><span className="font-bold text-slate-900">5,000 birds</span></div>
-               <div className="flex justify-between text-sm"><span className="text-gray-500">Housing Units</span><span className="font-bold text-slate-900">3 (Premium)</span></div>
-               <div className="flex justify-between text-sm"><span className="text-gray-500">Auto-Ventilation</span><span className="font-bold text-green-500">Enabled</span></div>
-            </div>
-
-            <div className="space-y-4 mb-6">
-               <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">FEED & NUTRITION</div>
-               <div className="flex justify-between text-sm"><span className="text-gray-500">Feed Type</span><span className="font-bold text-slate-900">High-Protein</span></div>
-               <div className="flex justify-between text-sm"><span className="text-gray-500">Daily Intake</span><span className="font-bold text-slate-900">110g / bird</span></div>
-               <div className="flex justify-between text-sm"><span className="text-gray-500">Est. Cycle Feed</span><span className="font-bold text-slate-900">22.5 Tons</span></div>
-            </div>
-
-            {formData.expectedMortality > 8 && (
-               <div className="bg-amber-50 rounded-xl p-4 flex gap-3 border border-amber-100">
-                  <AlertTriangle className="text-amber-500 w-5 h-5 shrink-0" />
-                  <p className="text-xs text-amber-700 font-medium leading-relaxed">Mortality above 8% may significantly impact break-even timelines.</p>
-               </div>
-            )}
-         </div>
-
-         <div className="bg-green-50 rounded-3xl p-6 border border-green-100 shadow-sm">
-            <h4 className="font-bold text-slate-900 text-sm mb-4">Real-time Forecast</h4>
-            <div className="flex items-center gap-4">
-               <div className="w-12 h-12 rounded-full border-4 border-green-500 border-t-green-200"></div>
-               <div>
-                  <div className="text-xs text-gray-500 mb-0.5">Estimated Profitability</div>
-                  <div className="text-2xl font-bold text-green-500">+18.4%</div>
-               </div>
-            </div>
-         </div>
-      </div>
-
     </div>
   );
 }

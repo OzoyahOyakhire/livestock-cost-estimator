@@ -5,7 +5,6 @@ import Step1Production from './steps/Step1Production';
 import Step2Housing from './steps/Step2Housing';
 import Step3Feed from './steps/Step3Feed';
 import Step4Health from './steps/Step4Health';
-import Step5Market from './steps/Step5Market';
 
 export default function PoultryWizard() {
   const navigate = useNavigate();
@@ -20,7 +19,13 @@ export default function PoultryWizard() {
     housingType: '',
     housingCapacity: '',
     infrastructure: [],
-    averageFeedPrice: 24.50,
+    totalFeedPrice: 72.50, // Calculated as sum of default layer prices (25 + 22 + 25.5)
+    overrideFeedPrice: true,
+    broilerStarterPrice: 26.00,
+    broilerFinisherPrice: 23.00,
+    chickStarterPrice: 25.00,
+    growerFeedPrice: 22.00,
+    layerFeedPrice: 25.50,
     laborCost: 850,
     electricityCost: 120,
     expectedMortality: 5.0,
@@ -36,15 +41,14 @@ export default function PoultryWizard() {
     setFormData(prev => ({ ...prev, ...newData }));
   };
 
-  const nextStep = () => setCurrentStep(prev => Math.min(prev + 1, 5));
+  const nextStep = () => setCurrentStep(prev => Math.min(prev + 1, 4));
   const prevStep = () => setCurrentStep(prev => Math.max(prev - 1, 1));
 
   const navItems = [
     { id: 1, name: '1. Production Setup', shortName: 'Production Setup' },
     { id: 2, name: '2. Housing & Infrastructure', shortName: 'Housing Costs' },
     { id: 3, name: '3. Feed & Ops', shortName: 'Feed & Ops' },
-    { id: 4, name: '4. Health & Meds', shortName: 'Health & Meds' },
-    { id: 5, name: '5. Summary', shortName: 'Summary' }
+    { id: 4, name: '4. Health & Meds', shortName: 'Health & Meds' }
   ];
 
   const renderContent = () => {
@@ -52,8 +56,7 @@ export default function PoultryWizard() {
       case 1: return <Step1Production formData={formData} update={updateFormData} onNext={nextStep} onCancel={() => navigate('/estimate')} />;
       case 2: return <Step2Housing formData={formData} update={updateFormData} onNext={nextStep} onBack={prevStep} />;
       case 3: return <Step3Feed formData={formData} update={updateFormData} onNext={nextStep} onBack={prevStep} />;
-      case 4: return <Step4Health formData={formData} update={updateFormData} onNext={nextStep} onBack={prevStep} />;
-      case 5: return <Step5Market formData={formData} update={updateFormData} onBack={prevStep} onSubmit={() => alert('Done!')} />;
+      case 4: return <Step4Health formData={formData} update={updateFormData} onBack={prevStep} onSubmit={() => alert('Wizard Completed!')} />;
       default: return null;
     }
   };
@@ -75,11 +78,11 @@ export default function PoultryWizard() {
            <div className="px-6 mb-8">
               <div className="text-xs font-bold text-gray-400 tracking-widest uppercase mb-3">Current Progress</div>
               <div className="flex items-end justify-between mb-2">
-                 <span className="text-4xl font-extrabold text-green-500 leading-none">{((currentStep - 1) / 5 * 100) + 20}%</span>
-                 <span className="text-xs font-medium text-gray-400 mb-1">Step {currentStep} of 5</span>
+                 <span className="text-4xl font-extrabold text-green-500 leading-none">{Math.round((currentStep / 4) * 100)}%</span>
+                 <span className="text-xs font-medium text-gray-400 mb-1">Step {currentStep} of 4</span>
               </div>
               <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                 <div className="h-full bg-green-500 transition-all duration-500 ease-out" style={{ width: `${((currentStep - 1) / 4) * 100}%`}}></div>
+                 <div className="h-full bg-green-500 transition-all duration-500 ease-out" style={{ width: `${(currentStep / 4) * 100}%`}}></div>
               </div>
            </div>
 

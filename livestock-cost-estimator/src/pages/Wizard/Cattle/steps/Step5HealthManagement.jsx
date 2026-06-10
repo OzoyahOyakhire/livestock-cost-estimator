@@ -1,16 +1,7 @@
 import React from 'react';
-import { ArrowLeft, ArrowRight, Shield, Stethoscope, Bug, Activity, Github, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Shield, Stethoscope, Bug, Activity } from 'lucide-react';
 
-export default function Step5HealthManagement({ formData, update, onNext, onBack }) {
-  
-  const toggleBreeding = (method) => {
-    update({ 
-       breedingMethods: {
-          ...formData.breedingMethods,
-          [method]: !formData.breedingMethods[method]
-       }
-    });
-  }
+export default function Step5HealthManagement({ formData, update, onSubmit, onBack }) {
 
   return (
     <div className="max-w-4xl mx-auto py-12 px-6">
@@ -26,17 +17,8 @@ export default function Step5HealthManagement({ formData, update, onNext, onBack
       </div>
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
-         <div className="flex justify-between items-center mb-4">
-            <span className="text-xs font-bold uppercase tracking-widest text-slate-900">Expected Mortality Rate (%)</span>
-            <span className="bg-green-100 text-green-600 font-bold py-1 px-3 rounded-full text-sm">{formData.mortalityRate}%</span>
-         </div>
-         <input 
-            type="range" 
-            min="1" max="10" step="0.1" 
-            value={formData.mortalityRate} 
-            onChange={(e) => update({ mortalityRate: parseFloat(e.target.value) })}
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-green-500 mb-2"
-         />
+         
+            
          <div className="flex justify-between text-xs font-medium text-gray-400">
             <span>1% (Beef Min)</span>
             <span>4% (Dairy Max)</span>
@@ -146,39 +128,6 @@ export default function Step5HealthManagement({ formData, update, onNext, onBack
             </div>
          </div>
 
-         <div className="bg-white border border-gray-200 rounded-xl p-6">
-            <div className="flex items-center gap-2 mb-2">
-               <Github className="w-4 h-4 text-green-600" /> {/* substitute icon */}
-               <h3 className="font-bold text-slate-900">Breeding Method</h3>
-            </div>
-            <p className="text-xs text-gray-500 mb-5">Required for Dairy herds to manage health cycles.</p>
-            
-            <div className="space-y-4">
-               <label className="flex items-center gap-3 cursor-pointer group">
-                  <div className={`w-5 h-5 rounded flex items-center justify-center border transition-colors ${formData.breedingMethods.ai ? 'bg-green-500 border-green-500' : 'bg-gray-50 border-gray-300 group-hover:border-green-400'}`}>
-                     {formData.breedingMethods.ai && <CheckCircle2 className="w-3 h-3 text-white" strokeWidth={3} />}
-                  </div>
-                  <input type="checkbox" className="sr-only" checked={formData.breedingMethods.ai} onChange={() => toggleBreeding('ai')} />
-                  <span className="text-sm font-medium text-slate-700">Artificial Insemination (AI)</span>
-               </label>
-               
-               <label className="flex items-center gap-3 cursor-pointer group">
-                  <div className={`w-5 h-5 rounded flex items-center justify-center border transition-colors ${formData.breedingMethods.natural ? 'bg-green-500 border-green-500' : 'bg-gray-50 border-gray-300 group-hover:border-green-400'}`}>
-                     {formData.breedingMethods.natural && <CheckCircle2 className="w-3 h-3 text-white" strokeWidth={3} />}
-                  </div>
-                  <input type="checkbox" className="sr-only" checked={formData.breedingMethods.natural} onChange={() => toggleBreeding('natural')} />
-                  <span className="text-sm font-medium text-slate-700">Natural Service (Bull)</span>
-               </label>
-
-               <label className="flex items-center gap-3 cursor-pointer group">
-                  <div className={`w-5 h-5 rounded flex items-center justify-center border transition-colors ${formData.breedingMethods.embryo ? 'bg-green-500 border-green-500' : 'bg-gray-50 border-gray-300 group-hover:border-green-400'}`}>
-                     {formData.breedingMethods.embryo && <CheckCircle2 className="w-3 h-3 text-white" strokeWidth={3} />}
-                  </div>
-                  <input type="checkbox" className="sr-only" checked={formData.breedingMethods.embryo} onChange={() => toggleBreeding('embryo')} />
-                  <span className="text-sm font-medium text-slate-700">Embryo Transfer</span>
-               </label>
-            </div>
-         </div>
       </div>
 
       <div className="border-t border-gray-200 py-6 mb-16 flex items-center justify-between">
@@ -189,14 +138,14 @@ export default function Step5HealthManagement({ formData, update, onNext, onBack
            <ArrowLeft className="w-4 h-4" /> Back
          </button>
          <button 
-           onClick={onNext}
+           onClick={onSubmit}
            className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-bold shadow-sm flex items-center gap-2 transition-all active:scale-95"
          >
-           Continue to Step 4 <ArrowRight className="w-4 h-4" />
+           Finish <ArrowRight className="w-4 h-4" />
          </button>
       </div>
 
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-4 px-6 md:pl-80 flex items-center justify-between z-20">
+      {/* <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-4 px-6 md:pl-80 flex items-center justify-between z-20">
          <div className="flex gap-8">
             <div>
                <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">EST. HEALTH COST</div>
@@ -211,7 +160,7 @@ export default function Step5HealthManagement({ formData, update, onNext, onBack
          <div className="text-xs text-gray-400 hidden sm:block max-w-xs text-right">
             Estimates are based on regional averages and provided management intensity.
          </div>
-      </div>
+      </div> */}
     </div>
   );
 }

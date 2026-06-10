@@ -60,10 +60,7 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
               </label>
            </div>
 
-           <div className="bg-green-50/50 border border-green-100 rounded-xl p-5 flex items-center gap-3">
-              <Sparkles className="w-5 h-5 text-green-500 shrink-0" />
-              <p className="text-sm text-green-800 font-medium">Daily feed requirement and conversion rate will be predicted based on these inputs.</p>
-           </div>
+           
         </div>
       </div>
 

@@ -63,19 +63,7 @@ export default function Step2Infrastructure({ formData, update, onNext, onBack }
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-           {formData.hasHousing !== 'no' && (
-             <div>
-                <label className="block text-sm font-bold text-slate-900 mb-2">Current Shelter Value (NGN)</label>
-                <input 
-                  type="number" 
-                  placeholder={formData.hasHousing === 'not_required' ? 'N/A' : '₦ e.g. 15,000'}
-                  disabled={formData.hasHousing === 'not_required'}
-                  className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 disabled:bg-gray-50 disabled:text-gray-400"
-                  value={formData.hasHousing === 'not_required' ? '' : formData.shelterValue}
-                  onChange={(e) => update({ shelterValue: e.target.value })}
-                />
-             </div>
-           )}
+           
            {formData.hasHousing === 'no' && (
              <>
                <div>
@@ -117,18 +105,7 @@ export default function Step2Infrastructure({ formData, update, onNext, onBack }
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 font-medium font-sans text-sm">Acres</span>
               </div>
            </div>
-           <div>
-              <label className="block text-sm font-bold text-slate-900 mb-2">Land Accessibility</label>
-              <select 
-                className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-slate-900 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
-                value={formData.accessibility}
-                onChange={(e) => update({ accessibility: e.target.value })}
-              >
-                <option value="Yes, fully accessible">Yes, fully accessible</option>
-                <option value="Partially accessible">Partially accessible</option>
-                <option value="Poor access">Poor access</option>
-              </select>
-           </div>
+          
            <div>
               <label className="block text-sm font-bold text-slate-900 mb-2">Primary Water Source</label>
               <select 
@@ -143,23 +120,7 @@ export default function Step2Infrastructure({ formData, update, onNext, onBack }
            </div>
         </div>
 
-        <div>
-           <label className="block text-sm font-bold text-slate-900 mb-2">Grid Power Connection</label>
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <button 
-                onClick={() => update({ utilities: 'Yes' })}
-                className={`py-3 rounded-lg font-bold border-2 flex justify-center items-center gap-2 ${formData.utilities === 'Yes' ? 'border-green-500 text-green-600 bg-green-50/30' : 'border-gray-200 text-slate-600'}`}
-              >
-                 {formData.utilities === 'Yes' && <CheckCircle2 className="w-4 h-4" />} Yes
-              </button>
-              <button 
-                onClick={() => update({ utilities: 'No' })}
-                className={`py-3 rounded-lg font-bold border-2 flex justify-center items-center gap-2 ${formData.utilities === 'No' ? 'border-gray-400 text-gray-700' : 'border-gray-200 text-slate-600'}`}
-              >
-                 {formData.utilities === 'No' && <Circle className="w-4 h-4" />} No
-              </button>
-           </div>
-        </div>
+     
 
       </div>
 

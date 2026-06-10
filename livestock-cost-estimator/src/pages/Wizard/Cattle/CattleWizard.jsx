@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { CheckCircle2 } from 'lucide-react';
 import Step1Production from './steps/Step1Production';
 import Step2Infrastructure from './steps/Step2Infrastructure';
+import Step3Feed from './steps/Step3Feed';
 import Step5HealthManagement from './steps/Step5HealthManagement';
-import Step6MarketInputs from './steps/Step6MarketInputs';
+
 
 export default function CattleWizard() {
   const navigate = useNavigate();
@@ -54,16 +55,16 @@ export default function CattleWizard() {
   const navItems = [
     { id: 1, name: 'Step 1: Basics', shortName: 'Basics' },
     { id: 2, name: 'Step 2: Infrastructure', shortName: 'Infrastructure' },
-    { id: 3, name: 'Step 3: Health', shortName: 'Health' },
-    { id: 4, name: 'Step 4: Market', shortName: 'Market' }
+    { id: 3, name: 'Step 3: Feed & Nutrition', shortName: 'Feed' },
+    { id: 4, name: 'Step 4: Health', shortName: 'Health' }
   ];
 
   const renderContent = () => {
     switch(currentStep) {
       case 1: return <Step1Production formData={formData} update={updateFormData} onNext={nextStep} onCancel={() => navigate('/estimate')} />;
       case 2: return <Step2Infrastructure formData={formData} update={updateFormData} onNext={nextStep} onBack={prevStep} />;
-      case 3: return <Step5HealthManagement formData={formData} update={updateFormData} onNext={nextStep} onBack={prevStep} />;
-      case 4: return <Step6MarketInputs formData={formData} update={updateFormData} onBack={prevStep} onSubmit={() => alert('Wizard Completed!')} />;
+      case 3: return <Step3Feed formData={formData} update={updateFormData} onNext={nextStep} onBack={prevStep} />;
+      case 4: return <Step5HealthManagement formData={formData} update={updateFormData} onSubmit={() => alert('Wizard Completed!')} onBack={prevStep} />;
       default: return null;
     }
   };
@@ -80,11 +81,11 @@ export default function CattleWizard() {
            <div className="px-6 mb-8">
               <div className="text-xs font-bold text-gray-400 tracking-widest uppercase mb-3">Current Progress</div>
               <div className="flex items-end justify-between mb-2">
-                 <span className="text-4xl font-extrabold text-green-500 leading-none">{Math.round(((currentStep - 1) / 4 * 100) + 25)}%</span>
+                 <span className="text-4xl font-extrabold text-green-500 leading-none">{Math.round((currentStep / 4) * 100)}%</span>
                  <span className="text-xs font-medium text-gray-400 mb-1">Step {currentStep} of 4</span>
               </div>
               <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                 <div className="h-full bg-green-500 transition-all duration-500 ease-out" style={{ width: `${((currentStep) / 4) * 100}%`}}></div>
+                 <div className="h-full bg-green-500 transition-all duration-500 ease-out" style={{ width: `${(currentStep / 4) * 100}%`}}></div>
               </div>
            </div>
 
