@@ -114,7 +114,7 @@ export default function Step4Health({ formData, update, onNext, onBack }) {
               Previous Step
             </button>
             <button onClick={onNext} className="w-1/2 py-4 bg-green-500 text-white rounded-xl font-bold hover:bg-green-600 transition-all text-center shadow-md shadow-green-500/20">
-              Next: Summary & Forecast
+              Next: Estimation
             </button>
          </div>
     </div>

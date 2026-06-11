@@ -129,13 +129,13 @@ export default function Step2Infrastructure({ formData, update, onNext, onBack }
           onClick={onBack}
           className="flex items-center gap-2 text-slate-600 font-bold hover:text-slate-900 transition-colors bg-white border border-gray-200 px-6 py-3 rounded-lg shadow-sm"
         >
-          <ArrowLeft className="w-4 h-4" /> Previous Step
+          <ArrowLeft className="w-4 h-4" /> back
         </button>
         <button 
           onClick={onNext}
           className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-bold shadow-sm flex items-center gap-2 transition-all active:scale-95"
         >
-          Continue to Health Management <ArrowRight className="w-4 h-4" />
+          Next step <ArrowRight className="w-4 h-4" />
         </button>
       </div>
 

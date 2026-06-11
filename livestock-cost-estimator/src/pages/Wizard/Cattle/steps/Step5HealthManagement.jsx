@@ -16,14 +16,7 @@ export default function Step5HealthManagement({ formData, update, onSubmit, onBa
         </div>
       </div>
 
-      <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
-         
-            
-         <div className="flex justify-between text-xs font-medium text-gray-400">
-            <span>1% (Beef Min)</span>
-            <span>4% (Dairy Max)</span>
-         </div>
-      </div>
+      
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
          {/* Vaccination */}
@@ -135,32 +128,17 @@ export default function Step5HealthManagement({ formData, update, onSubmit, onBa
            onClick={onBack}
            className="flex items-center gap-2 text-slate-600 font-bold hover:text-slate-900 transition-colors"
          >
-           <ArrowLeft className="w-4 h-4" /> Back
+           <ArrowLeft className="w-4 h-4" /> Previous Step
          </button>
          <button 
            onClick={onSubmit}
            className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-bold shadow-sm flex items-center gap-2 transition-all active:scale-95"
          >
-           Finish <ArrowRight className="w-4 h-4" />
+           Next: Estimation <ArrowRight className="w-4 h-4" />
          </button>
       </div>
 
-      {/* <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-4 px-6 md:pl-80 flex items-center justify-between z-20">
-         <div className="flex gap-8">
-            <div>
-               <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">EST. HEALTH COST</div>
-               <div className="text-lg font-extrabold text-green-500">$1,240 / yr</div>
-            </div>
-            <div className="w-px h-10 bg-gray-200"></div>
-            <div>
-               <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">HERD RISK SCORE</div>
-               <div className="text-lg font-extrabold text-slate-900">Low-Mid</div>
-            </div>
-         </div>
-         <div className="text-xs text-gray-400 hidden sm:block max-w-xs text-right">
-            Estimates are based on regional averages and provided management intensity.
-         </div>
-      </div> */}
+    
     </div>
   );
 }

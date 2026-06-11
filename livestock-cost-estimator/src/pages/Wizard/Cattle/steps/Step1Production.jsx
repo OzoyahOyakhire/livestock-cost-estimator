@@ -101,9 +101,9 @@ export default function Step1Production({ formData, update, onNext, onCancel }) 
             onClick={onNext}
             className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-bold shadow-sm shadow-green-500/20 flex items-center gap-2 transition-all active:scale-95"
           >
-            Continue to Step 2 <ArrowRight className="w-4 h-4" />
+            Next Step <ArrowRight className="w-4 h-4" />
           </button>
-        </div>
+        </div>  
       </div>
     </div>
   );
