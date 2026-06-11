@@ -1,11 +1,24 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Box, Menu, X, LogOut } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import toast from 'react-hot-toast';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleStartEstimation = (e) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    if (!user) {
+      toast.error('Login to carry out estimation');
+      navigate('/login');
+    } else {
+      navigate('/estimate');
+    }
+  };
 
   return (
     <nav className="border-b border-gray-100 bg-white sticky top-0 z-50">
@@ -40,7 +53,7 @@ export default function Navbar() {
                  <Link to="/signup" className="text-green-600 font-bold hover:text-green-700">Join Free</Link>
                </>
              )}
-             <Link to="/estimate" className="bg-green-500 hover:bg-green-600 text-white px-6 py-2.5 rounded-lg font-semibold transition-all shadow-sm">Start Free Estimation</Link>
+             <button onClick={handleStartEstimation} className="bg-green-500 hover:bg-green-600 text-white px-6 py-2.5 rounded-lg font-semibold transition-all shadow-sm">Start Estimation</button>
           </div>
 
           
@@ -83,9 +96,9 @@ export default function Navbar() {
                  <Link to="/signup" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-base font-medium text-green-600 hover:bg-green-50 rounded-lg">Sign Up</Link>
                </>
              )}
-             <Link to="/estimate" onClick={() => setIsMobileMenuOpen(false)} className="block mt-2 w-full text-center bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-xl font-bold shadow-md transition-colors">
-               Start Free Estimation
-             </Link>
+             <button onClick={handleStartEstimation} className="block mt-2 w-full text-center bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-xl font-bold shadow-md transition-colors">
+               Start Estimation
+             </button>
           </div>
         </div>
       )}

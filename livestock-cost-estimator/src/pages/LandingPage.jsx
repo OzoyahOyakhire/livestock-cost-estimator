@@ -1,10 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FileUp, Calculator, LineChart, Banknote, TrendingUp, ShieldCheck, Check } from 'lucide-react';
 import heroImage from '../assets/heroImage.png';
-
+import { useAuth } from '../context/AuthContext';
+import toast from 'react-hot-toast';
 
 export default function LandingPage() {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const handleStartEstimation = (e) => {
+    e.preventDefault();
+    if (!user) {
+      toast.error('Login to carry out estimation');
+      navigate('/login');
+    } else {
+      navigate('/estimate');
+    }
+  };
+
   return (
     <div className="flex flex-col w-full">
      
@@ -18,9 +32,9 @@ export default function LandingPage() {
            A high-end SaaS platform for precision livestock cost estimation and profit prediction. Data-driven insights at your fingertips.
          </p>
          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Link to="/estimate" className="w-full sm:w-auto px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-xl font-bold text-lg transition-transform hover:scale-105 active:scale-95 shadow-xl shadow-green-500/20">
-               Start Free Estimation
-            </Link>
+            <button onClick={handleStartEstimation} className="w-full sm:w-auto px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-xl font-bold text-lg transition-transform hover:scale-105 active:scale-95 shadow-xl shadow-green-500/20">
+               Start Estimation
+            </button>
             <button className="w-full sm:w-auto px-8 py-4 bg-white border border-gray-200 hover:border-gray-300 text-slate-900 rounded-xl font-bold text-lg transition-all shadow-sm hover:bg-gray-50">
                Watch Demo
             </button>
@@ -144,9 +158,9 @@ export default function LandingPage() {
               <p className="text-xl text-slate-300 mb-12 font-medium">
                 Join thousands of modern farmers using data to drive their investment strategy.
               </p>
-              <Link to="/estimate" className="inline-block px-12 py-5 bg-green-500 hover:bg-green-400 text-white rounded-xl font-bold text-xl transition-all hover:scale-105 active:scale-95 shadow-xl shadow-green-500/30">
+              <button onClick={handleStartEstimation} className="inline-block px-12 py-5 bg-green-500 hover:bg-green-400 text-white rounded-xl font-bold text-xl transition-all hover:scale-105 active:scale-95 shadow-xl shadow-green-500/30">
                  Get Started Now
-              </Link>
+              </button>
            </div>
         </div>
       </section>
