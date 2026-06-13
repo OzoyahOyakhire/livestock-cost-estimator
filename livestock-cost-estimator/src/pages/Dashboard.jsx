@@ -22,16 +22,16 @@ export default function Dashboard() {
       try {
         setIsLoading(true);
         const data = await estimationApi.getHistory();
-        // Handle different possible backend response structures
+        
         const estList = Array.isArray(data) ? data : (data.estimations || data.data || []);
         
-        // Sort by newest first
+     
         const sorted = [...estList].sort((a, b) => new Date(b.createdAt || b.updatedAt) - new Date(a.createdAt || a.updatedAt));
         setEstimations(sorted);
       } catch (err) {
         console.error("Failed to load estimations:", err);
         const status = err.response?.status;
-        // 401/403 = auth issue, 404 = endpoint may not exist yet — show empty state
+        
         if (status === 401 || status === 403 || status === 404) {
           setEstimations([]);
         } else {
