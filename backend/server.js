@@ -20,6 +20,15 @@ import authRouter from "./routes/auth-route.js";
 import notFound from "./middleware/not-found.js";
 import errorHandlerMiddleware from "./middleware/error-handler.js";
 
+// Allow Private Network Access header so secure contexts can reach loopback
+// (Chrome's Private Network Access / CORS requirement)
+app.use((req, res, next) => {
+  if (req.headers['access-control-request-private-network'] === 'true') {
+    res.setHeader('Access-Control-Allow-Private-Network', 'true');
+  }
+  next();
+});
+
 app.use(cors({
   origin: [
     "https://livestock-cost-estimator.vercel.app", 
