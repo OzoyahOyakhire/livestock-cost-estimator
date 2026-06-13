@@ -188,6 +188,28 @@ const calculateEstimation = async (req, res, next) => {
   }
 };
 
+const getUserEstimations = async (req, res, next) => {
+  try {
+    const estimations = await Estimation.find({ user: req.user.id })
+      .sort({ updatedAt: -1 })
+
+    if (estimations.length === 0) {
+      return res.status(StatusCodes.OK).json({
+        success: true,
+        estimations: [],
+        message: "No estimation yet",
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      estimations,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 export {
   createEstimation,
   updateStep2,
@@ -195,4 +217,5 @@ export {
   updateStep4,
   updateStep5,
   calculateEstimation,
+  getUserEstimations
 };

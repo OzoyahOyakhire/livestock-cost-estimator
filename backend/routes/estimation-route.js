@@ -3,6 +3,7 @@ import { authenticateUser } from "../middleware/auth.js";
 import {
   calculateEstimation,
   createEstimation,
+  getUserEstimations,
   updateStep2,
   updateStep3,
   updateStep4,
@@ -58,5 +59,6 @@ router.patch(
 
 // Calculate — triggers rule-based engine + ML prediction
 router.post("/:id/calculate", calculateEstimation);
+router.get("/user-estimation", getUserEstimations);
 
 export default router;
