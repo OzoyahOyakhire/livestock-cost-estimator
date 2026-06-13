@@ -1,16 +1,27 @@
-# Livestock Cost Estimator API Documentation
+# LivestockIQ — Backend API Documentation
 
 ## Overview
 
-This document describes the authentication API currently exposed by the backend branch.
+This document describes the API exposed by the LivestockIQ backend. The system
+estimates livestock farm costs, revenue, profit, and ROI for cattle and poultry
+operations. The backend (Node.js/Express + MongoDB) runs a rule-based estimation
+engine and also calls a separate Python ML service for ML-assisted predictions.
 
 ## Base URL
 
 `/api/v1`
 
-## Auth Base Path
+## Mounted routers
 
-`/api/v1/auth`
+| Router      | Base path              | Auth required |
+| ----------- | ---------------------- | ------------- |
+| Auth        | `/api/v1/auth`         | No (except logout) |
+| Estimation  | `/api/v1/estimation`   | Yes           |
+| User        | `/api/v1/user`         | Yes           |
+| Dashboard   | `/api/v1/dashboard`    | Yes           |
+
+> Note: the estimation base path is **singular** (`/api/v1/estimation`), as
+> mounted in `server.js`.
 
 ## Authentication Method
 
@@ -20,8 +31,14 @@ This backend uses **HTTP-only signed cookies** for authentication:
 - `refreshToken`
 
 Frontend requests that need cookies should be sent with credentials enabled.
+CORS is configured in `server.js` against `process.env.CLIENT_URL` with
+`credentials: true`.
 
 ---
+
+# Auth API
+
+**Base Path**: `/api/v1/auth`
 
 ## 1) Register User
 
@@ -29,7 +46,8 @@ Frontend requests that need cookies should be sent with credentials enabled.
 
 ### Description
 
-Creates a new user account, generates an email verification token, and sends a verification email.
+Creates a new user account, generates an email verification token, and sends a
+verification email.
 
 ### Validation Rules
 
@@ -143,7 +161,8 @@ GET /api/v1/auth/verify-email?token=abc123&email=john@example.com
 
 ### Description
 
-Authenticates a verified user, stores refresh token data in the database, and sets signed auth cookies.
+Authenticates a verified user, stores refresh token data in the database, and
+sets signed auth cookies.
 
 ### Validation Rules
 
@@ -260,7 +279,8 @@ Send the request with credentials enabled.
 
 ### Description
 
-If the email exists, generates a reset token, stores a hashed token plus expiry, and sends a reset email.
+If the email exists, generates a reset token, stores a hashed token plus expiry,
+and sends a reset email.
 
 ### Request Body
 
@@ -294,7 +314,8 @@ If the email exists, generates a reset token, stores a hashed token plus expiry,
 
 - This endpoint returns the same success message whether the email exists or not.
 - Reset token expiry is set to about 10 minutes.
-- The email link points to the backend reset-password path with `token` and `email` in the URL.
+- The email link points to the backend reset-password path with `token` and
+  `email` in the URL.
 
 ---
 
@@ -344,7 +365,7 @@ Resets a user's password using the reset token, email, and new password.
 
 ---
 
-## Frontend Integration Notes
+## Auth Frontend Integration Notes
 
 ### Base Axios Example
 
@@ -374,28 +395,26 @@ await api.post("/auth/login", {
 await api.delete("/auth/logout");
 ```
 
-## Important Current Backend Notes
-
-- Only the auth router is currently mounted in `server.js`.
-- The backend currently uses hard-coded backend URLs in the email verification and password reset links.
-- CORS is not visibly configured in `server.js`, so cross-origin frontend integration may fail until CORS is added.
-
-## Summary for Frontend Dev
-
-The frontend dev should not need to read backend source code to discover endpoints. This document is the API contract they can integrate against.
+---
 
 # 🐄 Estimation API
 
-- **Base Path**: `/api/v1/estimations`
-- **Auth Required**: ✅ Yes
+- **Base Path**: `/api/v1/estimation`
+- **Auth Required**: ✅ Yes (all routes)
 
-## 1) Create Estimation
+The estimation flow is a 5-step wizard. Step 1 creates the estimation; steps 2–5
+update it in place; `calculate` finalizes it. A step guard enforces that steps are
+completed in order. Market inputs (`sellingPricePerKg`, `eggPricePerEgg`) are
+captured as part of **Step 4 (Feed & Operations)** — there is no separate market
+step.
 
-**Endpoint**: `POST /api/v1/estimations`
+## 1) Create Estimation (Step 1)
 
-Description
+**Endpoint**: `POST /api/v1/estimation`
 
-Initializes a new estimation and starts the wizard.
+### Description
+
+Initializes a new estimation with the livestock type and starts the wizard.
 
 ### Request Body
 
@@ -405,7 +424,11 @@ Initializes a new estimation and starts the wizard.
 }
 ```
 
-### Response
+- `livestockType`: required, one of `cattle`, `poultry`
+
+### Success Response
+
+**Status**: `201 Created`
 
 ```json
 {
@@ -419,54 +442,109 @@ Initializes a new estimation and starts the wizard.
 }
 ```
 
-## 2) Production Setup
+## 2) Production Setup (Step 2)
 
-**Endpoint**: `PATCH /api/v1/estimations/:id/step-2`
+**Endpoint**: `PATCH /api/v1/estimation/:id/step-2`
 
 ### Request Body
 
 ```json
 {
-  "productionType": "meat",
+  "productionType": "beef",
   "productionSystem": "intensive",
   "numberOfAnimals": 100,
   "cycleDuration": 6,
-  "location": "Lagos"
+  "location": "Lagos",
+  "coordinates": { "latitude": 6.5244, "longitude": 3.3792 }
 }
 ```
 
-## 3) Housing
+- `productionType`: required, one of `broiler`, `layer`, `beef`
+- `productionSystem`: required, one of `intensive`, `semi-intensive`,
+  `extensive`, `deep litter`, `battery cage`, `mixed`
+- `numberOfAnimals`: required, min 1
+- `cycleDuration`: required, min 1
+- `location`: required
+- `coordinates`: optional `{ latitude, longitude }`
 
-**Endpoint**: `PATCH /api/v1/estimations/:id/step-3`
+### Success Response
+
+**Status**: `200 OK` — returns `{ "success": true, "estimation": { ... } }`
+
+## 3) Housing & Infrastructure (Step 3)
+
+**Endpoint**: `PATCH /api/v1/estimation/:id/step-3`
 
 ### Request Body
 
 ```json
 {
-  "hasHousing": true,
-  "housingType": "modern",
-  "capacity": 120,
-  "equipment": ["feeder", "drinkers"]
+  "housingStatus": "need-to-build",
+  "housingType": "block-concrete",
+  "requiredSpace": 200,
+  "farmSize": 500,
+  "waterSource": "borehole",
+  "buildingMaterial": "concrete",
+  "fencingType": "barbed-wire",
+  "equipment": ["feeder", "drinkers"],
+  "capacity": 120
 }
 ```
 
-## 4) Feed & Operations
+- `housingStatus`: required, one of `existing`, `need-to-build`, `not-required`
+- `housingType`: required **only when** `housingStatus` is `need-to-build`; one of
+  `wooden`, `block-concrete`, `steel-structure`, `basic`, `standard`, `premium`
+- `requiredSpace`, `farmSize`, `capacity`: optional numbers (min 0)
+- `waterSource`, `buildingMaterial`, `fencingType`: optional strings
+- `equipment`: optional array of strings (defaults to `[]`)
 
-**Endpoint**: `PATCH /api/v1/estimations/:id/step-4`
+> The backend derives `hasHousing` automatically: `true` when `housingStatus` is
+> `existing` or `not-required`, otherwise `false`.
 
-### Request Body
+### Success Response
+
+**Status**: `200 OK` — returns `{ "success": true, "estimation": { ... } }`
+
+## 4) Feed & Operations (Step 4 — includes market inputs)
+
+**Endpoint**: `PATCH /api/v1/estimation/:id/step-4`
+
+Feed costs can be supplied either as staged sub-costs (which the backend sums into
+`feedPrice`) or as a manual override. Required fields are `laborCost` and
+`electricityCost`.
+
+### Request Body (example — broiler)
 
 ```json
 {
-  "feedPrice": 150000,
-  "laborCost": 50000,
-  "electricityCost": 20000
+  "broilerStarterCost": 300000,
+  "broilerFinisherCost": 350000,
+  "laborCost": 80000,
+  "electricityCost": 25000,
+  "sellingPricePerKg": 3500,
+  "eggPricePerEgg": 0
 }
 ```
 
-## 5) Health Management
+### Accepted Fields
 
-**Endpoint**: `PATCH /api/v1/estimations/:id/step-5`
+- Poultry broiler staged feed: `broilerStarterCost`, `broilerFinisherCost`
+- Poultry layer staged feed: `chickStarterCost`, `growerMashCost`, `layerMashCost`
+- Cattle feed: `feedCostPerKg`, `supplementCost`, `grazingAvailability` (bool)
+- Manual override: `feedPrice`, `manualOverride` (bool)
+- Shared (required): `laborCost`, `electricityCost`
+- Market inputs (optional): `sellingPricePerKg`, `eggPricePerEgg`
+
+> `feedPrice` is computed and stored server-side from the staged inputs based on
+> `productionType`, unless `manualOverride` is `true` and `feedPrice > 0`.
+
+### Success Response
+
+**Status**: `200 OK` — returns `{ "success": true, "estimation": { ... } }`
+
+## 5) Health Management (Step 5 — final step)
+
+**Endpoint**: `PATCH /api/v1/estimation/:id/step-5`
 
 ### Request Body
 
@@ -476,33 +554,36 @@ Initializes a new estimation and starts the wizard.
   "vaccinationProgram": "standard",
   "vetServiceFrequency": "monthly",
   "medicationIntensity": "medium",
-  "diseaseRiskLevel": "medium"
+  "diseaseRiskLevel": "medium",
+  "parasiteControl": "occasional"
 }
 ```
 
-## 6) Market Inputs
+- `mortalityRate`: required, 0–100
+- `vaccinationProgram`: required, one of `minimal`, `basic`, `standard`, `intensive`
+- `vetServiceFrequency`: required, one of `weekly`, `monthly`, `quarterly`
+- `medicationIntensity`: required, one of `low`, `medium`, `high`
+- `diseaseRiskLevel`: optional, one of `low`, `medium`, `high`
+- `parasiteControl`: optional, one of `none`, `occasional`, `regular`
 
-**Endpoint**: `PATCH /api/v1/estimations/:id/step-6`
+### Success Response
 
-### Request Body
+**Status**: `200 OK` — returns `{ "success": true, "estimation": { ... } }`
 
-```json
-{
-  "sellingPricePerKg": 2500,
-  "eggPricePerEgg": 50,
-  "milkPricePerLiter": 800
-}
-```
+## 6) Calculate Estimation
 
-## 7) Calculate Estimations
+**Endpoint**: `POST /api/v1/estimation/:id/calculate`
 
-**Endpoint**: `PATCH /api/v1/estimations/:id/calculate`
+### Description
 
-Description
+Applies smart defaults for any missing/zero fields, runs the rule-based estimation
+engine, then calls the ML service. The rule-based result is always returned; the ML
+result is included only when the ML server responds successfully (the backend falls
+back gracefully if it is down).
 
-Runs cost estimation logic and finalizes the result.
+### Success Response
 
-### Response
+**Status**: `200 OK`
 
 ```json
 {
@@ -514,6 +595,13 @@ Runs cost estimation logic and finalizes the result.
       "projectedRevenue": 350000,
       "projectedProfit": 130000,
       "roi": 59.1
+    },
+    "costBreakdown": { "...": "..." },
+    "modelOutput": {
+      "predictedFeedCost": 150000,
+      "predictedLaborCost": 50000,
+      "predictedElectricityCost": 20000,
+      "confidenceScore": 0.92
     }
   },
   "costBreakdown": {
@@ -525,14 +613,49 @@ Runs cost estimation logic and finalizes the result.
     "vaccinationCost": 5000,
     "medicationCost": 7000,
     "vetServiceCost": 4000
+  },
+  "mlResults": {
+    "totalCostEstimation": 218500,
+    "projectedRevenue": 352000,
+    "projectedProfit": 133500,
+    "roi": 61.1,
+    "confidenceNote": "ML-assisted estimate. Actual costs may vary based on local market conditions.",
+    "defaultsApplied": {
+      "feedPrice": false,
+      "laborCost": false,
+      "electricityCost": false,
+      "mortalityRate": false,
+      "sellingPricePerKg": false,
+      "eggPricePerEgg": false
+    }
   }
 }
 ```
+
+> `mlResults` is omitted entirely if the ML server is unavailable. The
+> `defaultsApplied` flags tell the frontend which inputs were auto-filled with
+> smart defaults so it can surface that to the user.
+
+### Possible Error Responses
+
+**Status**: `404 Not Found`
+
+```json
+{
+  "success": false,
+  "message": "Estimation not found"
+}
+```
+
+---
 
 # 📊 Dashboard API
 
 - **Base Path**: `/api/v1/dashboard`
 - **Auth Required**: ✅ Yes
+
+All dashboard endpoints aggregate over the current user's estimations. Summary,
+cost-breakdown, and analytics only include estimations with `status: "completed"`.
 
 ## 1) Dashboard Summary
 
@@ -542,14 +665,19 @@ Runs cost estimation logic and finalizes the result.
 
 ```json
 {
-  "totalEstimatedCost": 425000,
-  "projectedRevenue": 580000,
-  "projectedProfit": 155000,
-  "roi": 36.4
+  "success": true,
+  "data": {
+    "totalEstimationCost": 425000,
+    "ProjectedRevenue": 580000,
+    "ProjectedProfit": 155000,
+    "roi": 36.4
+  }
 }
 ```
 
-## 2) Cost-Breakdown (Chart)
+> `roi` is computed as `(totalProfit / totalCost) * 100`, or `0` when total cost is `0`.
+
+## 2) Cost Breakdown
 
 **Endpoint**: `GET /api/v1/dashboard/cost-breakdown`
 
@@ -557,25 +685,40 @@ Runs cost estimation logic and finalizes the result.
 
 ```json
 {
-  "feed": 45,
-  "vet": 25,
-  "operations": 20,
-  "others": 10
+  "success": true,
+  "data": {
+    "feedingNutrition": 250000,
+    "vetinary": 0,
+    "operations": 120000,
+    "others": 0
+  }
 }
 ```
 
-## 3) Recent Estimation (Chart)
+## 3) Recent Estimations
 
-**Endpoint**: `GET /api/v1/dashboard/cost-breakdown`
+**Endpoint**: `GET /api/v1/dashboard/recent`
 
-### Response
+### Description
+
+Returns the user's 5 most recently updated estimations (any status), newest first.
+
+### Response (with data)
 
 ```json
 {
-  "feed": 45,
-  "vet": 25,
-  "operations": 20,
-  "others": 10
+  "success": true,
+  "estimations": [ { "_id": "...", "livestockType": "cattle", "status": "completed" } ]
+}
+```
+
+### Response (none yet)
+
+```json
+{
+  "success": true,
+  "estimations": [],
+  "message": "No estimation yet"
 }
 ```
 
@@ -583,10 +726,110 @@ Runs cost estimation logic and finalizes the result.
 
 **Endpoint**: `GET /api/v1/dashboard/analytics`
 
+### Description
+
+Returns completed-estimation totals grouped by month (keyed as e.g. `"Jun 2026"`).
+
 ### Response
 
-| Metric            | Value     |
-| :---------------- | :-------- |
-| **Total Cost**    | 1,400,000 |
-| **Total Revenue** | 9,500,000 |
-| **Total Profit**  | 8,000,000 |
+```json
+{
+  "success": true,
+  "data": {
+    "Jun 2026": { "cost": 1400000, "revenue": 9500000, "profit": 8000000 }
+  }
+}
+```
+
+---
+
+# 🤖 ML Inference Service
+
+The backend depends on a separate Python (FastAPI) service for ML-assisted
+predictions. Its location is configured via `ML_SERVER_URL` (default
+`http://localhost:8000`). If it is unavailable, the backend logs a warning and
+returns rule-based results only.
+
+## Health Check
+
+**Endpoint**: `GET {ML_SERVER_URL}/health`
+
+```json
+{ "status": "ok", "models_loaded": ["totalCostEstimation", "projectedRevenue", "projectedProfit", "roi"] }
+```
+
+The backend calls this on startup (non-fatal warning if it fails).
+
+## Predict
+
+**Endpoint**: `POST {ML_SERVER_URL}/predict`
+
+The backend builds the payload from the saved estimation (see `ml-service.js`).
+Key fields: `livestockType`, `productionType`, `productionSystem`,
+`numberOfAnimals`, `cycleDuration`, `location`, `hasHousing`, `housingType`,
+`capacity`, `equipmentCount`, `feedPrice`, `laborCost`, `electricityCost`,
+`mortalityRate`, `vaccinationProgram`, `medicationIntensity`,
+`vetServiceFrequency`, `diseaseRiskLevel`, `sellingPricePerKg`, `eggPricePerEgg`,
+`milkPricePerLiter`, `year`, `month`.
+
+### Response
+
+```json
+{
+  "totalCostEstimation": 218500.0,
+  "projectedRevenue": 352000.0,
+  "projectedProfit": 133500.0,
+  "roi": 61.1,
+  "confidenceNote": "ML-assisted estimate. Actual costs may vary based on local market conditions."
+}
+```
+
+> The ML service must have trained models present (`saved_model/*.pkl`). These are
+> git-ignored, so on a fresh checkout run `python model/train_model.py` before
+> starting the service, otherwise it raises `RuntimeError: Models not found`.
+
+---
+
+# Running the Backend
+
+## Environment Variables
+
+The backend reads the following (see `server.js` and `config/env.js`):
+
+```
+PORT=5000
+MONGO_URL=<mongodb connection string>
+JWT_SECRET=<secret used to sign cookies and tokens>
+CLIENT_URL=http://localhost:5173
+ML_SERVER_URL=http://localhost:8000
+
+# Email (config/env.js)
+EMAIL_PROVIDER=
+MAIL_FROM=
+BREVO_API_KEY=
+MAILTRAP_HOST=
+MAILTRAP_PORT=
+MAILTRAP_USER=
+MAILTRAP_PASS=
+```
+
+## Install & Start
+
+```bash
+npm install
+npm run dev     # nodemon (development)
+npm start       # node server.js (production)
+```
+
+---
+
+## Summary for Frontend Dev
+
+The frontend dev should not need to read backend source code to discover
+endpoints. This document is the API contract to integrate against. Key points:
+
+- Estimation base path is **singular**: `/api/v1/estimation`.
+- The wizard is **5 steps**; market inputs live in step 4, not a separate step.
+- `calculate` is a **POST**, and `mlResults` may be absent if the ML server is down.
+- Dashboard responses are wrapped in `{ "success": true, "data": ... }` (except
+  `/recent`, which uses `{ "success": true, "estimations": [...] }`).
