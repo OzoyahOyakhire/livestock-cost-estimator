@@ -7,6 +7,8 @@ import SignupPage from './pages/SignupPage';
 import EstimationSetup from './pages/Wizard/EstimationSetup';
 import PoultryWizard from './pages/Wizard/Poultry/PoultryWizard';
 import CattleWizard from './pages/Wizard/Cattle/CattleWizard';
+import ResultsPage from './pages/Wizard/ResultsPage';
+import Dashboard from './pages/Dashboard';
 import './App.css';
 
 function App() {
@@ -17,10 +19,12 @@ function App() {
         {/* Main site layout */}
         <Route path="/" element={<AppLayout />}>
           <Route index element={<LandingPage />} />
+          <Route path="dashboard" element={<Dashboard />} />
           <Route path="estimate">
             <Route index element={<EstimationSetup />} />
             <Route path="poultry" element={<PoultryWizard />} />
             <Route path="cattle" element={<CattleWizard />} />
+            <Route path="results/:id" element={<ResultsPage />} />
           </Route>
         </Route>
 

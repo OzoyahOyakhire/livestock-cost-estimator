@@ -40,13 +40,16 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-6">
              {user ? (
-               <button 
-                 onClick={logout}
-                 className="flex items-center gap-2 text-slate-600 font-medium hover:text-red-600 transition-colors bg-slate-50 px-4 py-2 rounded-lg hover:bg-red-50"
-               >
-                 <LogOut size={18} />
-                 Log Out
-               </button>
+               <>
+                 <Link to="/dashboard" className="text-slate-600 font-medium hover:text-green-500 transition-colors">Dashboard</Link>
+                 <button 
+                   onClick={logout}
+                   className="flex items-center gap-2 text-slate-600 font-medium hover:text-red-600 transition-colors bg-slate-50 px-4 py-2 rounded-lg hover:bg-red-50"
+                 >
+                   <LogOut size={18} />
+                   Log Out
+                 </button>
+               </>
              ) : (
                <>
                  <Link to="/login" className="text-gray-700 font-medium hover:text-slate-900 transition-colors">Log In</Link>
@@ -80,16 +83,19 @@ export default function Navbar() {
              <div className="h-px bg-gray-100 my-2"></div>
              
              {user ? (
-               <button 
-                 onClick={() => {
-                   logout();
-                   setIsMobileMenuOpen(false);
-                 }}
-                 className="flex items-center gap-2 px-4 py-3 text-base font-medium text-red-600 hover:bg-red-50 rounded-lg"
-               >
-                 <LogOut size={18} />
-                 Log Out
-               </button>
+               <>
+                 <Link to="/dashboard" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 rounded-lg">Dashboard</Link>
+                 <button 
+                   onClick={() => {
+                     logout();
+                     setIsMobileMenuOpen(false);
+                   }}
+                   className="flex items-center gap-2 px-4 py-3 text-base font-medium text-red-600 hover:bg-red-50 rounded-lg"
+                 >
+                   <LogOut size={18} />
+                   Log Out
+                 </button>
+               </>
              ) : (
                <>
                  <Link to="/login" onClick={() => setIsMobileMenuOpen(false)} className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-green-50 hover:text-green-500 rounded-lg">Log In</Link>

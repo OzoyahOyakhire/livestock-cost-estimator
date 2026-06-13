@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Box, HelpCircle, X, CheckCircle2 } from 'lucide-react';
+import { estimationApi } from '../../../api/estimationApi';
+import toast from 'react-hot-toast';
 import Step1Production from './steps/Step1Production';
 import Step2Housing from './steps/Step2Housing';
 import Step3Feed from './steps/Step3Feed';
@@ -8,7 +10,10 @@ import Step4Health from './steps/Step4Health';
 
 export default function PoultryWizard() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const estimationId = location.state?.estimationId;
   const [currentStep, setCurrentStep] = useState(1);
+  const [isProcessing, setIsProcessing] = useState(false);
   const [formData, setFormData] = useState({
     productionType: '',
     productionSystem: '',
@@ -44,6 +49,83 @@ export default function PoultryWizard() {
   const nextStep = () => setCurrentStep(prev => Math.min(prev + 1, 4));
   const prevStep = () => setCurrentStep(prev => Math.max(prev - 1, 1));
 
+  const handleNextStep = async () => {
+    if (!estimationId) {
+      toast.error('Missing Estimation ID. Please start over.');
+      navigate('/estimate');
+      return;
+    }
+    try {
+      setIsProcessing(true);
+      
+      if (currentStep === 1) {
+        // Step 2: Production Setup
+        await estimationApi.saveProductionSetup(estimationId, {
+          productionType: formData.productionType.toLowerCase(),
+          productionSystem: formData.productionSystem.toLowerCase().replace(' system', ''),
+          numberOfAnimals: parseInt(formData.numBirds, 10),
+          location: formData.location,
+          cycleDuration: parseInt(formData.cycleDuration, 10)
+        });
+      } else if (currentStep === 2) {
+        // Step 3: Housing
+        const hasHousingBool = formData.hasHousing?.toLowerCase() === 'yes';
+        
+        let mappedHousingType = 'wooden';
+        if (formData.housingType === 'Block / Concrete') mappedHousingType = 'block-concrete';
+        if (formData.housingType === 'Steel Structure') mappedHousingType = 'steel-structure';
+
+        await estimationApi.saveHousing(estimationId, {
+          hasHousing: hasHousingBool,
+          housingStatus: hasHousingBool ? 'existing' : 'need-to-build',
+          housingType: mappedHousingType
+        });
+      } else if (currentStep === 3) {
+        // Step 4: Feed & Market
+        await estimationApi.saveFeedAndMarket(estimationId, {
+          laborCost: parseFloat(formData.laborCost),
+          electricityCost: parseFloat(formData.electricityCost)
+        });
+      }
+      
+      nextStep();
+    } catch (error) {
+      const errorMsg = error.response?.data?.msg || error.response?.data?.message || JSON.stringify(error.response?.data) || error.message;
+      toast.error(`Validation Failed: ${errorMsg}`, { duration: 8000 });
+      console.error("Full error:", error);
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  const handleSubmit = async () => {
+    if (!estimationId) return;
+    try {
+      setIsProcessing(true);
+      // Step 5: Health
+      let mappedVetFreq = 'monthly';
+      if (formData.vetFrequency === 'Regular (Bi-weekly)') mappedVetFreq = 'weekly';
+      if (formData.vetFrequency === 'Emergency Only') mappedVetFreq = 'quarterly';
+
+      await estimationApi.saveHealth(estimationId, {
+        mortalityRate: parseFloat(formData.expectedMortality),
+        vaccinationProgram: formData.vaccineProgram?.toLowerCase() || 'standard',
+        vetServiceFrequency: mappedVetFreq,
+        medicationIntensity: formData.medicationIntensity?.toLowerCase() || 'medium'
+      });
+      
+      const results = await estimationApi.calculate(estimationId);
+      toast.success('Estimation calculated successfully!');
+      navigate(`/estimate/results/${estimationId}`, { state: { results } });
+    } catch (error) {
+      const errorMsg = error.response?.data?.msg || error.response?.data?.message || JSON.stringify(error.response?.data) || error.message;
+      toast.error(`Failed: ${errorMsg}`, { duration: 8000 });
+      console.error("Full error:", error);
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
   const navItems = [
     { id: 1, name: '1. Production Setup', shortName: 'Production Setup' },
     { id: 2, name: '2. Housing & Infrastructure', shortName: 'Housing Costs' },
@@ -53,10 +135,10 @@ export default function PoultryWizard() {
 
   const renderContent = () => {
     switch(currentStep) {
-      case 1: return <Step1Production formData={formData} update={updateFormData} onNext={nextStep} onCancel={() => navigate('/estimate')} />;
-      case 2: return <Step2Housing formData={formData} update={updateFormData} onNext={nextStep} onBack={prevStep} />;
-      case 3: return <Step3Feed formData={formData} update={updateFormData} onNext={nextStep} onBack={prevStep} />;
-      case 4: return <Step4Health formData={formData} update={updateFormData} onBack={prevStep} onSubmit={() => alert('Wizard Completed!')} />;
+      case 1: return <Step1Production formData={formData} update={updateFormData} onNext={handleNextStep} onCancel={() => navigate('/estimate')} isProcessing={isProcessing} />;
+      case 2: return <Step2Housing formData={formData} update={updateFormData} onNext={handleNextStep} onBack={prevStep} isProcessing={isProcessing} />;
+      case 3: return <Step3Feed formData={formData} update={updateFormData} onNext={handleNextStep} onBack={prevStep} isProcessing={isProcessing} />;
+      case 4: return <Step4Health formData={formData} update={updateFormData} onBack={prevStep} onSubmit={handleSubmit} isProcessing={isProcessing} />;
       default: return null;
     }
   };

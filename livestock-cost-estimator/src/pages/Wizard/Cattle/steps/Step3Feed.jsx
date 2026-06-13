@@ -60,6 +60,49 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
               </label>
            </div>
 
+           {/* Labor and Electricity */}
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+              <div className="border border-gray-200 rounded-2xl p-6 shadow-sm">
+                 <div className="flex items-center gap-2 mb-2">
+                    <span className="text-green-500">👥</span>
+                    <h4 className="font-bold text-slate-900">Labor Cost</h4>
+                 </div>
+                 <p className="text-xs text-gray-500 mb-4">Monthly wages for farm assistants</p>
+                 
+                 <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 flex items-center mb-1">
+                    <span className="text-gray-400 font-bold mr-2">₦</span>
+                    <input 
+                      type="number"
+                      value={formData.laborCost || ''}
+                      onChange={(e) => update({ laborCost: e.target.value })}
+                      placeholder="150000"
+                      className="bg-transparent border-none outline-none text-xl font-bold text-slate-900 w-full"
+                    />
+                 </div>
+                 <p className="text-[10px] text-gray-400 font-medium">Default market rate will be used if left blank.</p>
+              </div>
+
+              <div className="border border-gray-200 rounded-2xl p-6 shadow-sm">
+                 <div className="flex items-center gap-2 mb-2">
+                    <span className="text-green-500">⚡</span>
+                    <h4 className="font-bold text-slate-900">Electricity Cost</h4>
+                 </div>
+                 <p className="text-xs text-gray-500 mb-4">Estimated monthly utility bill</p>
+                 
+                 <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 flex items-center mb-1">
+                    <span className="text-gray-400 font-bold mr-2">₦</span>
+                    <input 
+                      type="number"
+                      value={formData.electricityCost || ''}
+                      onChange={(e) => update({ electricityCost: e.target.value })}
+                      placeholder="25000"
+                      className="bg-transparent border-none outline-none text-xl font-bold text-slate-900 w-full"
+                    />
+                 </div>
+                 <p className="text-[10px] text-gray-400 font-medium">Default market rate will be used if left blank.</p>
+              </div>
+           </div>
+
            
         </div>
       </div>

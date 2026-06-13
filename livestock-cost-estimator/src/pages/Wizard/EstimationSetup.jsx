@@ -1,10 +1,27 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Droplet, Tractor, CheckCircle2, X } from 'lucide-react';
+import { estimationApi } from '../../api/estimationApi';
+import toast from 'react-hot-toast';
 
 export default function EstimationSetup() {
   const [selected, setSelected] = useState('poultry');
+  const [isCreating, setIsCreating] = useState(false);
   const navigate = useNavigate();
+
+  const handleContinue = async () => {
+    try {
+      setIsCreating(true);
+      const data = await estimationApi.create({ livestockType: selected });
+      // Navigate to the next step, passing the estimation ID in state
+      navigate(`/estimate/${selected}`, { state: { estimationId: data?.estimation?._id || data?._id || data?.id } });
+    } catch (error) {
+      toast.error('Failed to create estimation. Please try again.');
+      console.error(error);
+    } finally {
+      setIsCreating(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans">
@@ -105,10 +122,11 @@ export default function EstimationSetup() {
                    <div className="font-bold text-slate-900">Input Data & Metrics</div>
                 </div>
                 <button 
-                  onClick={() => navigate(`/estimate/${selected}`)}
-                  className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-green-500/30 transition-transform active:scale-95 flex items-center gap-2"
+                  onClick={handleContinue}
+                  disabled={isCreating}
+                  className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-green-500/30 transition-transform active:scale-95 flex items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                   Continue <span className="transform translate-y-[1px]">→</span>
+                   {isCreating ? 'Creating...' : <>Continue <span className="transform translate-y-[1px]">→</span></>}
                 </button>
              </div>
           </div>

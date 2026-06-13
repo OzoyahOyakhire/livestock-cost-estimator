@@ -1,7 +1,7 @@
 import React from 'react';
 import { AlertTriangle, Info } from 'lucide-react';
 
-export default function Step4Health({ formData, update, onNext, onBack }) {
+export default function Step4Health({ formData, update, onSubmit, onBack }) {
   return (
     <div className="max-w-3xl mx-auto py-12 px-6 lg:px-12 animate-in fade-in slide-in-from-bottom-4 duration-500 w-full bg-white md:my-10 md:rounded-3xl md:shadow-xl md:border md:border-gray-100">
          <div className="flex justify-between items-center mb-6">
@@ -113,7 +113,7 @@ export default function Step4Health({ formData, update, onNext, onBack }) {
             <button onClick={onBack} className="w-1/2 py-4 bg-slate-50 border border-gray-200 text-slate-700 rounded-xl font-bold hover:bg-slate-100 transition-all text-center shadow-sm">
               Previous Step
             </button>
-            <button onClick={onNext} className="w-1/2 py-4 bg-green-500 text-white rounded-xl font-bold hover:bg-green-600 transition-all text-center shadow-md shadow-green-500/20">
+            <button onClick={onSubmit} className="w-1/2 py-4 bg-green-500 text-white rounded-xl font-bold hover:bg-green-600 transition-all text-center shadow-md shadow-green-500/20">
               Next: Estimation
             </button>
          </div>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { CheckCircle2 } from 'lucide-react';
+import { estimationApi } from '../../../api/estimationApi';
+import toast from 'react-hot-toast';
 import Step1Production from './steps/Step1Production';
 import Step2Infrastructure from './steps/Step2Infrastructure';
 import Step3Feed from './steps/Step3Feed';
@@ -9,10 +11,13 @@ import Step5HealthManagement from './steps/Step5HealthManagement';
 
 export default function CattleWizard() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const estimationId = location.state?.estimationId;
   const [currentStep, setCurrentStep] = useState(1);
+  const [isProcessing, setIsProcessing] = useState(false);
   const [formData, setFormData] = useState({
     productionType: 'Beef',
-    productionSystem: 'Feedlot',
+    productionSystem: 'Intensive',
     numCattle: '',
     location: '',
     duration: '',
@@ -52,6 +57,90 @@ export default function CattleWizard() {
   const nextStep = () => setCurrentStep(prev => Math.min(prev + 1, 4));
   const prevStep = () => setCurrentStep(prev => Math.max(prev - 1, 1));
 
+  const handleNextStep = async () => {
+    if (!estimationId) {
+      toast.error('Missing Estimation ID. Please start over.');
+      navigate('/estimate');
+      return;
+    }
+    try {
+      setIsProcessing(true);
+      
+      if (currentStep === 1) {
+        await estimationApi.saveProductionSetup(estimationId, {
+          productionType: formData.productionType.toLowerCase(),
+          productionSystem: formData.productionSystem.toLowerCase().replace(' system', ''),
+          numberOfAnimals: parseInt(formData.numCattle, 10),
+          location: formData.location,
+          cycleDuration: parseInt(formData.duration, 10)
+        });
+      } else if (currentStep === 2) {
+        const hasHousingBool = formData.hasHousing === 'yes' || formData.hasHousing === 'existing';
+        
+        let mappedHousingType = 'wooden';
+        if (formData.buildingMaterial === 'Standard Steel') mappedHousingType = 'steel-structure';
+        if (formData.buildingMaterial === 'Permanent Concrete') mappedHousingType = 'block-concrete';
+
+        await estimationApi.saveHousing(estimationId, {
+          hasHousing: hasHousingBool,
+          housingStatus: hasHousingBool ? 'existing' : 'need-to-build',
+          housingType: mappedHousingType,
+          farmSize: parseFloat(formData.farmSize) || 0,
+          waterSource: formData.waterSource,
+          buildingMaterial: formData.buildingMaterial,
+          fencingType: formData.fencingType
+        });
+      } else if (currentStep === 3) {
+        await estimationApi.saveFeedAndMarket(estimationId, {
+          laborCost: parseFloat(formData.laborCost) || 150000,
+          electricityCost: parseFloat(formData.electricityCost) || 25000,
+          feedPrice: parseFloat(formData.feedCost) || 0,
+          supplementCost: parseFloat(formData.supplementCost) || 0,
+          grazingAvailability: formData.grazingAvailability || false,
+          sellingPricePerKg: parseFloat(formData.beefPrice) || parseFloat(formData.dairyPrice) || 0
+        });
+      }
+      
+      nextStep();
+    } catch (error) {
+      const errorMsg = error.response?.data?.msg || error.response?.data?.message || JSON.stringify(error.response?.data) || error.message;
+      toast.error(`Validation Failed: ${errorMsg}`, { duration: 8000 });
+      console.error("Full error:", error);
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  const handleSubmit = async () => {
+    if (!estimationId) return;
+    try {
+      setIsProcessing(true);
+
+      let mappedVetFreq = 'monthly';
+      if (formData.vetFrequency === 'Weekly' || formData.vetFrequency === 'Regular (Weekly)') mappedVetFreq = 'weekly';
+      if (formData.vetFrequency === 'Monthly' || formData.vetFrequency === 'Regular (Monthly)') mappedVetFreq = 'monthly';
+      if (formData.vetFrequency === 'Quarterly' || formData.vetFrequency === 'Annually' || formData.vetFrequency === 'Emergency Only') mappedVetFreq = 'quarterly';
+
+      await estimationApi.saveHealth(estimationId, {
+        mortalityRate: parseFloat(formData.mortalityRate) || 2.5,
+        vaccinationProgram: formData.vaccineProgram?.toLowerCase() || 'standard',
+        vetServiceFrequency: mappedVetFreq,
+        parasiteControl: formData.parasiteControl?.toLowerCase() || 'regular',
+        medicationIntensity: formData.medicationIntensity?.toLowerCase() || 'medium'
+      });
+      
+      const results = await estimationApi.calculate(estimationId);
+      toast.success('Estimation calculated successfully!');
+      navigate(`/estimate/results/${estimationId}`, { state: { results } });
+    } catch (error) {
+      const errorMsg = error.response?.data?.msg || error.response?.data?.message || JSON.stringify(error.response?.data) || error.message;
+      toast.error(`Validation Failed: ${errorMsg}`, { duration: 8000 });
+      console.error("Full error:", error);
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
   const navItems = [
     { id: 1, name: 'Step 1: Basics', shortName: 'Basics' },
     { id: 2, name: 'Step 2: Infrastructure', shortName: 'Infrastructure' },
@@ -61,10 +150,10 @@ export default function CattleWizard() {
 
   const renderContent = () => {
     switch(currentStep) {
-      case 1: return <Step1Production formData={formData} update={updateFormData} onNext={nextStep} onCancel={() => navigate('/estimate')} />;
-      case 2: return <Step2Infrastructure formData={formData} update={updateFormData} onNext={nextStep} onBack={prevStep} />;
-      case 3: return <Step3Feed formData={formData} update={updateFormData} onNext={nextStep} onBack={prevStep} />;
-      case 4: return <Step5HealthManagement formData={formData} update={updateFormData} onSubmit={() => alert('Wizard Completed!')} onBack={prevStep} />;
+      case 1: return <Step1Production formData={formData} update={updateFormData} onNext={handleNextStep} onCancel={() => navigate('/estimate')} isProcessing={isProcessing} />;
+      case 2: return <Step2Infrastructure formData={formData} update={updateFormData} onNext={handleNextStep} onBack={prevStep} isProcessing={isProcessing} />;
+      case 3: return <Step3Feed formData={formData} update={updateFormData} onNext={handleNextStep} onBack={prevStep} isProcessing={isProcessing} />;
+      case 4: return <Step5HealthManagement formData={formData} update={updateFormData} onSubmit={handleSubmit} onBack={prevStep} isProcessing={isProcessing} />;
       default: return null;
     }
   };
