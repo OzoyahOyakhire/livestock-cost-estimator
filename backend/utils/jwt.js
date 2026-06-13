@@ -17,15 +17,19 @@ const attachCookiesToResponse = ({ res, user, refreshToken }) => {
   const oneDay = 1000 * 60 * 60 * 24;
   const longerExp = 1000 * 60 * 60 * 24 * 30;
 
+  const isProduction = process.env.NODE_ENV === "production";
+
   res.cookie("accessToken", accessTokenJwt, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: isProduction,
+    sameSite: isProduction ? "none" : "lax",
     signed: true,
     expires: new Date(Date.now() + oneDay),
   });
   res.cookie("refreshToken", refreshTokenJwt, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: isProduction,
+    sameSite: isProduction ? "none" : "lax",
     signed: true,
     expires: new Date(Date.now() + longerExp),
   });

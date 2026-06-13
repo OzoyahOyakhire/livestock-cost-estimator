@@ -25,9 +25,26 @@ import errorHandlerMiddleware from "./middleware/error-handler.js";
 
 import { checkMLHealth } from "./service/ml-service.js";  // optional health check
 
+if (process.env.NODE_ENV === "production") {
+  app.set("trust proxy", 1);
+}
+
+const allowedOrigins = [process.env.CLIENT_URL];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/estimation", estimationRouter);
