@@ -210,6 +210,29 @@ const getUserEstimations = async (req, res, next) => {
   }
 };
 
+const getEstimation = async (req, res, next) => {
+  const { id } = req.params;
+
+  try {
+    // Scope to the logged-in user so one user can't read another's estimation.
+    const estimation = await Estimation.findOne({ _id: id, user: req.user.id });
+
+    if (!estimation) {
+      return res.status(StatusCodes.NOT_FOUND).json({
+        success: false,
+        message: "Estimation not found",
+      });
+    }
+
+    res.status(StatusCodes.OK).json({
+      success: true,
+      estimation,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 export {
   createEstimation,
   updateStep2,
@@ -217,5 +240,6 @@ export {
   updateStep4,
   updateStep5,
   calculateEstimation,
-  getUserEstimations
+  getUserEstimations,
+  getEstimation
 };
