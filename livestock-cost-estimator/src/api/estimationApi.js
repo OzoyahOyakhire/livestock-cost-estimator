@@ -56,7 +56,7 @@ export const estimationApi = {
 
   // Delete Estimation
   delete: async (id) => {
-    const response = await api.delete(`/estimation/${id}`);
+    const response = await api.delete(`/dashboard/${id}`);
     return response.data;
   }
 };
