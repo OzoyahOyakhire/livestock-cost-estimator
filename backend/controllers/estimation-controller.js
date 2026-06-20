@@ -2,6 +2,10 @@ import Estimation from "../models/estimation.js";
 import { StatusCodes } from "http-status-codes";
 import { runEstimation } from "../service/estimation-service.js";
 import { getMLPrediction, applySmartDefaults } from "../service/ml-service.js";
+import {
+  estimateFeedPrice,
+  checkFeedPriceReasonable,
+} from "../service/feed-estimator.js";
 
 // ── Feed assumptions (tune to your context) ──────────────────────────────────
 const KG_PER_BIRD_BROILER = 4.25; // ~4–4.5 kg over an 8-week broiler cycle
@@ -9,52 +13,61 @@ const KG_PER_BIRD_LAYER = 40; // layers eat far more over their laying life
 const KG_PER_BAG = 25; // feed sold in 25 kg bags
 
 // ── Compute total feedPrice from staged inputs ────────────────────────────────
-// Accepts BOTH the frontend's "...Price" names and the schema's "...Cost" names.
-// Multiplies per-bag prices by the number of bags the flock actually needs,
-// so the result scales with flock size instead of just adding two bag prices.
+// Accepts BOTH the frontend's "...Price" names and the schema's "...Cost" names,
+// scales per-bag prices by flock size, and — when no usable input is given —
+// estimates a realistic, flock-scaled figure from calibration data.
 const computeTotalFeedPrice = (feed, productionType, numberOfAnimals = 0) => {
-  if (!feed) return 0;
-
-  // Honor an explicit manual total if the user overrode it
-  if (feed.manualOverride && feed.feedPrice > 0) return feed.feedPrice;
-
   const pt = (productionType || "").toLowerCase();
   const birds = Number(numberOfAnimals) || 0;
 
-  // Read either naming convention
-  const starter = Number(
-    feed.broilerStarterCost ?? feed.broilerStarterPrice ?? 0,
-  );
-  const finisher = Number(
-    feed.broilerFinisherCost ?? feed.broilerFinisherPrice ?? 0,
-  );
-  const chick = Number(feed.chickStarterCost ?? feed.chickStarterPrice ?? 0);
-  const grower = Number(feed.growerMashCost ?? feed.growerFeedPrice ?? 0);
-  const layer = Number(feed.layerMashCost ?? feed.layerFeedPrice ?? 0);
+  if (feed) {
+    // Honor an explicit manual total if the user overrode it
+    if (feed.manualOverride && feed.feedPrice > 0) return feed.feedPrice;
 
-  if (pt === "broiler") {
-    const avgBagPrice = (starter + finisher) / 2;
-    if (avgBagPrice > 0 && birds > 0) {
-      const bags = (birds * KG_PER_BIRD_BROILER) / KG_PER_BAG;
-      return Math.round(bags * avgBagPrice);
+    const starter = Number(
+      feed.broilerStarterCost ?? feed.broilerStarterPrice ?? 0,
+    );
+    const finisher = Number(
+      feed.broilerFinisherCost ?? feed.broilerFinisherPrice ?? 0,
+    );
+    const chick = Number(feed.chickStarterCost ?? feed.chickStarterPrice ?? 0);
+    const grower = Number(feed.growerMashCost ?? feed.growerFeedPrice ?? 0);
+    const layer = Number(feed.layerMashCost ?? feed.layerFeedPrice ?? 0);
+
+    if (pt === "broiler") {
+      const avgBagPrice = (starter + finisher) / 2;
+      if (avgBagPrice > 0 && birds > 0) {
+        const bags = (birds * KG_PER_BIRD_BROILER) / KG_PER_BAG;
+        return Math.round(bags * avgBagPrice);
+      }
     }
-  }
 
-  if (pt === "layer") {
-    const avgBagPrice = (chick + grower + layer) / 3;
-    if (avgBagPrice > 0 && birds > 0) {
-      const bags = (birds * KG_PER_BIRD_LAYER) / KG_PER_BAG;
-      return Math.round(bags * avgBagPrice);
+    if (pt === "layer") {
+      const avgBagPrice = (chick + grower + layer) / 3;
+      if (avgBagPrice > 0 && birds > 0) {
+        const bags = (birds * KG_PER_BIRD_LAYER) / KG_PER_BAG;
+        return Math.round(bags * avgBagPrice);
+      }
     }
+
+    if (pt === "beef") {
+      const total =
+        Number(feed.feedCostPerKg ?? 0) + Number(feed.supplementCost ?? 0);
+      if (total > 0) return total;
+    }
+
+    if (feed.feedPrice && feed.feedPrice > 0) return feed.feedPrice;
   }
 
-  if (pt === "beef") {
-    const total =
-      Number(feed.feedCostPerKg ?? 0) + Number(feed.supplementCost ?? 0);
-    if (total > 0) return total;
-  }
+  // No usable input — estimate from flock size + year (calibrated).
+  const estimated = estimateFeedPrice(
+    productionType,
+    birds,
+    new Date().getFullYear(),
+  );
+  if (estimated > 0) return estimated;
 
-  return feed.feedPrice || 0;
+  return 0;
 };
 
 // Normalize incoming feed body: map frontend "...Price" names onto the schema's
@@ -90,6 +103,16 @@ const normalizeFeedBody = (b = {}) => ({
   eggPricePerEgg: Number(b.eggPricePerEgg ?? 0),
 });
 
+// Did the user actually enter any feed value? (controls whether we range-check)
+const userEnteredFeed = (b = {}) =>
+  Number(b.broilerStarterCost ?? b.broilerStarterPrice ?? 0) > 0 ||
+  Number(b.broilerFinisherCost ?? b.broilerFinisherPrice ?? 0) > 0 ||
+  Number(b.chickStarterCost ?? b.chickStarterPrice ?? 0) > 0 ||
+  Number(b.growerMashCost ?? b.growerFeedPrice ?? 0) > 0 ||
+  Number(b.layerMashCost ?? b.layerFeedPrice ?? 0) > 0 ||
+  Number(b.feedCostPerKg ?? 0) > 0 ||
+  Number(b.feedPrice ?? 0) > 0;
+
 // ── Step controllers ──────────────────────────────────────────────────────────
 
 const createEstimation = async (req, res, next) => {
@@ -124,7 +147,6 @@ const updateStep3 = async (req, res, next) => {
   try {
     estimation.housingInfrastructure = req.body;
 
-    // Sync hasHousing with housingStatus for backward compatibility
     const status = req.body.housingStatus;
     estimation.housingInfrastructure.hasHousing =
       status === "existing" || status === "not-required";
@@ -146,7 +168,6 @@ const updateStep4 = async (req, res, next) => {
     const mapped = normalizeFeedBody(req.body);
     estimation.feedOperations = mapped;
 
-    // Compute and store flock-scaled total feedPrice from staged inputs
     const pt = estimation.productionSetup?.productionType;
     const birds = estimation.productionSetup?.numberOfAnimals;
     estimation.feedOperations.feedPrice = computeTotalFeedPrice(
@@ -157,7 +178,20 @@ const updateStep4 = async (req, res, next) => {
 
     estimation.currentStep = 4;
     await estimation.save();
-    res.status(StatusCodes.OK).json({ success: true, estimation });
+
+    // Soft range-check ONLY if the user actually entered a feed value.
+    let feedWarning = null;
+    if (userEnteredFeed(req.body)) {
+      const check = checkFeedPriceReasonable(
+        estimation.feedOperations.feedPrice,
+        pt,
+        birds,
+        new Date().getFullYear(),
+      );
+      if (!check.ok) feedWarning = check.message;
+    }
+
+    res.status(StatusCodes.OK).json({ success: true, estimation, feedWarning });
   } catch (error) {
     next(error);
   }
@@ -210,7 +244,6 @@ const calculateEstimation = async (req, res, next) => {
       roi: ruleResults.roi,
     };
 
-    // Save structured cost breakdown to database
     estimation.costBreakdown = ruleResults.costBreakdown;
     estimation.status = "completed";
 
@@ -266,10 +299,7 @@ const getUserEstimations = async (req, res, next) => {
       });
     }
 
-    return res.status(200).json({
-      success: true,
-      estimations,
-    });
+    return res.status(200).json({ success: true, estimations });
   } catch (error) {
     next(error);
   }
@@ -288,10 +318,7 @@ const getEstimation = async (req, res, next) => {
       });
     }
 
-    res.status(StatusCodes.OK).json({
-      success: true,
-      estimation,
-    });
+    res.status(StatusCodes.OK).json({ success: true, estimation });
   } catch (error) {
     next(error);
   }
