@@ -1,21 +1,57 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { CheckCircle2, TrendingUp, DollarSign, Activity, AlertTriangle, ArrowRight, Download } from 'lucide-react';
+import { CheckCircle2, TrendingUp, DollarSign, Activity, AlertTriangle, ArrowRight, Download, Loader2 } from 'lucide-react';
+import { estimationApi } from '../../api/estimationApi';
 
 export default function ResultsPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const { id } = useParams();
   
-  // Try to get results from router state, fallback to empty object
-  const results = location.state?.results || null;
+  const [results, setResults] = useState(location.state?.results || null);
+  const [isLoading, setIsLoading] = useState(!location.state?.results);
+  const [error, setError] = useState(null);
 
-  if (!results) {
+  useEffect(() => {
+    if (!results && id) {
+      const fetchResults = async () => {
+        setIsLoading(true);
+        try {
+          const data = await estimationApi.getById(id);
+          
+          const est = data.estimation || data.data || data;
+          const cb = data.costBreakdown || est.costBreakdown || est.results?.costBreakdown || {};
+          
+          setResults({
+            estimation: est,
+            costBreakdown: cb
+          });
+        } catch (err) {
+          console.error("Failed to fetch estimation:", err);
+          setError(err.response?.data?.msg || "Failed to load estimation results.");
+        } finally {
+          setIsLoading(false);
+        }
+      };
+      fetchResults();
+    }
+  }, [id, results]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-6">
+        <Loader2 className="w-12 h-12 text-green-500 animate-spin mb-4" />
+        <h2 className="text-xl font-bold text-slate-900">Loading Results...</h2>
+      </div>
+    );
+  }
+
+  if (error || !results) {
     return (
       <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-6">
         <AlertTriangle className="w-16 h-16 text-yellow-500 mb-4" />
         <h2 className="text-2xl font-bold text-slate-900 mb-2">No Results Found</h2>
-        <p className="text-gray-500 mb-8">We couldn't find the estimation results. Please try running the estimation again.</p>
+        <p className="text-gray-500 mb-8">{error || "We couldn't find the estimation results. Please try running the estimation again."}</p>
         <button 
           onClick={() => navigate('/estimate')}
           className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg shadow-green-500/30 transition-all"
