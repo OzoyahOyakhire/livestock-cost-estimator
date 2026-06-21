@@ -23,7 +23,7 @@ import dashboardRouter from "./routes/dashboard-route.js";
 import notFound from "./middleware/not-found.js";
 import errorHandlerMiddleware from "./middleware/error-handler.js";
 
-import { checkMLHealth } from "./service/ml-service.js";  // optional health check
+import { checkMLHealth } from "./service/ml-service.js"; // optional health check
 
 if (process.env.NODE_ENV === "production") {
   app.set("trust proxy", 1);
@@ -40,7 +40,7 @@ app.use(
       return callback(new Error("Not allowed by CORS"));
     },
     credentials: true,
-  })
+  }),
 );
 
 app.use(express.json());

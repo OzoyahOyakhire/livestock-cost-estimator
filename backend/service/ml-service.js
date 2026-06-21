@@ -1,3 +1,9 @@
+import {
+  estimateFeedPrice,
+  estimateLaborCost,
+  estimateElectricityCost,
+} from "./feed-estimator.js";
+
 const ML_SERVER_URL = process.env.ML_SERVER_URL || "http://localhost:8000";
 
 // ── Feed assumptions (keep in sync with the controller) ──────────────────────
@@ -6,8 +12,8 @@ const KG_PER_BIRD_LAYER = 40; // layers eat far more over their laying life
 const KG_PER_BAG = 25; // feed sold in 25 kg bags
 
 // ── Smart defaults by livestock/production type ───────────────────────────────
-// NOTE: feedPrice here is only a last-resort fallback when the user provided
-// no feed input at all. Real inputs should always win over these.
+// NOTE: feedPrice here is only a coarse last-resort fallback. The system now
+// prefers a flock-scaled estimate (see estimateFeedPrice) over these flat values.
 const SMART_DEFAULTS = {
   poultry: {
     broiler: {
@@ -50,54 +56,69 @@ const SMART_DEFAULTS = {
 
 // ── Compute total feed price from staged inputs ───────────────────────────────
 // Accepts BOTH "...Cost" (schema) and "...Price" (frontend) names, and scales
-// per-bag prices by the number of bags the flock actually needs.
+// per-bag prices by the number of bags the flock actually needs. When the user
+// provided no feed input, it estimates a realistic, flock-scaled figure from the
+// calibration data instead of falling back to a flat default.
 const computeTotalFeedPrice = (
   feed,
   productionType,
   defaults,
   numberOfAnimals = 0,
 ) => {
-  if (!feed) return defaults.feedPrice || 0;
-
-  // Honor an explicit manual total if provided
-  if (feed.manualOverride && feed.feedPrice > 0) return feed.feedPrice;
-
   const pt = (productionType || "").toLowerCase();
   const birds = Number(numberOfAnimals) || 0;
 
-  const starter = Number(
-    feed.broilerStarterCost ?? feed.broilerStarterPrice ?? 0,
-  );
-  const finisher = Number(
-    feed.broilerFinisherCost ?? feed.broilerFinisherPrice ?? 0,
-  );
-  const chick = Number(feed.chickStarterCost ?? feed.chickStarterPrice ?? 0);
-  const grower = Number(feed.growerMashCost ?? feed.growerFeedPrice ?? 0);
-  const layer = Number(feed.layerMashCost ?? feed.layerFeedPrice ?? 0);
+  if (feed) {
+    // Honor an explicit manual total if provided
+    if (feed.manualOverride && feed.feedPrice > 0) return feed.feedPrice;
 
-  if (pt === "broiler") {
-    const avgBagPrice = (starter + finisher) / 2;
-    if (avgBagPrice > 0 && birds > 0) {
-      const bags = (birds * KG_PER_BIRD_BROILER) / KG_PER_BAG;
-      return Math.round(bags * avgBagPrice);
+    const starter = Number(
+      feed.broilerStarterCost ?? feed.broilerStarterPrice ?? 0,
+    );
+    const finisher = Number(
+      feed.broilerFinisherCost ?? feed.broilerFinisherPrice ?? 0,
+    );
+    const chick = Number(feed.chickStarterCost ?? feed.chickStarterPrice ?? 0);
+    const grower = Number(feed.growerMashCost ?? feed.growerFeedPrice ?? 0);
+    const layer = Number(feed.layerMashCost ?? feed.layerFeedPrice ?? 0);
+
+    if (pt === "broiler") {
+      const avgBagPrice = (starter + finisher) / 2;
+      if (avgBagPrice > 0 && birds > 0) {
+        const bags = (birds * KG_PER_BIRD_BROILER) / KG_PER_BAG;
+        return Math.round(bags * avgBagPrice);
+      }
     }
-  }
 
-  if (pt === "layer") {
-    const avgBagPrice = (chick + grower + layer) / 3;
-    if (avgBagPrice > 0 && birds > 0) {
-      const bags = (birds * KG_PER_BIRD_LAYER) / KG_PER_BAG;
-      return Math.round(bags * avgBagPrice);
+    if (pt === "layer") {
+      const avgBagPrice = (chick + grower + layer) / 3;
+      if (avgBagPrice > 0 && birds > 0) {
+        const bags = (birds * KG_PER_BIRD_LAYER) / KG_PER_BAG;
+        return Math.round(bags * avgBagPrice);
+      }
     }
+
+    if (pt === "beef") {
+      const t =
+        Number(feed.feedCostPerKg ?? 0) + Number(feed.supplementCost ?? 0);
+      if (t > 0) return t;
+    }
+
+    // If the user gave a usable total directly, keep it.
+    if (feed.feedPrice && feed.feedPrice > 0) return feed.feedPrice;
   }
 
-  if (pt === "beef") {
-    const t =
-      Number(feed.feedCostPerKg ?? 0) + Number(feed.supplementCost ?? 0);
-    if (t > 0) return t;
-  }
+  // No usable user input — estimate a realistic, flock-scaled figure
+  // calibrated to the training data, instead of a flat default.
+  const estimated = estimateFeedPrice(
+    productionType,
+    birds,
+    new Date().getFullYear(),
+  );
+  if (estimated > 0) return estimated;
 
-  return feed.feedPrice || defaults.feedPrice || 0;
+  // Absolute last resort (e.g. no animal count available).
+  return (defaults && defaults.feedPrice) || 0;
 };
 
 // ── Apply smart defaults ───────────────────────────────────────────────────────
@@ -109,13 +130,28 @@ export const applySmartDefaults = (estimation) => {
   const feed = estimation.feedOperations || {};
   const health = estimation.healthManagement || {};
   const numberOfAnimals = estimation.productionSetup?.numberOfAnimals || 0;
+  const year = new Date().getFullYear();
 
   const feedPrice = computeTotalFeedPrice(feed, pt, defaults, numberOfAnimals);
 
+  // Labor & electricity: use the user's value if given (>0), otherwise estimate
+  // a calibrated, size-adjusted figure instead of a flat default.
+  const laborCost =
+    feed.laborCost && feed.laborCost > 0
+      ? feed.laborCost
+      : estimateLaborCost(pt, numberOfAnimals, year) || defaults.laborCost || 0;
+
+  const electricityCost =
+    feed.electricityCost && feed.electricityCost > 0
+      ? feed.electricityCost
+      : estimateElectricityCost(pt, numberOfAnimals, year) ||
+        defaults.electricityCost ||
+        0;
+
   return {
     feedPrice: feedPrice || defaults.feedPrice || 0,
-    laborCost: feed.laborCost || defaults.laborCost || 0,
-    electricityCost: feed.electricityCost || defaults.electricityCost || 0,
+    laborCost,
+    electricityCost,
 
     // Market inputs now in feedOperations
     sellingPricePerKg:
@@ -203,7 +239,7 @@ export const getMLPrediction = async (estimation) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
-      signal: AbortSignal.timeout(8000),
+      signal: AbortSignal.timeout(15000),
     });
 
     if (!response.ok) {
@@ -245,7 +281,7 @@ export const getMLPrediction = async (estimation) => {
 export const checkMLHealth = async () => {
   try {
     const res = await fetch(`${ML_SERVER_URL}/health`, {
-      signal: AbortSignal.timeout(3000),
+      signal: AbortSignal.timeout(10000),
     });
     const data = await res.json();
     console.log("[ML Service] Health check OK:", data);
