@@ -6,13 +6,13 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
     const updated = { ...formData, ...newPrices };
     let total = 0;
     if (formData.productionType === 'Broiler') {
-      const starter = Number(updated.broilerStarterPrice !== undefined ? updated.broilerStarterPrice : 26.00);
-      const finisher = Number(updated.broilerFinisherPrice !== undefined ? updated.broilerFinisherPrice : 23.00);
+      const starter = Number(updated.broilerStarterPrice || 0);
+      const finisher = Number(updated.broilerFinisherPrice || 0);
       total = Number((starter + finisher).toFixed(2));
     } else {
-      const chick = Number(updated.chickStarterPrice !== undefined ? updated.chickStarterPrice : 25.00);
-      const grower = Number(updated.growerFeedPrice !== undefined ? updated.growerFeedPrice : 22.00);
-      const layer = Number(updated.layerFeedPrice !== undefined ? updated.layerFeedPrice : 25.50);
+      const chick = Number(updated.chickStarterPrice || 0);
+      const grower = Number(updated.growerFeedPrice || 0);
+      const layer = Number(updated.layerFeedPrice || 0);
       total = Number((chick + grower + layer).toFixed(2));
     }
     update({ ...newPrices, totalFeedPrice: total });
@@ -22,28 +22,28 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
     if (!formData.overrideFeedPrice) {
       if (formData.productionType === 'Broiler') {
         update({
-          broilerStarterPrice: 26.00,
-          broilerFinisherPrice: 23.00,
-          totalFeedPrice: 49.00
+          broilerStarterPrice: '',
+          broilerFinisherPrice: '',
+          totalFeedPrice: 0
         });
       } else {
         update({
-          chickStarterPrice: 25.00,
-          growerFeedPrice: 22.00,
-          layerFeedPrice: 25.50,
-          totalFeedPrice: 72.50
+          chickStarterPrice: '',
+          growerFeedPrice: '',
+          layerFeedPrice: '',
+          totalFeedPrice: 0
         });
       }
     } else {
       let total = 0;
       if (formData.productionType === 'Broiler') {
-        const starter = Number(formData.broilerStarterPrice !== undefined ? formData.broilerStarterPrice : 26.00);
-        const finisher = Number(formData.broilerFinisherPrice !== undefined ? formData.broilerFinisherPrice : 23.00);
+        const starter = Number(formData.broilerStarterPrice || 0);
+        const finisher = Number(formData.broilerFinisherPrice || 0);
         total = Number((starter + finisher).toFixed(2));
       } else {
-        const chick = Number(formData.chickStarterPrice !== undefined ? formData.chickStarterPrice : 25.00);
-        const grower = Number(formData.growerFeedPrice !== undefined ? formData.growerFeedPrice : 22.00);
-        const layer = Number(formData.layerFeedPrice !== undefined ? formData.layerFeedPrice : 25.50);
+        const chick = Number(formData.chickStarterPrice || 0);
+        const grower = Number(formData.growerFeedPrice || 0);
+        const layer = Number(formData.layerFeedPrice || 0);
         total = Number((chick + grower + layer).toFixed(2));
       }
       if (formData.totalFeedPrice !== total) {
@@ -61,7 +61,7 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
                <div className="flex justify-between items-center mb-6">
                   <div>
                      <h4 className="font-bold text-slate-900 text-lg">Broiler Feed Prices (per 25kg bag)</h4>
-                     <p className="text-sm text-gray-500">Enter pricing for each growth stage to compute the total feed cost.</p>
+                     <p className="text-sm text-gray-500">Enter pricing for each growth stage to compute the total feed cost. <span className="block mt-1 text-xs text-amber-600 font-medium">You can leave these fields blank if you don't know the exact price. Default market rates will be used.</span></p>
                   </div>
                   <div className="flex items-center gap-3">
                      <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">MANUAL OVERRIDE</span>
@@ -82,7 +82,8 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
                         <input 
                           type="number"
                           value={formData.broilerStarterPrice}
-                          onChange={(e) => updateFeedPrices({ broilerStarterPrice: Number(e.target.value) })}
+                          onChange={(e) => updateFeedPrices({ broilerStarterPrice: e.target.value })}
+                          placeholder="0"
                           disabled={!formData.overrideFeedPrice}
                           className="bg-transparent border-none outline-none text-lg font-bold text-slate-900 w-full disabled:text-slate-400 disabled:cursor-not-allowed"
                         />
@@ -96,7 +97,8 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
                         <input 
                           type="number"
                           value={formData.broilerFinisherPrice}
-                          onChange={(e) => updateFeedPrices({ broilerFinisherPrice: Number(e.target.value) })}
+                          onChange={(e) => updateFeedPrices({ broilerFinisherPrice: e.target.value })}
+                          placeholder="0"
                           disabled={!formData.overrideFeedPrice}
                           className="bg-transparent border-none outline-none text-lg font-bold text-slate-900 w-full disabled:text-slate-400 disabled:cursor-not-allowed"
                         />
@@ -115,7 +117,7 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
                <div className="flex justify-between items-center mb-6">
                   <div>
                      <h4 className="font-bold text-slate-900 text-lg">Layer Feed Prices (per 25kg bag)</h4>
-                     <p className="text-sm text-gray-500">Enter pricing for each growth stage to compute the total feed cost.</p>
+                     <p className="text-sm text-gray-500">Enter pricing for each growth stage to compute the total feed cost. <span className="block mt-1 text-xs text-amber-600 font-medium">You can leave these fields blank if you don't know the exact price. Default market rates will be used.</span></p>
                   </div>
                   <div className="flex items-center gap-3">
                      <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">MANUAL OVERRIDE</span>
@@ -136,7 +138,8 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
                         <input 
                           type="number"
                           value={formData.chickStarterPrice}
-                          onChange={(e) => updateFeedPrices({ chickStarterPrice: Number(e.target.value) })}
+                          onChange={(e) => updateFeedPrices({ chickStarterPrice: e.target.value })}
+                          placeholder="0"
                           disabled={!formData.overrideFeedPrice}
                           className="bg-transparent border-none outline-none text-lg font-bold text-slate-900 w-full disabled:text-slate-400 disabled:cursor-not-allowed"
                         />
@@ -150,7 +153,8 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
                         <input 
                           type="number"
                           value={formData.growerFeedPrice}
-                          onChange={(e) => updateFeedPrices({ growerFeedPrice: Number(e.target.value) })}
+                          onChange={(e) => updateFeedPrices({ growerFeedPrice: e.target.value })}
+                          placeholder="0"
                           disabled={!formData.overrideFeedPrice}
                           className="bg-transparent border-none outline-none text-lg font-bold text-slate-900 w-full disabled:text-slate-400 disabled:cursor-not-allowed"
                         />
@@ -164,7 +168,8 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
                         <input 
                           type="number"
                           value={formData.layerFeedPrice}
-                          onChange={(e) => updateFeedPrices({ layerFeedPrice: Number(e.target.value) })}
+                          onChange={(e) => updateFeedPrices({ layerFeedPrice: e.target.value })}
+                          placeholder="0"
                           disabled={!formData.overrideFeedPrice}
                           className="bg-transparent border-none outline-none text-lg font-bold text-slate-900 w-full disabled:text-slate-400 disabled:cursor-not-allowed"
                         />

@@ -13,6 +13,25 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
         </div>
 
         <div className="space-y-8">
+           <div className="flex justify-between items-center bg-slate-50 p-4 rounded-xl border border-slate-100">
+              <div>
+                 <h4 className="font-bold text-slate-900 text-lg">Feed Prices (Optional)</h4>
+                 <p className="text-sm text-gray-500">You can leave these fields blank if you don't know the exact price. Default market rates will be used.</p>
+              </div>
+              <div className="flex items-center gap-3">
+                 <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">MANUAL OVERRIDE</span>
+                 <div 
+                   onClick={() => {
+                      const newValue = !formData.overrideFeedPrice;
+                      update({ overrideFeedPrice: newValue, feedCost: newValue ? formData.feedCost : '', supplementCost: newValue ? formData.supplementCost : '' });
+                   }}
+                   className={`w-12 h-6 rounded-full relative cursor-pointer transition-colors duration-200 ${formData.overrideFeedPrice ? 'bg-green-500' : 'bg-gray-300'}`}
+                 >
+                    <div className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-transform duration-200 ${formData.overrideFeedPrice ? 'transform translate-x-6' : ''}`}></div>
+                 </div>
+              </div>
+           </div>
+
            <div>
               <label className="block text-sm font-bold text-slate-900 mb-2">Feed cost per kg (Optional override)</label>
               <div className="relative">
@@ -20,13 +39,13 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
                 <input 
                   type="number" 
                   step="0.01"
-                  placeholder="0.45"
-                  className="w-full bg-white border border-gray-200 rounded-lg pl-10 pr-4 py-3 text-slate-900 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
+                  placeholder="0.00"
+                  disabled={!formData.overrideFeedPrice}
+                  className="w-full bg-white border border-gray-200 rounded-lg pl-10 pr-4 py-3 text-slate-900 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 disabled:text-slate-400 disabled:cursor-not-allowed disabled:bg-gray-50"
                   value={formData.feedCost}
                   onChange={(e) => update({ feedCost: e.target.value })}
                 />
               </div>
-              <p className="text-xs text-gray-400 mt-2 font-medium">Default market rate will be used if left blank.</p>
            </div>
 
            <div>
@@ -36,8 +55,9 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
                 <input 
                   type="number" 
                   step="0.01"
-                  placeholder="0.15"
-                  className="w-full bg-white border border-gray-200 rounded-lg pl-10 pr-4 py-3 text-slate-900 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
+                  placeholder="0.00"
+                  disabled={!formData.overrideFeedPrice}
+                  className="w-full bg-white border border-gray-200 rounded-lg pl-10 pr-4 py-3 text-slate-900 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 disabled:text-slate-400 disabled:cursor-not-allowed disabled:bg-gray-50"
                   value={formData.supplementCost}
                   onChange={(e) => update({ supplementCost: e.target.value })}
                 />

@@ -32,6 +32,7 @@ export default function CattleWizard() {
     feedCost: '',
     supplementCost: '',
     grazingAvailability: false,
+    overrideFeedPrice: false,
     initialWeight: '',
     targetWeight: '',
     milkYield: '',
