@@ -19,38 +19,28 @@ export default function Step3Feed({ formData, update, onNext, onBack }) {
   };
 
   React.useEffect(() => {
-    if (!formData.overrideFeedPrice) {
-      if (formData.productionType === 'Broiler') {
-        update({
-          broilerStarterPrice: '',
-          broilerFinisherPrice: '',
-          totalFeedPrice: 0
-        });
-      } else {
-        update({
-          chickStarterPrice: '',
-          growerFeedPrice: '',
-          layerFeedPrice: '',
-          totalFeedPrice: 0
-        });
-      }
+    let total = 0;
+    if (formData.productionType === 'Broiler') {
+      const starter = Number(formData.broilerStarterPrice || 0);
+      const finisher = Number(formData.broilerFinisherPrice || 0);
+      total = Number((starter + finisher).toFixed(2));
     } else {
-      let total = 0;
-      if (formData.productionType === 'Broiler') {
-        const starter = Number(formData.broilerStarterPrice || 0);
-        const finisher = Number(formData.broilerFinisherPrice || 0);
-        total = Number((starter + finisher).toFixed(2));
-      } else {
-        const chick = Number(formData.chickStarterPrice || 0);
-        const grower = Number(formData.growerFeedPrice || 0);
-        const layer = Number(formData.layerFeedPrice || 0);
-        total = Number((chick + grower + layer).toFixed(2));
-      }
-      if (formData.totalFeedPrice !== total) {
-        update({ totalFeedPrice: total });
-      }
+      const chick = Number(formData.chickStarterPrice || 0);
+      const grower = Number(formData.growerFeedPrice || 0);
+      const layer = Number(formData.layerFeedPrice || 0);
+      total = Number((chick + grower + layer).toFixed(2));
     }
-  }, [formData.productionType, formData.overrideFeedPrice]);
+    if (formData.totalFeedPrice !== total) {
+      update({ totalFeedPrice: total });
+    }
+  }, [
+    formData.productionType, 
+    formData.broilerStarterPrice, 
+    formData.broilerFinisherPrice, 
+    formData.chickStarterPrice, 
+    formData.growerFeedPrice, 
+    formData.layerFeedPrice
+  ]);
 
   return (
     <div className="max-w-3xl mx-auto py-12 px-6 lg:px-12 animate-in fade-in slide-in-from-bottom-4 duration-500 w-full bg-white md:my-10 md:rounded-3xl md:shadow-xl md:border md:border-gray-100">

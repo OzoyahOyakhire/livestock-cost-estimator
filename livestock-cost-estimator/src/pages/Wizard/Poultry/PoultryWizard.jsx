@@ -82,10 +82,26 @@ export default function PoultryWizard() {
         });
       } else if (currentStep === 3) {
         // Step 4: Feed & Market
-        await estimationApi.saveFeedAndMarket(estimationId, {
-          laborCost: parseFloat(formData.laborCost),
-          electricityCost: parseFloat(formData.electricityCost)
-        });
+        const isBroiler = formData.productionType?.toLowerCase() === 'broiler';
+        
+        const feedPayload = {
+          laborCost: parseFloat(formData.laborCost || 0),
+          electricityCost: parseFloat(formData.electricityCost || 0),
+          manualOverride: !!formData.overrideFeedPrice
+        };
+
+        if (isBroiler) {
+          feedPayload.broilerStarterCost = parseFloat(formData.broilerStarterPrice || 0);
+          feedPayload.broilerFinisherCost = parseFloat(formData.broilerFinisherPrice || 0);
+          feedPayload.sellingPricePerKg = parseFloat(formData.sellPriceKg || 0);
+        } else {
+          feedPayload.chickStarterCost = parseFloat(formData.chickStarterPrice || 0);
+          feedPayload.growerMashCost = parseFloat(formData.growerFeedPrice || 0);
+          feedPayload.layerMashCost = parseFloat(formData.layerFeedPrice || 0);
+          feedPayload.sellingPricePerCrate = parseFloat(formData.eggPriceCrate || 0);
+        }
+
+        await estimationApi.saveFeedAndMarket(estimationId, feedPayload);
       }
       
       nextStep();
